@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <img src="images/milionari.png" alt="" width="100px" height="100px">
     <?php
     global $nivel;
     $nivel = 1;
@@ -20,8 +21,7 @@
         for ($i = 0; $i < count($preguntas_nivel); $i++) {
             if ($preguntas_nivel[$i][0] === $question_mark) {
                 $llave = $preguntas_nivel[$i];
-            } 
-            elseif ($preguntas_nivel[$i][0] === "+" || $preguntas_nivel[$i][0] === "-") {
+            } elseif ($preguntas_nivel[$i][0] === "+" || $preguntas_nivel[$i][0] === "-") {
                 $preguntas_por_nivel[$llave][] = $preguntas_nivel[$i];
             }
         }
@@ -69,23 +69,28 @@
         foreach ($preguntas_escogidas as $key => $value) {
             if ($preguntas_restantes == $total) {
                 echo "<div>";
-                $key = ltrim($key, '* ');
-                echo "<h2>".$key."</h2>";
-                foreach ($value as $respuestas) {
-                    $respuestas = ltrim($respuestas, '- ');
-                    $respuestas = ltrim($respuestas, '+ ');
-                    echo "<button>$respuestas</button>";
-                }
+                    $key = ltrim($key, '* ');
+                    echo "<h2>" . $key . "</h2>";
+                    echo "<div class='grid'>";
+                        foreach ($value as $respuestas) {
+                            $respuestas = ltrim($respuestas, '- ');
+                            $respuestas = ltrim($respuestas, '+ ');
+                            echo "<button class='boton'>$respuestas</button>";
+                        }
+                    echo "</div>";
                 echo "</div>";
             } else {
                 echo "<div class='oculto'>";
-                $key = ltrim($key, '* ');
-                echo "<h2>".$key."</h2>";
-                foreach ($value as $respuestas) {
-                    $respuestas = ltrim($respuestas, '- '); $respuestas = ltrim($respuestas, '+ ');
-                    echo "<button>$respuestas</button>";
-                }
-                echo "<p>Hola</p>";
+                    $key = ltrim($key, '* ');
+                    echo "<h2>" . $key . "</h2>";
+                    echo "<div class='grid'>";
+                        foreach ($value as $respuestas) {
+                            $respuestas = ltrim($respuestas, '- ');
+                            $respuestas = ltrim($respuestas, '+ ');
+                            echo "<button>$respuestas</button>";
+                        }
+                        echo "<p>Hola</p>";
+                    echo "</div>";
                 echo "</div>";
             }
             $preguntas_restantes--;

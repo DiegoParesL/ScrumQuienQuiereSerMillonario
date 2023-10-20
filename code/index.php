@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Qui vol ser milionari?</title>
 </head>
 <body>
+    <header><p><img src="images/spain.png" alt="" height="50px">&nbsp;
+    <img src="images/catalan.png" alt="" height="50px">&nbsp;
+    <img src="images/english.jpg" alt="" height="50px"></p></header>
     <h1>Benvigut a Qui vol ser milionari?</h1>
     <img src="images/milionari.png" alt="milionariIMG" width="300px" height="300px">
     <p>Aquest joc aquesta basat en el programa del mateix nom.<br>En el qual hi ha diferents nivells de dificultat respecte les preguntes.<br>Començarem en el nivell 1
