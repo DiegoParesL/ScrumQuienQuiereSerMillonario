@@ -12,6 +12,8 @@
     <h2>Felicidades</h2>
     <img src="images/congratulations.gif" alt="" >
     </div>
-    
+    <form action="index.php" method="post">
+        <button>Tornar a l'inici</button>
+    </form>
 </body>
 </html>
