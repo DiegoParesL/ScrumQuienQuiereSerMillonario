@@ -75,24 +75,26 @@
                 echo "<div>";
                 echo "<h2>$key</h2>";
                 foreach ($value as $respuestas) {
-                    echo "<button>".trim($respuestas,"+-")."</button>";
                     if($respuestas[0]=== "+"){
                         echo "<p class=\"oculto\" id='respuesta".($total-$preguntas_restantes)."'>$respuestas</p>";
+                        echo "<button id=\"res".($total-$preguntas_restantes)."\" onclick=\"trueClick()\">".trim($respuestas,"+-")."</button>";
+                    }else{
+                        echo "<button class=\"fail".($total-$preguntas_restantes)."\" onclick=\"failClick()\">".trim($respuestas,"+-")."</button>";
                     }
                 }
-                echo "<p class=\"oculto\"></p>";
                 
                 echo "</div>";
             } else {
-                echo "<div class='oculto'>";
+                echo "<div id='pregunta".($total-$preguntas_restantes+1)."' class='oculto'>";
                 echo "<h2>$key</h2>";
                 foreach ($value as $respuestas) {
-                    echo "<button>$respuestas</button>";
                     if($respuestas[0]=== "+"){
                         echo "<p class=\"oculto\" id='respuesta".($total-$preguntas_restantes)."'>$respuestas</p>";
+                        echo "<button id=\"res".($total-$preguntas_restantes)."\" onclick=\"trueClick()\">".trim($respuestas,"+-")."</button>";
+                    }else{
+                        echo "<button class=\"fail".($total-$preguntas_restantes)."\" onclick=\"failClick()\">".trim($respuestas,"+-")."</button>";
                     }
-                }   
-                echo "<p class=\"oculto\"></p>";
+                }  
                 echo "</div>";
             }
             $preguntas_restantes--;
