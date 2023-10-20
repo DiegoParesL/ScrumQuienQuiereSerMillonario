@@ -3,26 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>GAME</title>
 </head>
 <body>
     <?php
-    $pregunta =0;
+    $pregunta =1;
     $hilo ="";
-    while ($pregunta <18){
-        echo "<h2>Pregunta$pregunta</h2>";
+    while ($pregunta <=18){
+        if($pregunta == 1){
+            echo "<div class=\"visible\">";
+            echo "<h2>Pregunta $pregunta</h2>";
+        } else{
+           echo "<div class=\"oculto\">";
+            echo "<h2>Pregunta $pregunta</h2>"; 
+        }
+        
         for($res = 1; $res<=4; $res++){
             
             if($res%4!=0) {
-                echo"<button onclick =\"trueClick()\">pregunta$res</button>\t";
+                echo"<button onclick =\"trueClick()\">respuesta $res</button>\t\t\t";
             }else{
-                echo"<button onclick=\"failClick()\">pregunta$res</button>\t";
+                echo"<button onclick=\"failClick()\">respuesta $res</button>\t\t\t";
             }       
             if ($res ==2){
-                echo "<br>";
+                echo "<br><br>";
             }     
             
         }
+        echo "<p id=\"result\"></p>"
+        echo "</div>";
         $pregunta++;
     }
     
