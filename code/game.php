@@ -21,14 +21,10 @@
             if ($preguntas_nivel[$i][0] === $question_mark) {
                 $llave = $preguntas_nivel[$i];
             } 
-            elseif ($preguntas_nivel[$i][0] === "+") {
-                $preguntas_por_nivel[$llave][] = $preguntas_nivel[$i];
-            }
-            elseif ($preguntas_nivel[$i][0] === "-") {
+            elseif ($preguntas_nivel[$i][0] === "+" || $preguntas_nivel[$i][0] === "-") {
                 $preguntas_por_nivel[$llave][] = $preguntas_nivel[$i];
             }
         }
-        var_dump($preguntas_por_nivel);
         return $preguntas_por_nivel;
     }
 
@@ -73,15 +69,20 @@
         foreach ($preguntas_escogidas as $key => $value) {
             if ($preguntas_restantes == $total) {
                 echo "<div>";
-                echo "<h2>$key</h2>";
+                $key = ltrim($key, '* ');
+                echo "<h2>".$key."</h2>";
                 foreach ($value as $respuestas) {
+                    $respuestas = ltrim($respuestas, '- ');
+                    $respuestas = ltrim($respuestas, '+ ');
                     echo "<button>$respuestas</button>";
                 }
                 echo "</div>";
             } else {
                 echo "<div class='oculto'>";
-                echo "<h2>$key</h2>";
+                $key = ltrim($key, '* ');
+                echo "<h2>".$key."</h2>";
                 foreach ($value as $respuestas) {
+                    $respuestas = ltrim($respuestas, '- '); $respuestas = ltrim($respuestas, '+ ');
                     echo "<button>$respuestas</button>";
                 }
                 echo "<p>Hola</p>";
