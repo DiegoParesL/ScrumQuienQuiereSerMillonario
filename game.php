@@ -22,20 +22,21 @@
         for($res = 1; $res<=4; $res++){
             
             if($res%4!=0) {
-                echo"<button onclick =\"trueClick()\">respuesta $res</button>\t\t\t";
+                echo"<button id=\"button$pregunta"."_$res\" onclick=\"failClick()\">respuesta $res</button>\t\t\t";
             }else{
-                echo"<button onclick=\"failClick()\">respuesta $res</button>\t\t\t";
+                echo"<button id=\"button$pregunta"."_$res\" onclick =\"trueClick()\">respuesta $res</button>\t\t\t";
             }       
             if ($res ==2){
                 echo "<br><br>";
             }     
             
         }
-        echo "<p id=\"result\"></p>"
+        echo "<p id=\"result\"></p>";
         echo "</div>";
         $pregunta++;
     }
     
     ?>
+    <script src="funcionalidades.js"></script>
 </body>
 </html>
