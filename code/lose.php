@@ -6,7 +6,12 @@
     <title>Lose</title>
 </head>
 <body>
-    <h2>Que pena</h2>
-    <img src="images/lose.gif" alt="" srcset="">
+    <div>
+        <h2>Que pena</h2>
+        <img src="images/lose.gif" alt="" srcset="">
+    </div>
+    <form action="index.php" method="post">
+        <button>Tornar a l'inici</button>
+    </form>
 </body>
 </html>
