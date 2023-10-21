@@ -1,0 +1,31 @@
+body {
+    text-align: center;
+    background-color: rgb(18, 27, 42);
+    margin: 5%;
+}
+
+h1, h2, p {
+    color: white;
+}
+.visible {
+    display: block;
+}
+.oculto {
+    display: none;
+}
+
+.grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+  
+.boton{
+border: 2px solid black;
+padding: 30px;
+display: grid;
+place-items: center;
+background-color: rgba(255,255,0,0.6);
+
+}
+
