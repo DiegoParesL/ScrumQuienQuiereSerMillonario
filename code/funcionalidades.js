@@ -1,0 +1,56 @@
+let aciertos = 0;
+const totalPreguntas = 3; // El número total de preguntas en el juego
+const botonesAccion = document.querySelectorAll(".boton-accion"); // Selecciona ambos botones
+
+document.getElementById("botones").style.display = "none";
+
+function disableButtons(buttons) {
+    for (let button of buttons) {
+        button.disabled = true;
+    }
+}
+
+function enableButtons(buttons) {
+    for (let button of buttons) {
+        button.disabled = false;
+    }
+}
+
+function failClick() {
+    window.location.href = "lose.php";
+    soundError(); 
+}
+
+function trueClick(button) {
+    button.style.color = "rgb(0,255,0)";
+    aciertos++;
+    disableButtons(document.querySelectorAll("button"));
+    if (aciertos >= totalPreguntas) {
+        // El jugador ha respondido todas las preguntas correctamente
+        // Mostrar los botones "Següents preguntes" e "Tornar a l'inici"
+        document.getElementById("botones").style.display = "block";
+        enableButtons(botonesAccion); // Habilita los botones de clase "boton-accion"
+    } else {
+        mostrarSiguiente(aciertos);
+    }
+}
+
+function mostrarSiguiente(numeroPregunta) {
+    if (numeroPregunta >= totalPreguntas) {
+        // El jugador ha respondido todas las preguntas correctamente
+        // Mostrar los botones "Següents preguntes" e "Tornar a l'inici"
+        document.getElementById("botones").style.display = "block";
+        enableButtons(botonesAccion); // Habilita los botones de clase "boton-accion"
+    } else {
+        document.getElementById("pregunta" + (numeroPregunta + 1)).style.display = "inline";
+        enableButtons(document.querySelectorAll("#pregunta" + (numeroPregunta + 1) + " button"));
+    }
+}
+
+// Agregar la función para redirigir a index.php
+document.getElementById("inicio").addEventListener("click", function () {
+    window.location.href = "index.php";
+});
+
+
+
