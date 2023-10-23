@@ -21,7 +21,10 @@
         <button type="submit" id="boton-jugar">Jugar</button>
     </form>
 
-    <!-- ... Tu código HTML anterior ... -->
+    <?php 
+        session_unset();
+    ?>
+
 <script src="translation.js"></script>
 </body>
 </html>

@@ -10,11 +10,11 @@ function disableButtons(buttons) {
     }
 }
 
-function enableButtons(buttons) {
-    for (let button of buttons) {
-        button.disabled = false;
-    }
-}
+// function enableButtons(buttons) {
+//     for (let button of buttons) {
+//         button.disabled = false;
+//     }
+// }
 
 function failClick() {
     window.location.href = "lose.php";
@@ -23,27 +23,45 @@ function failClick() {
 
 function trueClick(button) {
     button.style.color = "rgb(0,255,0)";
+   
+   // disableButtons(document.querySelectorAll("button"));
+
+    let fails = document.getElementsByClassName("fail"+aciertos);
+    for (let i = 0; i < fails.length; i++) {
+        fails[i].style.color="rgb(255,0,0)";
+        fails[i].disabled = true;
+    }
+
+    document.getElementById("res"+aciertos).disabled = true;
     aciertos++;
-    disableButtons(document.querySelectorAll("button"));
-    if (aciertos >= totalPreguntas) {
+
+    let nivel = document.getElementById("aciertos").innerText;
+
+    if (parseInt(nivel, 10) >= 6 && aciertos >= 3 ) {
+
+        window.location.href = "win.php";  
+    }else if  (aciertos >= totalPreguntas) {
         // El jugador ha respondido todas las preguntas correctamente
         // Mostrar los botones "Següents preguntes" e "Tornar a l'inici"
         document.getElementById("botones").style.display = "block";
-        enableButtons(botonesAccion); // Habilita los botones de clase "boton-accion"
+        //enableButtons(botonesAccion); // Habilita los botones de clase "boton-accion"
     } else {
+              
         mostrarSiguiente(aciertos);
     }
 }
 
 function mostrarSiguiente(numeroPregunta) {
+
     if (numeroPregunta >= totalPreguntas) {
+        aciertos ++
         // El jugador ha respondido todas las preguntas correctamente
         // Mostrar los botones "Següents preguntes" e "Tornar a l'inici"
         document.getElementById("botones").style.display = "block";
-        enableButtons(botonesAccion); // Habilita los botones de clase "boton-accion"
+        //enableButtons(botonesAccion); // Habilita los botones de clase "boton-accion"
     } else {
         document.getElementById("pregunta" + (numeroPregunta + 1)).style.display = "inline";
-        enableButtons(document.querySelectorAll("#pregunta" + (numeroPregunta + 1) + " button"));
+            //enableButtons(document.querySelectorAll("#pregunta" + (numeroPregunta + 1) + " button"));
     }
 }
 
