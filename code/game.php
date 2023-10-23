@@ -24,7 +24,7 @@
         }
     }
     
-    //echo "<p class='' id='aciertos'>" . $nivel ."</p>";
+    echo "<p class='' id='aciertos'>" . $nivel ."</p>";
 
     function preguntas()
     {
