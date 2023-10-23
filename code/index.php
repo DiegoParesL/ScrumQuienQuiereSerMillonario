@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="style.css">
     <title>Qui vol ser milionari?</title>
 </head>
+<?php
+session_start();
+// Restablecer el nivel del juego al nivel 1
+unset($_SESSION['nivel']);
+?>
 <body>
     <header>
         <p>
@@ -21,9 +26,7 @@
         <button type="submit" id="boton-jugar">Jugar</button>
     </form>
 
-    <?php 
-        session_unset();
-    ?>
+    
 
 <script src="translation.js"></script>
 </body>
