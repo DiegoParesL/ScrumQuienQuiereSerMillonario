@@ -16,6 +16,6 @@
     </form>
     <button id="lose">lose</button>
     <button id="pausar">stop</button>
-    <script src="lose_sound.js"></script>
+    <script src="funciones/lose_sound.js"></script>
 </body>
 </html>

@@ -6,6 +6,12 @@
     <link rel="stylesheet" href="style.css">
     <title>Qui vol ser milionari?</title>
 </head>
+<?php
+session_start();
+
+// Restablecer el nivel del juego al nivel 1
+unset($_SESSION['nivel']);
+?>
 <body>
     <header>
         <p>
@@ -20,8 +26,13 @@
     <form action="game.php" method="post">
         <button type="submit" id="boton-jugar">Jugar</button>
     </form>
+    <br>
+    <form action="ranking.php" method="post">
+        <button type="submit" id="ranking">Hall of fame</button>
+    </form>
 
-    <!-- ... Tu código HTML anterior ... -->
-<script src="translation.js"></script>
+    
+
+<script src="funciones/translation.js"></script>
 </body>
 </html>

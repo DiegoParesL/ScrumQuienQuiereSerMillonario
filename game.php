@@ -7,12 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!--<h1>Juego de Preguntas</h1>-->
-    <img src="images/milionari.png" alt="" width="100px" height="100px">
+    <h1>Juego de Preguntas</h1>
+
     <div id="preguntasContainer">
     <?php
     session_start();
-   
     $nivel = isset($_SESSION['nivel']) ? $_SESSION['nivel'] : 1;
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['siguiente'])) {
@@ -122,14 +121,16 @@
             }
             print_preguntas_aleatorias();
             ?>
+        </div>
+
+        <div class='oculto' id="botones">
+        <form method="post">
+            <button name="siguiente" class="boton-accion" id="siguiente">Següents preguntes</button>
+        
+        <button id="inicio" class="boton-accion" onclick="window.location.href='game.php'">Tornar a l'inici</button>
+        </form>
     </div>
-    <div class='oculto' id="botones">
-    <form>
-        <button name="siguiente" class="boton-accion" id="siguiente">Següents preguntes</button>
-        <button id="inicio" class="boton-accion">Tornar a l'inici</button>
-    </form>
-</div>
-    <script src="sounds.js"></script>
-    <script src="funcionalidades.js"></script>
-</body>
-</html>
+    <script src="funciones/sounds.js"></script>
+    <script src="funciones/funcionalidades.js"></script>
+    </body>
+    </html>
