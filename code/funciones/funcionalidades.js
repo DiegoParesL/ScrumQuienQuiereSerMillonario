@@ -17,11 +17,14 @@ function disableButtons(buttons) {
 // }
 
 function failClick() {
+    playIncorrect();
     window.location.href = "lose.php";
-    soundError(); 
+   
 }
 
 function trueClick(button) {
+
+    playCorrect();
     button.style.color = "rgb(0,255,0)";
    
    // disableButtons(document.querySelectorAll("button"));

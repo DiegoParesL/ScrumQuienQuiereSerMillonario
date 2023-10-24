@@ -10,6 +10,7 @@
     <h1>Juego de Preguntas</h1>
 
     <div id="preguntasContainer">
+        
     <?php
     session_start();
    
@@ -135,6 +136,7 @@
 
 
 
-        <script src="funcionalidades.js"></script>
-    </body>
-    </html>
+        <script src="funciones/funcionalidades.js"></script>
+        <script src="funciones/sounds.js"></script>
+</body>
+</html>

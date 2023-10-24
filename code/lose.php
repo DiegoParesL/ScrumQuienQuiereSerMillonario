@@ -8,11 +8,13 @@
 </head>
 <body>
     <div>
-        <h2>Que pena</h2>
+        <h2>GAME OVER</h2>
         <img src="images/lose.gif" alt="" srcset="">
     </div>
     <form action="index.php" method="post">
-        <button>Tornar a l'inici</button>
+        <button class="boton-grande">Tornar a l'inici</button>
     </form>
+
+    <script src="funciones/lose_sound.js"></script>
 </body>
 </html>
