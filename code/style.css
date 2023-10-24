@@ -4,9 +4,21 @@ body {
     margin: 5%;
 }
 
-h1, h2, p {
+h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;
+    font-size: 60PX;
 }
+h2{
+    color: white;
+    font-size: 40PX;
+}
+
+p {
+    color: white;
+    font-size: 30PX;
+}
+
 .visible {
     display: block;
 }
@@ -30,6 +42,11 @@ div > button {
 }
 
 .boton-grande {
+    font-size: 50px; /* Tamaño de fuente más grande */
+    padding: 15px 30px; /* Aumenta el espacio interior del botón */
+}
+
+.boton-mediano {
     font-size: 20px; /* Tamaño de fuente más grande */
     padding: 15px 30px; /* Aumenta el espacio interior del botón */
 }

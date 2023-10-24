@@ -1,3 +1,9 @@
+<?php
+session_start();
+// Restablecer el nivel del juego al nivel 1
+unset($_SESSION['nivel']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,11 +12,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Qui vol ser milionari?</title>
 </head>
-<?php
-session_start();
-// Restablecer el nivel del juego al nivel 1
-unset($_SESSION['nivel']);
-?>
+
 <body>
     <header>
         <p>
@@ -29,7 +31,7 @@ unset($_SESSION['nivel']);
     </form>
     <br>
     <form action="ranking.php" method="post">
-        <button type="submit" id="ranking">Hall of fame</button>
+        <button type="submit" id="ranking" class="boton-mediano">Hall of fame</button>
     </form>
     
 
