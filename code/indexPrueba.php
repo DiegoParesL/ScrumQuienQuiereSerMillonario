@@ -31,45 +31,12 @@ unset($_SESSION['nivel']);
     </form>
     <br>
     <form action="ranking.php" method="post">
-        <button type="submit" id="ranking" class="boton-mediano">Hall of fame</button>
+        <button type="submit" id="ranking" class="boton-mediano">Saló de la fama</button>
     </form>
 
     <script src="funciones/funcionalidades.js"></script>
    
-
-    <script>
-        // Función para cambiar el idioma de la página
-        function changeLanguage(lang) {
-            // Aquí puedes definir objetos de idioma con los textos correspondientes
-            const languageData = {
-                'spanish': {
-                    'titulo': 'Bienvenido a ¿Quién quiere ser millonario?',
-                    'descripcion': 'Este juego está basado en el programa del mismo nombre...',
-                    // Agrega más textos aquí
-                },
-                'catalan': {
-                    'titulo': 'Benvingut a Qui vol ser milionari?',
-                    'descripcion': 'Aquest joc aquesta basat en el programa del mateix nom...',
-                    // Agrega más textos aquí
-                },
-                'english': {
-                    'titulo': 'Welcome to Who Wants to Be a Millionaire?',
-                    'descripcion': 'This game is based on the program of the same name...',
-                    // Agrega más textos aquí
-                }
-            };
-
-            // Cambiar el contenido de la página según el idioma seleccionado
-            document.getElementById('titulo').textContent = languageData[lang]['titulo'];
-            document.getElementById('descripcion').textContent = languageData[lang]['descripcion'];
-
-           // Actualiza el campo oculto con el idioma seleccionado
-            document.getElementById('selectedLanguage').value = lang;
-
-            // Establece el idioma seleccionado en la sesión
-            sessionStorage.setItem('idioma', lang);
-
-        }
-    </script>
+    <script src="funciones/translation.js"></script>
+  
 </body>
 </html>
