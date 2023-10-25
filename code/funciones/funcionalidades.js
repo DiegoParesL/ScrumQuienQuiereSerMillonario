@@ -1,5 +1,6 @@
 let aciertos = 0;
 const totalPreguntas = 3; // El número total de preguntas en el juego
+
 const botonesAccion = document.querySelectorAll(".boton-accion"); // Selecciona ambos botones
 
 document.getElementById("botones").style.display = "none";

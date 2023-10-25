@@ -128,16 +128,16 @@ function preguntas()
 
         <div class='oculto' id="botones">
         <form method="post">
-            <button name="siguiente" class="boton-accion" id="siguiente">Següents preguntes</button>
+            <button name="siguiente" class="boton-accion" id="siguiente">Next Questions</button>
         
-        <button id="inicio" class="boton-accion" onclick="window.location.href='game.php'">Tornar a l'inici</button>
+        <button id="inicio" class="boton-accion" onclick="window.location.href='game.php'">Menu</button>
         </form>
     </div>
 
 
 
-    <p><button id="win_button" class="oculto" onclick="window.location.href = 'win.php'">Ver estadisticas</button></p>
-    <p><button id="lose_button" class="oculto" onclick="window.location.href = 'lose.php'">Ver estadisticas</button></p>
+    <p><button id="win_button" class="centrar-boton" onclick="window.location.href = 'win.php'">Show Stats</button></p>
+    <p><button id="lose_button" class="centrar-boton" onclick="window.location.href = 'lose.php'">Show Stats</button></p>
 
     <script src="funciones/sounds.js"></script>
         <script src="funciones/funcionalidades.js"></script>
