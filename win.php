@@ -8,10 +8,10 @@
 </head>
 <body>
     <div id="mensaje">
-        <h2>You got it</h2>
-        <p><button id="win" onclick="recompensa()">Pulsa aqui para mostrar tu recompensa</button></p>
+        <h3>You got it</h3>
+        <p><button id="win" class="boton-mediano" onclick="recompensa()">Show Correct Answers</button></p>
         <form action="index.php" method="post">
-            <button>Tornar a l'inici</button>
+            <button class="boton-mediano">Back To Start</button>
         </form>
     </div>
 
@@ -19,8 +19,8 @@
     <img src="images/congratulations.gif" alt="" >
 
     <p>
-    <button onclick="window.location.href = 'index.php'">Tornar a l'inici</button>
-    <button id="publish_button" name="publish_button" type="submit" onclick="publish()">Publish?</button>
+    <button class="boton-mediano" onclick="window.location.href = 'index.php'">Back To Start</button>
+    <button class="boton-mediano" id="publish_button" name="publish_button" type="submit" onclick="publish()">Publish</button>
     </p>
     </div>
     <br>

@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <img src="images/milionari.png" alt="" height="150px" width="150px">
+    <h1>Juego de Preguntas</h1>
+
     <div id="preguntasContainer">
+        
 <?php
 session_start();
 
@@ -127,18 +128,15 @@ function preguntas()
 
         <div class='oculto' id="botones">
         <form method="post">
-            <button name="siguiente" class="boton-accion" id="siguiente">Next Questions</button>
+            <button name="siguiente" class="boton-accion" id="siguiente">Següents preguntes</button>
         
-        <button id="inicio" class="boton-accion" onclick="window.location.href='game.php'">Menu</button>
+        <button id="inicio" class="boton-accion" onclick="window.location.href='game.php'">Tornar a l'inici</button>
         </form>
     </div>
 
 
 
-    <p><button id="win_button" class="centrar-boton" onclick="window.location.href = 'win.php'">Show Stats</button></p>
-    <p><button id="lose_button" class="centrar-boton" onclick="window.location.href = 'lose.php'">Show Stats</button></p>
 
-    <script src="funciones/sounds.js"></script>
         <script src="funciones/funcionalidades.js"></script>
         <script src="funciones/sounds.js"></script>
 </body>

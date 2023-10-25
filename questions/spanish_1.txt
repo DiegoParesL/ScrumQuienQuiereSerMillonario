@@ -8,12 +8,12 @@
 - Marruecos
 - Inglaterra
 + India
- - Perú
+- Perú
 * Ghandi murió por un...
 - Accidente
 - Infarto de miocardio
 - enfermedad
- + Asesinado
++ Asesinado
 * ¿En qué siglo se creó el fútbol?
 + Siglo XIX
 - Siglo XX
@@ -25,7 +25,7 @@
 - México
 -Brasil
 + Inglaterra
-    * La pelota solía ser...
+* La pelota solía ser...
 - Con Plástico
 + Con Hojas
 - Con Cajas

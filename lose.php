@@ -9,22 +9,22 @@
 <body>
     
     <div id="mensaje">
-        <h2>You lose </h2>
-        <p><button id="lose" onclick="recompensa()">Pulsa aqui para mostrar tu recompensa</button></p>
+        <h3 >You lose </h3>
+        <p><button id="lose" class="boton-mediano" onclick="recompensa()">Show Correct Answers</button></p>
         <form action="index.php" method="post">
-            <button>Tornar a l'inici</button>
+            <button class="boton-mediano">Back to start</button>
         </form>
     </div>
 
     <div class="oculto" id="pantalla">
     <img src="images/lose.png" alt="" srcset="" width="540px" height="540px">
 
-    <p><button id="publish_button" name="publish_button" type="submit" onclick="publish()">Publish?</button></p>
+    <p><button id="publish_button" name="publish_button" type="submit"  class="boton-mediano"onclick="publish()">Publish</button></p>
     </div>
     <div class="oculto" id="publicar">
     <form method="post" id="publicar">
-            <input type="text" name="nombre" id="nombre">
-            <button type="submit" name="send" id="send">Enviar</button>
+            <input type="text" name="nombre" id="nombre" placeholder="Introduiex el teu nom">
+            <button type="submit" name="send" id="send">Send</button>
     </form> 
     </div>
 
@@ -41,3 +41,4 @@
     ?>
 </body>
 </html>
+

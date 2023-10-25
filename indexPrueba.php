@@ -1,8 +1,6 @@
 <?php
 session_start();
 // Restablecer el nivel del juego al nivel 1
-
-
 unset($_SESSION['nivel']);
 ?>
 
@@ -27,7 +25,7 @@ unset($_SESSION['nivel']);
     <img src="images/milionari.png" alt="milionariIMG" width="300px" height="300px">
     <p id="descripcion">Aquest joc aquesta basat en el programa del mateix nom.<br>En el qual hi ha diferents nivells de dificultat respecte les preguntes.<br>Començarem en el nivell 1 i conforme anem encertat preguntes ira pujant el nivell, fins al nivell 6.<br>Cada nivell de dificultat té en total 3 preguntes y una vez encertades las 3 passarem a la següent dificultat, fins que encertem les 18 preguntes totals o fallem.</p>
     <br>
-    <form action="game.php" method="get">
+    <form action="gamePrueba.php" method="get">
         <input type="hidden" name="lang" id="selectedLanguage" value="catalan"> <!-- Cambia "es" a "ca" o "en" según el idioma seleccionado -->
         <button type="submit" id="boton-jugar" class="boton-grande">Jugar</button>
     </form>

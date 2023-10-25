@@ -25,3 +25,15 @@ function playCorrect() {
         audioCorrect.play();
     }
 }
+
+//Lose page
+lose_button.addEventListener("click", ()=>{
+    audioLose.currentTime = 0;
+    audioLose.play();
+})
+
+//Win Page
+boton_recompensa.addEventListener("click", ()=>{
+    audioWin.currentTime = 0;
+    audioWin.play();
+})
