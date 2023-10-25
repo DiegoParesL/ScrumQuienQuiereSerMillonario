@@ -127,11 +127,12 @@ function preguntas()
         </div>
 
         <div class='oculto' id="botones">
+            <br><br>
         <form method="post">
-            <button name="siguiente" class="boton-accion" id="siguiente">Next Questions</button>
-        
-        <button id="inicio" class="boton-accion" onclick="window.location.href='game.php'">Menu</button>
+            <button name="siguiente" class="boton-accion boton-mediano" id="siguiente">Next Questions</button>
+            <button id="inicio" class="boton-accion boton-mediano" onclick="window.location.href='game.php'">Restart</button>
         </form>
+
     </div>
 
 

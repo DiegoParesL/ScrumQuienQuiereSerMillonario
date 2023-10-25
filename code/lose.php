@@ -12,7 +12,7 @@
         <h3 >You lose </h3>
         <p><button id="lose" class="boton-mediano" onclick="recompensa()">Show Correct Answers</button></p>
         <form action="index.php" method="post">
-            <button class="boton-mediano">Home</button>
+            <button class="boton-mediano">Back to start</button>
         </form>
     </div>
 
@@ -22,7 +22,7 @@
     <p><button id="publish_button" name="publish_button" type="submit"  class="boton-mediano"onclick="publish()">Publish</button></p>
     </div>
     <div class="oculto" id="publicar">
-    <form action="index.php" method="post" id="publicar">
+    <form method="post" id="publicar">
             <input type="text" name="nombre" id="nombre" placeholder="Introduiex el teu nom">
             <button type="submit" name="send" id="send">Send</button>
     </form> 
@@ -41,4 +41,3 @@
     ?>
 </body>
 </html>
-
