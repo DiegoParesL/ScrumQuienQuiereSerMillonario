@@ -7,13 +7,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Juego de Preguntas</h1>
-
+    <img src="images/milionari.png" alt="" height="150px" width="150px">
     <div id="preguntasContainer">
     <?php
     session_start();
     $nivel = isset($_SESSION['nivel']) ? $_SESSION['nivel'] : 1;
-
+    $correctas = isset($_SESSION['correctas']) ? $_SESSION['correctas'] : 0;
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['siguiente'])) {
         // Verifica si el jugador ha completado el tercer nivel
         $nivel++;
@@ -22,7 +21,7 @@
             $_SESSION['nivel'] = $nivel;
         }
     }
-    
+    echo "<p class='' id='correctas'>" . $correctas ."</p>";;
     echo "<p class='' id='aciertos'>" . $nivel ."</p>";
 
     function preguntas()

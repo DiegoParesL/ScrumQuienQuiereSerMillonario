@@ -8,16 +8,16 @@
 </head>
 <body>
     <div id="mensaje">
-        <h2>Has acertado todo</h2>
+        <h2>You got it</h2>
         <p><button id="win" onclick="recompensa()">Pulsa aqui para mostrar tu recompensa</button></p>
+        <form action="index.php" method="post">
+            <button>Tornar a l'inici</button>
+        </form>
     </div>
+
     <div class="oculto" id="pantalla">
-    <h2>Felicidades</h2>
     <img src="images/congratulations.gif" alt="" >
-    
-    <form action="index.php" method="post">
-    
-    </form>
+
     <p>
     <button onclick="window.location.href = 'index.php'">Tornar a l'inici</button>
     <button id="publish_button" name="publish_button" type="submit" onclick="publish()">Publish?</button>
@@ -38,7 +38,8 @@
         if (isset($_POST["nombre"])) {
             $file = fopen("records.txt", "a+");
             fwrite($file,$_POST["nombre"].", 18, ".session_id()."\n");
-            fclose($file);            
+            fclose($file);           
+             
         }
         session_destroy();
     ?>
