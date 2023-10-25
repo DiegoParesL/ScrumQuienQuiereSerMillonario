@@ -1,6 +1,9 @@
 var audioCorrect = new Audio("audio/correct.mp3");
 var audioError = new Audio("audio/incorrect.mp3");
+var audioLose = new Audio("audio/lose.mp3");
+var audioWin = new Audio("audio/felicidades.mp3");
 
+//Incorrect answer
 function playIncorrect() {
     audioError.currentTime = 0;
     if (audioCorrect.paused !== true) {
@@ -11,6 +14,7 @@ function playIncorrect() {
         audioError.play();
     }
 }
+//Correct Answer
 function playCorrect() {
     audioCorrect.currentTime = 0;
     if (audioError.paused !== true) {
@@ -21,3 +25,15 @@ function playCorrect() {
         audioCorrect.play();
     }
 }
+
+//Lose page
+lose_button.addEventListener("click", ()=>{
+    audioLose.currentTime = 0;
+    audioLose.play();
+})
+
+//Win Page
+win_button.addEventListener("click", ()=>{
+    audioWin.currentTime = 0;
+    audioWin.play();
+})

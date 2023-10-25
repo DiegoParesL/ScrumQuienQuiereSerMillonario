@@ -123,13 +123,16 @@
             ?>
         </div>
 
-        <div class='oculto' id="botones">
+    <div class='oculto' id="botones">
         <form method="post">
             <button name="siguiente" class="boton-accion" id="siguiente">Següents preguntes</button>
-        
-        <button id="inicio" class="boton-accion" onclick="window.location.href='game.php'">Tornar a l'inici</button>
+            <button id="inicio" class="boton-accion" onclick="window.location.href='game.php'">Tornar a l'inici</button>
         </form>
     </div>
+    
+    <button id="win_button" class="oculto" onclick="toWin()">Ver estadisticas</button>
+    <button id="lose_button" class="oculto" onclick="toLose()">Ver estadisticas</button>
+
     <script src="funciones/sounds.js"></script>
     <script src="funciones/funcionalidades.js"></script>
     </body>

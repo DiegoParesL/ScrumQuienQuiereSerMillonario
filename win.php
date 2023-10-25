@@ -7,12 +7,9 @@
     <title>Win</title>
 </head>
 <body>
-    
     <div class="box">
     <h2>Felicidades</h2>
-    <audio id="congrats" src="audio/felicidades.mp3"></audio>
-
-    
+  
     <img src="images/congratulations.gif" alt="" >
     </div>
     <form action="index.php" method="post">
@@ -21,20 +18,23 @@
     
     <button id="win">play</button>
     <button id="pausar">stop</button>
-
-    <button id="publicar" name="publicar" type="submit">Publish</button>
-
-    <form action="" method="post">
-        <input type="text" name="nombre" id="nombre">
-        <button type="submit" name="send" id="send">Enviar</button>
-    </form>
     
+    <br>
+    <button id="publish_button" name="publish_button" type="submit" onclick="publish()">Publish</button>
+    <div class="oculto" id="publicar">
+    <form action="" method="post" id="publicar">
+            <input type="text" name="nombre" id="nombre">
+            <button type="submit" name="send" id="send">Enviar</button>
+        </form>
+    </div>
+
     <script src="funciones/win_sound.js"></script>
     <script src="funciones/funcionalidades.js"></script>
     <?php
+        session_start();
         if (isset($_POST["nombre"])) {
             $file = fopen("records.txt", "a+");
-            fwrite($file,"\n".$_POST["nombre"].", 12");
+            fwrite($file,$_POST["nombre"].", 18, ".session_id()."\n");
         }
     ?>
 </body>
