@@ -11,13 +11,22 @@
 
     <div id="preguntasContainer">
         
-    <?php
+<?php
 session_start();
 
-// Obtener el idioma de la variable de sesión
-$idioma = isset($_SESSION['idioma']) ? $_SESSION['idioma'] : 'english';
+// Obtener el idioma del campo oculto
+$idioma = isset($_GET['lang']) ? $_GET['lang'] : 'catalan'; // Cambia 'catalan' al idioma predeterminado que desees
 
 $nivel = isset($_SESSION['nivel']) ? $_SESSION['nivel'] : 1;
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['siguiente'])) {
+    // Verifica si el jugador ha completado el tercer nivel
+    $nivel++;
+    if ($nivel < 6) {
+        $_SESSION['nivel'] = $nivel;
+    }
+}
+
+echo "<p class='' id='aciertos'>" . $nivel ."</p";
 
 function preguntas()
 {
