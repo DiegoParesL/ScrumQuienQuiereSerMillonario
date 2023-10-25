@@ -7,35 +7,41 @@
     <title>Win</title>
 </head>
 <body>
-    
-    <div class="box">
-    <h2>Felicidades</h2>
-    <audio id="congrats" src="audio/felicidades.mp3"></audio>
-
-    
-    <img src="images/congratulations.gif" alt="" >
+    <div id="mensaje">
+        <h2>You got it</h2>
+        <p><button id="win" onclick="recompensa()">Pulsa aqui para mostrar tu recompensa</button></p>
+        <form action="index.php" method="post">
+            <button>Tornar a l'inici</button>
+        </form>
     </div>
-    <form action="index.php" method="post">
-        <button class="boton-grande">Tornar a l'inici</button>
-    </form>
-    
-    <button id="win">play</button>
-    <button id="pausar">stop</button>
 
-    <button id="publicar" name="publicar" type="submit">Publish</button>
+    <div class="oculto" id="pantalla">
+    <img src="images/congratulations.gif" alt="" >
 
-    <form action="" method="post">
+    <p>
+    <button onclick="window.location.href = 'index.php'">Tornar a l'inici</button>
+    <button id="publish_button" name="publish_button" type="submit" onclick="publish()">Publish?</button>
+    </p>
+    </div>
+    <br>
+    <div class="oculto" id="publicar">
+    <form method="post" id="publicar">
         <input type="text" name="nombre" id="nombre">
-        <button type="submit" name="send" id="send" class="boton-grande">Enviar</button>
+        <button type="submit" name="send" id="send">Enviar</button>
     </form>
-    
+    </div>
+
     <script src="funciones/win_sound.js"></script>
     <script src="funciones/funcionalidades.js"></script>
     <?php
+        session_start();
         if (isset($_POST["nombre"])) {
             $file = fopen("records.txt", "a+");
-            fwrite($file,"\n".$_POST["nombre"].", 12");
+            fwrite($file,$_POST["nombre"].", 18, ".session_id()."\n");
+            fclose($file);           
+             
         }
+        session_destroy();
     ?>
 </body>
 </html>

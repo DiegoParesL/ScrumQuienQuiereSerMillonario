@@ -7,44 +7,45 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Juego de Preguntas</h1>
-
+    
+    <img src="images/milionari.png" alt="" height="150px" width="150px">
     <div id="preguntasContainer">
         
-    <?php
-    session_start();
-   
-    $nivel = isset($_SESSION['nivel']) ? $_SESSION['nivel'] : 1;
+<?php
+session_start();
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['siguiente'])) {
-        // Verifica si el jugador ha completado el tercer nivel
-        $nivel++;
-        if ($nivel < 6) {
-            
-            $_SESSION['nivel'] = $nivel;
+// Obtener el idioma del campo oculto
+$idioma = isset($_GET['lang']) ? $_GET['lang'] : 'catalan'; // Cambia 'catalan' al idioma predeterminado que desees
+
+$nivel = isset($_SESSION['nivel']) ? $_SESSION['nivel'] : 1;
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['siguiente'])) {
+    // Verifica si el jugador ha completado el tercer nivel
+    $nivel++;
+    if ($nivel < 6) {
+        $_SESSION['nivel'] = $nivel;
+    }
+}
+
+echo "<p class='' id='aciertos'>" . $nivel ."</p";
+
+function preguntas()
+{
+    global $nivel, $idioma;
+    $question_mark = '*';
+    $preguntas_nivel = file("questions/{$idioma}_{$nivel}.txt");
+    $preguntas_por_nivel = [];
+    $llave = '';
+    foreach ($preguntas_nivel as $linea) {
+        if ($linea[0] === $question_mark) {
+            $llave = $linea;
+        } elseif ($linea[0] === "+") {
+            $preguntas_por_nivel[$llave][] = $linea;
+        } elseif ($linea[0] === "-") {
+            $preguntas_por_nivel[$llave][] = $linea;
         }
     }
-    
-    echo "<p class='' id='aciertos'>" . $nivel ."</p>";
-
-    function preguntas()
-    {
-        global $nivel;
-        $question_mark = '*';
-        $preguntas_nivel = file("questions/catalan_" . strval($nivel) . ".txt");
-        $preguntas_por_nivel = [];
-        $llave = '';
-        foreach ($preguntas_nivel as $linea) {
-            if ($linea[0] === $question_mark) {
-                $llave = $linea;
-            } elseif ($linea[0] === "+") {
-                $preguntas_por_nivel[$llave][] = $linea;
-            } elseif ($linea[0] === "-") {
-                $preguntas_por_nivel[$llave][] = $linea;
-            }
-        }
-        return $preguntas_por_nivel;
-    }
+    return $preguntas_por_nivel;
+}
 
 
 
@@ -135,7 +136,10 @@
 
 
 
+    <p><button id="win_button" class="oculto" onclick="window.location.href = 'win.php'">Ver estadisticas</button></p>
+    <p><button id="lose_button" class="oculto" onclick="window.location.href = 'lose.php'">Ver estadisticas</button></p>
 
+    <script src="funciones/sounds.js"></script>
         <script src="funciones/funcionalidades.js"></script>
         <script src="funciones/sounds.js"></script>
 </body>

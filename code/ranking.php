@@ -8,7 +8,7 @@
 </head>
 <body>
 <form action="index.php" method="post">
-        <button type="submit" id="index" class="boton-grande">Inicio</button>
+        <button type="submit" id="index">Index</button>
     </form>
     <h1>Hall of fame</h1>
     <?php

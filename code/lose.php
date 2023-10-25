@@ -7,14 +7,38 @@
     <title>Lose</title>
 </head>
 <body>
-    <div>
-        <h2>GAME OVER</h2>
-        <img src="images/lose.gif" alt="" srcset="">
+    
+    <div id="mensaje">
+        <h3 >You lose </h3>
+        <p><button id="lose" class="boton-mediano" onclick="recompensa()">Pulsa aqui para mostrar tu recompensa</button></p>
+        <form action="index.php" method="post">
+            <button class="boton-mediano">Tornar a l'inici</button>
+        </form>
     </div>
-    <form action="index.php" method="post">
-        <button class="boton-grande">Tornar a l'inici</button>
-    </form>
+
+    <div class="oculto" id="pantalla">
+    <img src="images/lose.png" alt="" srcset="" width="540px" height="540px">
+
+    <p><button id="publish_button" name="publish_button" type="submit"  onclick="publish()">Publish</button></p>
+    </div>
+    <div class="oculto" id="publicar">
+    <form action="index.php" method="post" id="publicar">
+            <input type="text" name="nombre" id="nombre">
+            <button type="submit" name="send" id="send">Enviar</button>
+    </form> 
+    </div>
 
     <script src="funciones/lose_sound.js"></script>
+    <script src="funciones/funcionalidades.js"></script>
+    <?php
+        session_start();
+        if (isset($_POST["nombre"])) {
+            $file = fopen("records.txt", "a+");
+            fwrite($file,$_POST["nombre"].", 18, ".session_id()."\n");
+            fclose($file);            
+        }
+        session_destroy();
+    ?>
 </body>
 </html>
+
