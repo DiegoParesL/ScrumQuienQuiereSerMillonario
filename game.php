@@ -130,8 +130,8 @@
         </form>
     </div>
     
-    <button id="win_button" class="oculto" onclick="toWin()">Ver estadisticas</button>
-    <button id="lose_button" class="oculto" onclick="toLose()">Ver estadisticas</button>
+    <p><button id="win_button" class="oculto" onclick="window.location.href = 'win.php'">Ver estadisticas</button></p>
+    <p><button id="lose_button" class="oculto" onclick="window.location.href = 'lose.php'">Ver estadisticas</button></p>
 
     <script src="funciones/sounds.js"></script>
     <script src="funciones/funcionalidades.js"></script>

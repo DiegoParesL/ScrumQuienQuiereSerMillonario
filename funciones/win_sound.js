@@ -5,6 +5,4 @@ win.addEventListener("click", ()=>{
     audio.play();
 })
 
-pausar.addEventListener("click", ()=>{
-    audio.pause();
-})
+

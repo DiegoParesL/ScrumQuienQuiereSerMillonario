@@ -3,6 +3,3 @@ lose.addEventListener("click", ()=>{
     audio.currentTime = 0;
     audio.play();
 })
-pausar.addEventListener("click", ()=>{
-    audio.pause();
-})

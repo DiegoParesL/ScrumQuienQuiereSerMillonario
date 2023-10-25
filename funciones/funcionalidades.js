@@ -7,7 +7,7 @@ document.getElementById("nombre").style.display = "none";
 document.getElementById("publicar").style.display = "none";
 document.getElementById("win_button").style.display = "none";
 document.getElementById("lose_button").style.display = "none";
-
+document.getElementById("pantalla").style.display = "none";
 function disableButtons(buttons) {
     for (let button of buttons) {
         button.disabled = true;
@@ -78,4 +78,9 @@ function toLose() {
 
 function toWin() {
     window.location.href = "win.php";
+}
+
+function recompensa() {
+    document.getElementById("pantalla").style.display = "block";
+    document.getElementById("mensaje").style.display = "none";
 }

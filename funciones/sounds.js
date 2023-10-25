@@ -33,7 +33,7 @@ lose_button.addEventListener("click", ()=>{
 })
 
 //Win Page
-win_button.addEventListener("click", ()=>{
+boton_recompensa.addEventListener("click", ()=>{
     audioWin.currentTime = 0;
     audioWin.play();
 })
