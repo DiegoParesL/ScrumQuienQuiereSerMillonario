@@ -68,5 +68,6 @@ div > button {
     margin: 0 auto;
     display: block;
     display: none;
+    font-size: 25px;
 
 }

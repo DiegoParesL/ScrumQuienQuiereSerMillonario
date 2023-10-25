@@ -12,7 +12,7 @@
         <h3 >You lose </h3>
         <p><button id="lose" class="boton-mediano" onclick="recompensa()">Show Correct Answers</button></p>
         <form action="index.php" method="post">
-            <button class="boton-mediano">Back to start</button>
+            <button class="boton-mediano">Home</button>
         </form>
     </div>
 
