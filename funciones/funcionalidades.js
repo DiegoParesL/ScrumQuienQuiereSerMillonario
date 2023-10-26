@@ -1,16 +1,15 @@
 let aciertos = 0;
-var correctas = 0;
-
 const totalPreguntas = 3; // El número total de preguntas en el juego
 
 const botonesAccion = document.querySelectorAll(".boton-accion"); // Selecciona ambos botones
-const elementoCorrectas= document.getElementById('respuestas');
+
 document.getElementById("botones").style.display = "none";
 document.getElementById("nombre").style.display = "none";
 document.getElementById("publicar").style.display = "none";
 document.getElementById("win_button").style.display = "none";
 document.getElementById("lose_button").style.display = "none";
 document.getElementById("pantalla").style.display = "none";
+
 function disableButtons(buttons) {
     for (let button of buttons) {
         button.disabled = true;
@@ -32,10 +31,10 @@ function failClick() {
 
 function trueClick(button) {
     playCorrect();
-    correctas=correctas+1;
-
     button.style.color = "rgb(0,255,0)";
+   
    //disableButtons(document.querySelectorAll("button"));
+
     let fails = document.getElementsByClassName("fail"+aciertos);
     for (let i = 0; i < fails.length; i++) {
         fails[i].style.color="rgb(255,0,0)";
@@ -81,6 +80,14 @@ document.getElementById("inicio").addEventListener("click", function () {
 
 function publish() {
     document.getElementById('publicar').style.display = "block";
+}
+
+function toLose() {
+    window.location.href = "lose.php";
+}
+
+function toWin() {
+    window.location.href = "win.php";
 }
 
 function recompensa() {

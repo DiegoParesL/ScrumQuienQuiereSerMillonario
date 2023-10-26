@@ -17,14 +17,12 @@
 
     <div class="oculto" id="pantalla">
     <img src="images/congratulations.gif" alt="" >
-    <p id="respuestas">hola</p>
 
     <p>
     <button class="boton-mediano" onclick="window.location.href = 'index.php'">Back To Start</button>
     <button class="boton-mediano" id="publish_button" name="publish_button" type="submit" onclick="publish()">Publish</button>
     </p>
-    
-</div>
+    </div>
     <br>
     <div class="oculto" id="publicar">
     <form method="post" id="publicar">
@@ -37,13 +35,10 @@
     <script src="funciones/funcionalidades.js"></script>
     <?php
         session_start();
-        $variablePHP = $_POST['variableJS'];
-        echo $variablePHP;
         if (isset($_POST["nombre"])) {
             $file = fopen("records.txt", "a+");
-            fwrite($file,$_POST["nombre"].", 18, ".session_id()."\n");
+            fwrite($file,$_POST["nombre"].", 18, ".session_create_id()."\n");
             fclose($file);           
-             
         }
         session_destroy();
     ?>

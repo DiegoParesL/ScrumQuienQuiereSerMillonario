@@ -11,7 +11,6 @@
     <button class="boton-mediano" type="submit" id="index">Index</button>
 </form>
 <h1>Hall of Fame</h1>
-<div>
 <table>
     <thead>
         <tr>
@@ -40,6 +39,5 @@
         ?>
     </tbody>
 </table>
-</div>
 </body>
 </html>

@@ -18,8 +18,8 @@
 
     <div class="oculto" id="pantalla">
     <img src="images/lose.png" alt="" srcset="" width="540px" height="540px">
-    <p id="respuestas" class="respuestas"></p>
-    <p><button id="publish_button" name="publish_button" type="submit"  class="boton-mediano"onclick="publish()">Publish</button></p>
+    <p><button class="boton-mediano" onclick="window.location.href = 'index.php'">Back To Start</button>
+    <button id="publish_button" name="publish_button" type="submit"  class="boton-mediano"onclick="publish()">Publish</button></p>
     </div>
     <div class="oculto" id="publicar">
     <form method="post" id="publicar">
@@ -32,15 +32,9 @@
     <script src="funciones/funcionalidades.js"></script>
     <?php
         session_start();
-        if (isset($_COOKIE['respuestas_correctas'])) {
-            $variableDesdeJS = $_COOKIE['respuestas_correctas'];
-            echo "Variable recibida desde JavaScript: " . $variableDesdeJS;
-        } else {
-            echo "No se recibió ninguna variable desde JavaScript.";
-        }
         if (isset($_POST["nombre"])) {
             $file = fopen("records.txt", "a+");
-            fwrite($file,$_POST["nombre"].", 18, ".session_id()."\n");
+            fwrite($file,$_POST["nombre"].", 18, ".session_create_id()."\n");
             fclose($file);            
         }
         session_destroy();

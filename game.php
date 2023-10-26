@@ -10,9 +10,10 @@
     
     <img src="images/milionari.png" alt="" height="150px" width="150px">
     <div id="preguntasContainer">
+        
 <?php
 session_start();
-$correctas = 0;
+
 // Obtener el idioma del campo oculto
 $idioma = isset($_GET['lang']) ? $_GET['lang'] : 'catalan'; // Cambia 'catalan' al idioma predeterminado que desees
 
