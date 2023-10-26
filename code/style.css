@@ -28,6 +28,7 @@ h3 {
 p {
     color: white;
     font-size: 30PX;
+    text-align: center;
 }
 
 .visible {
@@ -72,5 +73,10 @@ div > button {
     margin: 0 auto;
     display: block;
     display: none;
+    font-size: 20px; /* Cambia el tamaño del texto del botón */
+    padding: 10px 20px; /* Ajusta el relleno del botón para hacerlo más grande */
 
 }
+
+
+

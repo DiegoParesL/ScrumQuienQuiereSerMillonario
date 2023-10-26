@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+// Verificar si se ha realizado alguna acción o se ha visitado desde una página válida
+if (isset($_SESSION['aciertos']) && $_SESSION['aciertos'] < 18) {
+    // Página válida
+    // El contenido de la página "lose.php" continua aquí
+} else {
+    // Página no válida, redirigir a una página de error o realizar una acción adecuada
+    header("HTTP/1.1 403 Forbidden");
+    exit;
+}
+// El contenido de la página "lose.php" continua aquí
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
