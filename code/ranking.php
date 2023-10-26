@@ -5,34 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ranking</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            text-align: center; /* Centrar el contenido en la página */
-        }
-
-        .table-container {
-            display: inline-block; /* Para centrar el bloque en línea */
-        }
-
-        table {
-            margin: 0 auto; /* Centrar la tabla horizontalmente */
-            border-collapse: collapse; /* Colapsar los bordes para líneas de separación */
-        }
-
-        th, td {
-            font-size: 24px; /* Tamaño de fuente más grande */
-            color: white; /* Color de texto blanco */
-            padding: 10px; /* Añadir espaciado interior para mejorar la apariencia */
-        }
-
-        .button-container {
-            margin-top: 20px; /* Espacio superior para separar el botón del contenido anterior */
-        }
-
-        .boton-mediano {
-            display: inline-block; /* Mostrar el botón en línea con el texto */
-        }
-    </style>
 </head>
 <body>
 <h1>Hall of Fame</h1>
