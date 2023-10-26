@@ -1,4 +1,5 @@
 let aciertos = 0;
+let acertadas = 0;
 const totalPreguntas = 3; // El número total de preguntas en el juego
 
 const botonesAccion = document.querySelectorAll(".boton-accion"); // Selecciona ambos botones
@@ -32,7 +33,7 @@ function failClick() {
 function trueClick(button) {
     playCorrect();
     button.style.color = "rgb(0,255,0)";
-   
+    
    //disableButtons(document.querySelectorAll("button"));
 
     let fails = document.getElementsByClassName("fail"+aciertos);

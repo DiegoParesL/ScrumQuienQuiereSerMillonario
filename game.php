@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
     <img src="images/milionari.png" alt="" height="150px" width="150px">
     <div id="preguntasContainer">
         
@@ -18,15 +17,28 @@ session_start();
 $idioma = isset($_GET['lang']) ? $_GET['lang'] : 'catalan'; // Cambia 'catalan' al idioma predeterminado que desees
 
 $nivel = isset($_SESSION['nivel']) ? $_SESSION['nivel'] : 1;
+if (!isset($_SESSION['puntuacion'])) {
+    $_SESSION['puntuacion'] = 0;
+}
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['incrementar'])) {
+    // Incrementar la variable global
+    $_SESSION['puntuacion']++;
+    
+    // Enviar la respuesta a la solicitud AJAX
+    echo $_SESSION['puntuacion'];
+    exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['siguiente'])) {
     // Verifica si el jugador ha completado el tercer nivel
     $nivel++;
     if ($nivel < 6) {
         $_SESSION['nivel'] = $nivel;
+        $puntuaje += 3;
     }
 }
 
-echo "<p class='' id='aciertos'>" . $nivel ."</p";
+echo "<p class='' id='aciertos'>Nivel: " . $nivel ."</p";
 
 function preguntas()
 {
@@ -47,10 +59,7 @@ function preguntas()
     return $preguntas_por_nivel;
 }
 
-
-
     // Resto de tu código para imprimir preguntas, respuestas y botones
-
 
             function numeros_aleatorios($max)
             {
@@ -89,6 +98,7 @@ function preguntas()
                 $preguntas_escogidas = preguntas_aleatorias();
                 $total = count($preguntas_escogidas);
                 $preguntas_restantes = $total;
+                
                 foreach ($preguntas_escogidas as $key => $value) {
                     if ($preguntas_restantes == $total) {
                         echo "<div>";
@@ -97,7 +107,7 @@ function preguntas()
                         foreach ($value as $respuestas) {
                             if ($respuestas[0] === "+") {
                                 echo "<p class=\"oculto\" id='respuesta" . ($total - $preguntas_restantes) . "'>$respuestas</p>";
-                                echo "<button id=\"res" . ($total - $preguntas_restantes) . "\" onclick=\"trueClick(this)\">" . trim($respuestas, "+-") . "</button>";
+                                echo "<button name='incrementar' id=\"res" . ($total - $preguntas_restantes) . "\" onclick=\"trueClick(this)\">" . trim($respuestas, "+-") . "</button>";
                             } else {
                                 echo "<button class=\"fail" . ($total - $preguntas_restantes) . "\" onclick=\"failClick(this)\">" . trim($respuestas, "+-") . "</button>";
                             }
@@ -111,7 +121,7 @@ function preguntas()
                         foreach ($value as $respuestas) {
                             if ($respuestas[0] === "+") {
                                 echo "<p class=\"oculto\" id='respuesta" . ($total - $preguntas_restantes) . "'>$respuestas</p>";
-                                echo "<button id=\"res" . ($total - $preguntas_restantes) . "\" onclick=\"trueClick(this)\">" . trim($respuestas, "+-") . "</button>";
+                                echo "<button name='incrementar' id=\"res" . ($total - $preguntas_restantes) . "\" onclick=\"trueClick(this)\">" . trim($respuestas, "+-") . "</button>";
                             } else {
                                 echo "<button class=\"fail" . ($total - $preguntas_restantes) . "\" onclick=\"failClick(this)\">" . trim($respuestas, "+-") . "</button>";
                             }
@@ -119,28 +129,29 @@ function preguntas()
                         echo "</div>";  
                         echo "</div>";
                     }
+                    
                     $preguntas_restantes--;
                 }
             }
             print_preguntas_aleatorias();
             ?>
         </div>
-
+        
+        
         <div class='oculto' id="botones">
         <form method="post">
             <button name="siguiente" class="boton-accion" id="siguiente">Next Questions</button>
-        
-        <button id="inicio" class="boton-accion" onclick="window.location.href='game.php'">Menu</button>
-        </form>
+            </form>
     </div>
 
 
 
     <p><button id="win_button" class="centrar-boton" onclick="window.location.href = 'win.php'">Show Stats</button></p>
-    <p><button id="lose_button" class="centrar-boton" onclick="window.location.href = 'lose.php'">Show Stats</button></p>
+    <p><button id="lose_button" class="centrar-boton" onclick="window.location.href = 'lose.php'">Wrong Answer</button></p>
+    <a href="win.php"><img src="images/milionari.png" alt="" height="3px" width="3px"></a>
 
+    <script src="funciones/contador.js"></script>
+    <script src="funciones/funcionalidades.js"></script>
     <script src="funciones/sounds.js"></script>
-        <script src="funciones/funcionalidades.js"></script>
-        <script src="funciones/sounds.js"></script>
 </body>
 </html>
