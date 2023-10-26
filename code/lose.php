@@ -34,7 +34,7 @@
         session_start();
         if (isset($_POST["nombre"])) {
             $file = fopen("records.txt", "a+");
-            fwrite($file,$_POST["nombre"].", 18, ".session_create_id()."\n");
+            fwrite($file,$_POST["nombre"].", 0, ".session_create_id()."\n");
             fclose($file);            
         }
         session_destroy();
