@@ -23,7 +23,7 @@
     </div>
     <div class="oculto" id="publicar">
     <form method="post" id="publicar">
-            <input type="text" name="nombre" id="nombre" placeholder="Introduiex el teu nom">
+            <input type="text" name="nombre" id="nombre" placeholder="Introduce Your Name">
             <button type="submit" name="send" id="send">Send</button>
     </form> 
     </div>

@@ -137,7 +137,7 @@ function preguntas()
 
 
     <p><button id="win_button" class="centrar-boton" onclick="window.location.href = 'win.php'">Show Stats</button></p>
-    <p><button id="lose_button" class="centrar-boton" onclick="window.location.href = 'lose.php'">Show Stats</button></p>
+    <p><button id="lose_button" class="centrar-boton" onclick="window.location.href = 'lose.php'">Wrong Answer</button></p>
 
     <script src="funciones/sounds.js"></script>
         <script src="funciones/funcionalidades.js"></script>
