@@ -82,6 +82,10 @@ function publish() {
     document.getElementById('publicar').style.display = "block";
 }
 
+function toIndex(){
+    window.location.href = "index.php"
+}
+
 function toLose() {
     window.location.href = "lose.php";
 }

@@ -1,13 +1,13 @@
 let numAciertos;
-if(document.getElementById("value").value == 0 || document.getElementById("value").value =='' ) {
+if(document.getElementById("valueAciertos").value == 0 || document.getElementById("valueAciertos").value =='' ) {
     numAciertos=0;
 }else{
-    numAciertos = document.getElementById("value").value;
+    numAciertos = document.getElementById("valueAciertos").value;
 }
 
 
 function setAciertos() {
     numAciertos++;
     document.cookie='aciertos='+numAciertos; 
-    document.getElementById("value").value = numAciertos;
+    document.getElementById("valueAciertos").value = numAciertos;
 }

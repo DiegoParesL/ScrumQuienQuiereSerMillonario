@@ -26,8 +26,8 @@
     <br>
     <div class="oculto" id="publicar">
     <form method="post" id="publicar">
-        <input type="text" name="nombre" id="nombre">
-        <button type="submit" name="send" id="send">Enviar</button>
+        <input type="text" name="nombre" id="nombre" required>
+        <button onclick="toIndex()" type="submit" name="send" id="send">Enviar</button>
     </form>
     </div>
 
@@ -35,9 +35,10 @@
     <script src="funciones/funcionalidades.js"></script>
     <?php
         session_start();
+        $aciertos = $_COOKIE["aciertos"];
         if (isset($_POST["nombre"])) {
             $file = fopen("records.txt", "a+");
-            fwrite($file,$_POST["nombre"].", 18, ".session_create_id()."\n");
+            fwrite($file,$_POST["nombre"].", ". strval($aciertos).", ".session_create_id()."\n");
             fclose($file);           
         }
         session_destroy();

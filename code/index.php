@@ -1,9 +1,6 @@
 <?php
 session_start();
 
-echo '<script src="funciones/pass_aciertos.js">';
-echo 'borrarCookie("aciertos")';
-echo '</script>';
 setcookie('aciertos', 0, time()-3600,'/');
 // Restablecer el nivel del juego al nivel 1
 unset($_SESSION['nivel']);

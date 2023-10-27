@@ -96,7 +96,7 @@ function preguntas()
                 }else{
                     $aciertos = $_COOKIE["aciertos"];
                 }
-                echo "<input type='text' id='value' name='aciertos' value='$aciertos' > ";
+                echo "<input type='text' id='valueAciertos' name='aciertos' value='$aciertos' > ";
                 foreach ($preguntas_escogidas as $key => $value) {
                     if ($preguntas_restantes == $total) {
                         echo "<div>";
