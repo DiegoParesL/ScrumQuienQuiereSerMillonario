@@ -88,49 +88,49 @@
         }
 
     function print_preguntas_aleatorias()
-        {
-            $preguntas_escogidas = preguntas_aleatorias();
-            $total = count($preguntas_escogidas);
-            $preguntas_restantes = $total;
-            
-            foreach ($preguntas_escogidas as $key => $value) {
-                // Agrega un identificador único a cada pregunta
-                $pregunta_id = "pregunta" . ($total - $preguntas_restantes + 1);
+{
+    $preguntas_escogidas = preguntas_aleatorias();
+    $total = count($preguntas_escogidas);
+    $preguntas_restantes = $total;
+    
+    foreach ($preguntas_escogidas as $key => $value) {
+        // Agrega un identificador único a cada pregunta
+        $pregunta_id = "pregunta" . ($total - $preguntas_restantes + 1);
 
-                if ($preguntas_restantes == $total) {
-                    echo "<div>";
-                    echo "<h2>" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
-                    echo "<div class='grid'>";
-                    foreach ($value as $respuestas) {
-                        if ($respuestas[0] === "+") {
-                            echo "<p class=\"oculto\" id='respuesta" . ($total - $preguntas_restantes) . "'>$respuestas</p>";
-                            // Agrega la función de scroll hacia la siguiente pregunta en el botón de respuesta correcta
-                            echo "<button id=\"res" . ($total - $preguntas_restantes) . "\" onclick=\"trueClick(this, '$pregunta_id')\">" . trim($respuestas, "+-") . "</button>";
-                        } else {
-                            echo "<button class=\"fail" . ($total - $preguntas_restantes) . "\" onclick=\"failClick(this)\">" . trim($respuestas, "+-") . "</button>";
-                        }
-                    }
-                    echo "</div>";
-                    echo "</div>";
+        if ($preguntas_restantes == $total) {
+            echo "<div>";
+            echo "<h2>" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
+            echo "<div class='grid'>";
+            foreach ($value as $respuestas) {
+                if ($respuestas[0] === "+") {
+                    echo "<p class=\"oculto\" id='respuesta" . ($total - $preguntas_restantes) . "'>$respuestas</p>";
+                    // Agrega la función de scroll hacia la siguiente pregunta en el botón de respuesta correcta
+                    echo "<button style=\"font-size: 25px;\" id=\"res" . ($total - $preguntas_restantes) . "\" onclick=\"trueClick(this, '$pregunta_id')\">" . trim($respuestas, "+-") . "</button>";
                 } else {
-                    echo "<div id='$pregunta_id' class='oculto'>";
-                    echo "<h2>" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
-                    echo "<div class='grid'>";
-                    foreach ($value as $respuestas) {
-                        if ($respuestas[0] === "+") {
-                            echo "<p class=\"oculto\" id='respuesta" . ($total - $preguntas_restantes) . "'>$respuestas</p>";
-                            // Agrega la función de scroll hacia la siguiente pregunta en el botón de respuesta correcta
-                            echo "<button id=\"res" . ($total - $preguntas_restantes) . "\" onclick=\"trueClick(this, '$pregunta_id')\">" . trim($respuestas, "+-") . "</button>";
-                        } else {
-                            echo "<button class=\"fail" . ($total - $preguntas_restantes) . "\" onclick=\"failClick(this)\">" . trim($respuestas, "+-") . "</button>";
-                        }
-                    }
-                    echo "</div>";  
-                    echo "</div>";
+                    echo "<button class=\"fail" . ($total - $preguntas_restantes) . "\" style=\"font-size: 25px;\" onclick=\"failClick(this)\">" . trim($respuestas, "+-") . "</button>";
                 }
-                $preguntas_restantes--;
+            }
+            echo "</div>";
+            echo "</div>";
+        } else {
+            echo "<div id='$pregunta_id' class='oculto'>";
+            echo "<h2>" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
+            echo "<div class='grid'>";
+            foreach ($value as $respuestas) {
+                if ($respuestas[0] === "+") {
+                    echo "<p class=\"oculto\" id='respuesta" . ($total - $preguntas_restantes) . "'>$respuestas</p>";
+                    // Agrega la función de scroll hacia la siguiente pregunta en el botón de respuesta correcta
+                    echo "<button style=\"font-size: 25px;\" id=\"res" . ($total - $preguntas_restantes) . "\" onclick=\"trueClick(this, '$pregunta_id')\">" . trim($respuestas, "+-") . "</button>";
+                } else {
+                    echo "<button class=\"fail" . ($total - $preguntas_restantes) . "\" style=\"font-size: 25px;\" onclick=\"failClick(this)\">" . trim($respuestas, "+-") . "</button>";
+                }
+            }
+            echo "</div>";  
+            echo "</div>";
         }
+        $preguntas_restantes--;
     }
+}
 
     // Llama a la función para imprimir las preguntas
     print_preguntas_aleatorias();
@@ -141,8 +141,8 @@
     <div class='oculto' id="botones">
         <form method="post">
             <button name="siguiente" class="boton-accion" id="siguiente">Next Level</button>
-        
-        <button id="inicio" class="boton-accion" onclick="window.location.href='index.php'">Menu</button>
+            <button  class="boton-accion" onclick="window.location.href='index.php'">Menu</button> 
+
         </form>
     </div>
 
