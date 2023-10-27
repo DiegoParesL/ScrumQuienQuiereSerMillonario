@@ -30,17 +30,17 @@ unset($_SESSION['nivel']);
     <img src="images/milionari.png" alt="milionariIMG" width="300px" height="300px">
     <p id="descripcion">Aquest joc aquesta basat en el programa del mateix nom.<br>En el qual hi ha diferents nivells de dificultat respecte les preguntes.<br>Començarem en el nivell 1 i conforme anem encertat preguntes ira pujant el nivell, fins al nivell 6.<br>Cada nivell de dificultat té en total 3 preguntes i una vegada encertades las 3 passarem a la següent dificultat, fins que encertem les 18 preguntes totals o fallem.</p>
     <br>
-    <form action="game.php" method="get">
+    <form action="game.php" method="get" >
         <input type="hidden" name="lang" id="selectedLanguage" value="catalan"> <!-- Cambia "es" a "ca" o "en" según el idioma seleccionado -->
         <button type="submit" id="boton-jugar" class="boton-grande">Play</button>
     </form>
     <br>
-    <form action="ranking.php" method="post">
+    <form id="partida" action="ranking.php" method="post">
         <button type="submit" id="ranking" class="boton-mediano">Hall Of Fame</button>
     </form>
 
     <script src="funciones/funcionalidades.js"></script>
-   
+    <script src="funciones/cronometro.js"></script>
     <script src="funciones/translation.js"></script>
   
 </body>

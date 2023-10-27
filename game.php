@@ -6,39 +6,36 @@
     <title>Joc</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="inicio(); cuenta_atras()">
     <img src="images/milionari.png" alt="" height="150px" width="150px">
+    <br>
+    <span class="cronometro-sticky">
+        <p class="reloj" id="Minutos">00</p>
+        <p class="reloj">:</p>
+        <p class="reloj" id="Segundos">00</p>    
+    </span>
+    <br>
     <div id="preguntasContainer">
-        
 <?php
 session_start();
 
 // Obtener el idioma del campo oculto
-$idioma = isset($_GET['lang']) ? $_GET['lang'] : 'catalan'; // Cambia 'catalan' al idioma predeterminado que desees
 
+
+
+$idioma = isset($_GET['lang']) ? $_GET['lang'] : 'catalan'; // Cambia 'catalan' al idioma predeterminado que desees
 $nivel = isset($_SESSION['nivel']) ? $_SESSION['nivel'] : 1;
-if (!isset($_SESSION['puntuacion'])) {
-    $_SESSION['puntuacion'] = 0;
-}
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['incrementar'])) {
-    // Incrementar la variable global
-    $_SESSION['puntuacion']++;
-    
-    // Enviar la respuesta a la solicitud AJAX
-    echo $_SESSION['puntuacion'];
-    exit;
-}
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['siguiente'])) {
     // Verifica si el jugador ha completado el tercer nivel
     $nivel++;
     if ($nivel < 6) {
         $_SESSION['nivel'] = $nivel;
-        $puntuaje += 3;
     }
 }
 
-echo "<p class='' id='aciertos'>Nivel: " . $nivel ."</p";
+echo "<p class='' id='aciertos'>Nivel: " . $nivel . "</p";
 
 function preguntas()
 {
@@ -59,82 +56,84 @@ function preguntas()
     return $preguntas_por_nivel;
 }
 
-    // Resto de tu código para imprimir preguntas, respuestas y botones
+// Resto de tu código para imprimir preguntas, respuestas y botones
 
-            function numeros_aleatorios($max)
-            {
-                $array_of_number = [];
-                for ($i = 0; $i < 3; $i++) {
-                    while (true) {
-                        $num = rand(0, $max - 1);
-                        if (!in_array($num, $array_of_number)) {
-                            array_push($array_of_number, $num);
-                            break;
-                        }
-                    }
-                }
-                return $array_of_number;
+function numeros_aleatorios($max)
+{
+    $array_of_number = [];
+    for ($i = 0; $i < 3; $i++) {
+        while (true) {
+            $num = rand(0, $max - 1);
+            if (!in_array($num, $array_of_number)) {
+                array_push($array_of_number, $num);
+                break;
             }
+        }
+    }
+    return $array_of_number;
+}
 
-            function preguntas_aleatorias()
-            {
-                $i = 0;
-                $preguntas = preguntas();
-                $positions = numeros_aleatorios(count($preguntas));
-                $preguntas_nivel = [];
-                foreach ($preguntas as $key => $value) {
-                    if (in_array($i, $positions)) {
-                        foreach ($value as $respuestas) {
-                            $preguntas_nivel[$key][] = $respuestas;
-                        }
-                    }
-                    $i++;
-                }
-                return $preguntas_nivel;
+function preguntas_aleatorias()
+{
+    $i = 0;
+    $preguntas = preguntas();
+    $positions = numeros_aleatorios(count($preguntas));
+    $preguntas_nivel = [];
+    foreach ($preguntas as $key => $value) {
+        if (in_array($i, $positions)) {
+            foreach ($value as $respuestas) {
+                $preguntas_nivel[$key][] = $respuestas;
             }
+        }
+        $i++;
+    }
+    return $preguntas_nivel;
+}
 
-            function print_preguntas_aleatorias()
-            {
-                $preguntas_escogidas = preguntas_aleatorias();
-                $total = count($preguntas_escogidas);
-                $preguntas_restantes = $total;
-                
-                foreach ($preguntas_escogidas as $key => $value) {
-                    if ($preguntas_restantes == $total) {
-                        echo "<div>";
-                        echo "<h2>" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
-                        echo "<div class='grid'>";
-                        foreach ($value as $respuestas) {
-                            if ($respuestas[0] === "+") {
-                                echo "<p class=\"oculto\" id='respuesta" . ($total - $preguntas_restantes) . "'>$respuestas</p>";
-                                echo "<button name='incrementar' id=\"res" . ($total - $preguntas_restantes) . "\" onclick=\"trueClick(this)\">" . trim($respuestas, "+-") . "</button>";
-                            } else {
-                                echo "<button class=\"fail" . ($total - $preguntas_restantes) . "\" onclick=\"failClick(this)\">" . trim($respuestas, "+-") . "</button>";
-                            }
-                        }
-                        echo "</div>";
-                        echo "</div>";
-                    } else {
-                        echo "<div id='pregunta" . ($total - $preguntas_restantes + 1) . "' class='oculto'>";
-                        echo "<h2>" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
-                        echo "<div class='grid'>";
-                        foreach ($value as $respuestas) {
-                            if ($respuestas[0] === "+") {
-                                echo "<p class=\"oculto\" id='respuesta" . ($total - $preguntas_restantes) . "'>$respuestas</p>";
-                                echo "<button name='incrementar' id=\"res" . ($total - $preguntas_restantes) . "\" onclick=\"trueClick(this)\">" . trim($respuestas, "+-") . "</button>";
-                            } else {
-                                echo "<button class=\"fail" . ($total - $preguntas_restantes) . "\" onclick=\"failClick(this)\">" . trim($respuestas, "+-") . "</button>";
-                            }
-                        }
-                        echo "</div>";  
-                        echo "</div>";
-                    }
-                    
-                    $preguntas_restantes--;
+function print_preguntas_aleatorias()
+{
+    $preguntas_escogidas = preguntas_aleatorias();
+    $total = count($preguntas_escogidas);
+    $preguntas_restantes = $total;
+
+    foreach ($preguntas_escogidas as $key => $value) {
+        if ($preguntas_restantes == $total) {
+            echo "<div onload='cuenta_atras()'>";
+            echo "<h2>" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
+            echo "<p id='cronometro-preguntas'></p>";
+            echo "<div class='grid' >";
+            foreach ($value as $respuestas) {
+                if ($respuestas[0] === "+") {
+                    echo "<p class=\"oculto\" id='respuesta" . ($total - $preguntas_restantes) . "'>$respuestas</p>";
+                    echo "<button name='incrementar' id=\"res" . ($total - $preguntas_restantes) . "\" onclick=\"trueClick(this)\">" . trim($respuestas, "+-") . "</button>";
+                } else {
+                    echo "<button class=\"fail" . ($total - $preguntas_restantes) . "\" onclick=\"failClick(this)\">" . trim($respuestas, "+-") . "</button>";
                 }
             }
-            print_preguntas_aleatorias();
-            ?>
+            echo "</div>";
+            echo "</div>";
+        } else {
+            echo "<div id='pregunta" . ($total - $preguntas_restantes + 1) . "' class='oculto' onload='cuenta_atras()'>";
+            echo "<p id='cronometro-preguntas'></p>";
+            echo "<h2>" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
+            echo "<div class='grid' onload='cuenta_atras()'>";
+            foreach ($value as $respuestas) {
+                if ($respuestas[0] === "+") {
+                    echo "<p class=\"oculto\" id='respuesta" . ($total - $preguntas_restantes) . "'>$respuestas</p>";
+                    echo "<button name='incrementar' id=\"res" . ($total - $preguntas_restantes) . "\" onclick=\"trueClick(this);contador_regresivo()\">" . trim($respuestas, "+-") . "</button>";
+                } else {
+                    echo "<button class=\"fail" . ($total - $preguntas_restantes) . "\" onclick=\"failClick(this)\">" . trim($respuestas, "+-") . "</button>";
+                }
+            }
+            echo "</div>";
+            echo "</div>";
+        }
+
+        $preguntas_restantes--;
+    }
+}
+print_preguntas_aleatorias();
+?>
         </div>
         
         
@@ -149,8 +148,8 @@ function preguntas()
     <p><button id="win_button" class="centrar-boton" onclick="window.location.href = 'win.php'">Show Stats</button></p>
     <p><button id="lose_button" class="centrar-boton" onclick="window.location.href = 'lose.php'">Wrong Answer</button></p>
     <a href="win.php"><img src="images/milionari.png" alt="" height="3px" width="3px"></a>
-
-    <script src="funciones/contador.js"></script>
+        
+    <script src="funciones/cronometro.js"></script>
     <script src="funciones/funcionalidades.js"></script>
     <script src="funciones/sounds.js"></script>
 </body>
