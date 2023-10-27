@@ -1,10 +1,10 @@
 <?php
-// Verificar si se ha realizado alguna acción o se ha visitado desde una página válida
-if (isset($_SESSION['aciertos']) && $_SESSION['aciertos'] >= 3) {
-    // Página válida
-} else {
-    // Página no válida, redirigir a una página de error o realizar una acción adecuada
+session_start();
+
+if (!isset($_SERVER['HTTP_REFERER']) || !strpos($_SERVER['HTTP_REFERER'], "game.php")) {
+    // Si la página no se accede desde "game.php", redirige o muestra un mensaje de error.
     header("HTTP/1.1 403 Forbidden");
+   
     exit;
 }
 // El contenido de la página "win.php" continua aquí

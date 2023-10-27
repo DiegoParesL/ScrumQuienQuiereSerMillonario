@@ -19,10 +19,7 @@
 
     $nivel = isset($_SESSION['nivel']) ? $_SESSION['nivel'] : 1;
 
-    // Verificar si la variable de sesión aciertos existe y, si no, configurarla en 0
-    if (!isset($_SESSION['aciertos'])) {
-        $_SESSION['aciertos'] = 0;
-    }
+
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['siguiente'])) {
         // Verifica si el jugador ha completado el tercer nivel
