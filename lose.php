@@ -31,13 +31,13 @@
     <script src="funciones/lose_sound.js"></script>
     <script src="funciones/funcionalidades.js"></script>
     <?php
-        session_start();
-        if (isset($_POST["nombre"])) {
-            $file = fopen("records.txt", "a+");
-            fwrite($file,$_POST["nombre"].", 0, ".session_create_id()."\n");
-            fclose($file);            
-        }
-        session_destroy();
+    session_start();
+    if (isset($_POST["nombre"])) {
+        $file = fopen("records.txt", "a+");
+        fwrite($file, $_POST["nombre"] . ", 0, " . session_create_id() . "\n");
+        fclose($file);
+    }
+    session_destroy();
     ?>
 </body>
 </html>

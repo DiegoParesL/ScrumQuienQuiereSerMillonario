@@ -6,16 +6,16 @@
     <title>Joc</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="inicio(); cuenta_atras()">
+<body onload="setTiempo()">
     <img src="images/milionari.png" alt="" height="150px" width="150px">
     <br>
     <span class="cronometro-sticky">
-        <p class="reloj" id="Minutos">00</p>
+        <p class="reloj" id="Minutos">0</p>
         <p class="reloj">:</p>
-        <p class="reloj" id="Segundos">00</p>    
+        <p class="reloj" id="Segundos">0</p>    
     </span>
     <br>
-    <div id="preguntasContainer">
+    <div id="preguntasContainer" onload="inicio()">
 <?php
 session_start();
 
@@ -98,7 +98,7 @@ function print_preguntas_aleatorias()
 
     foreach ($preguntas_escogidas as $key => $value) {
         if ($preguntas_restantes == $total) {
-            echo "<div onload='cuenta_atras()'>";
+            echo "<div>";
             echo "<h2>" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
             echo "<p id='cronometro-preguntas'></p>";
             echo "<div class='grid' >";
@@ -113,7 +113,7 @@ function print_preguntas_aleatorias()
             echo "</div>";
             echo "</div>";
         } else {
-            echo "<div id='pregunta" . ($total - $preguntas_restantes + 1) . "' class='oculto' onload='cuenta_atras()'>";
+            echo "<div id='pregunta" . ($total - $preguntas_restantes + 1) . "' class='oculto' >";
             echo "<p id='cronometro-preguntas'></p>";
             echo "<h2>" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
             echo "<div class='grid' onload='cuenta_atras()'>";
@@ -135,15 +135,11 @@ function print_preguntas_aleatorias()
 print_preguntas_aleatorias();
 ?>
         </div>
-        
-        
-        <div class='oculto' id="botones">
+    <div class='oculto' id="botones">
         <form method="post">
             <button name="siguiente" class="boton-accion" id="siguiente">Next Questions</button>
-            </form>
+        </form>
     </div>
-
-
 
     <p><button id="win_button" class="centrar-boton" onclick="window.location.href = 'win.php'">Show Stats</button></p>
     <p><button id="lose_button" class="centrar-boton" onclick="window.location.href = 'lose.php'">Wrong Answer</button></p>

@@ -1,18 +1,31 @@
 let centesimas = 0;
-let segundos = document.getElementById("Segundos").innerHTML;
-let minutos = document.getElementById("Minutos").innerHTML;
-let segundos_pregunta = 30;
+let segundos;
+let minutos;
 
+if (document.getElementById("Minutos").value == 0 || document.getElementById("Minutos").value =='') {
+    minutos=0;
+}else {
+    minutos = document.getElementById("Minutos").value;
+}
+
+if (document.getElementById("Segundos").value == 0 || document.getElementById("Segundos").value =='') {
+    segundos=0;
+}else {
+    segundos = document.getElementById("Segundos").value;
+}
+
+function setTiempo() {
+    document.cookie = "segundos="+segundos;
+    document.cookie = "minutos="+minutos;
+    document.getElementById("Minutos").value = minutos;
+    document.getElementById("Segundos").value = segundos;
+}
 
 function inicio() {
     control = setInterval(cronometro, 10);
 }
 
 function cronometro () {
-    segundos_totales = segundos
-    minutos_totales = minutos
-    document.cookie = "segundos="+segundos_totales+"; SameSite=None";
-    document.cookie = "minutos="+minutos_totales+"; SameSite=None";
 	if (centesimas < 99) {
 		centesimas++;
 		if (centesimas < 10) { centesimas = "0"+centesimas }
@@ -38,13 +51,3 @@ function cronometro () {
 	}
 }
 
-function cuenta_atras() {
-    document.getElementById("cronometro-preguntas").innerHTML = segundos_pregunta;
-    if(totalTime==0){
-        failClick();
-      }else{
-        totalTime-=1;
-        setTimeout(cuenta_atras,1000);
-      }
-}
-cuenta_atras();
