@@ -40,7 +40,6 @@ unset($_SESSION['nivel']);
     </form>
 
     <script src="funciones/funcionalidades.js"></script>
-    <script src="funciones/cronometro.js"></script>
     <script src="funciones/translation.js"></script>
   
 </body>

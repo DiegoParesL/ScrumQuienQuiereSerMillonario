@@ -2,13 +2,13 @@ let centesimas = 0;
 let segundos;
 let minutos;
 
-if (document.getElementById("Minutos").value == 0 || document.getElementById("Minutos").value =='') {
+if (document.getElementById("Minutos").value == '00' || document.getElementById("Minutos").value =='') {
     minutos=0;
 }else {
     minutos = document.getElementById("Minutos").value;
 }
 
-if (document.getElementById("Segundos").value == 0 || document.getElementById("Segundos").value =='') {
+if (document.getElementById("Segundos").value == '00' || document.getElementById("Segundos").value =='') {
     segundos=0;
 }else {
     segundos = document.getElementById("Segundos").value;
@@ -22,6 +22,7 @@ function setTiempo() {
 }
 
 function inicio() {
+    setTiempo();
     control = setInterval(cronometro, 10);
 }
 
@@ -36,7 +37,7 @@ function cronometro () {
 	if (centesimas == 0) {
 		segundos ++;
 		if (segundos < 10) { segundos = "0"+segundos }
-		Segundos.innerHTML = ""+segundos;
+		Segundos.innerHTML = ":"+segundos;
 	}
 	if (segundos == 59) {
 		segundos = -1;
