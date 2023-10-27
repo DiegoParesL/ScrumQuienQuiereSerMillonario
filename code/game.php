@@ -136,15 +136,16 @@
     print_preguntas_aleatorias();
 
     ?>
-    </div>
-
     <div class='oculto' id="botones">
-        <form method="post">
-            <button name="siguiente" class="boton-accion" id="siguiente">Next Level</button>
-            <button  class="boton-accion" onclick="window.location.href='index.php'">Menu</button> 
-
-        </form>
+    <form method="post" class="botones-container">
+        <br>
+        <button name="siguiente" class="boton-accion grande" id="siguiente">Next Level</button>
+        <br> <!-- Agrega un salto de línea para aumentar la separación entre los botones -->
+        <button class="boton-accion grande" onclick="window.location.href='index.php'">Menu</button>
+    </form>
     </div>
+
+
 
 
 

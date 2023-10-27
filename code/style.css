@@ -78,5 +78,20 @@ div > button {
 
 }
 
+/* ***************************************************************************************
+/* ESTILO PARA LOS BOTONES DE (NEXT QUESTIONS / MENU ) EN EL GAME.PHP  
 
+/* Estilo para los botones "grande" */
+.boton-accion.grande {
+    font-size: 20px; /* Tamaño de fuente más grande */
+    padding: 10px 20px; /* Ajusta el espaciado interior del botón */
+    display: block; /* Muestra los botones como bloques para centrarlos horizontalmente */
+    margin: 0 auto; /* Centra los botones horizontalmente */
+}
 
+/* Estilo para el contenedor de botones */
+.botones-container {
+    text-align: center; /* Centra los botones en el contenedor */
+}
+
+/* **************************************************************************************

@@ -33,7 +33,7 @@ if (!isset($_SERVER['HTTP_REFERER']) || !strpos($_SERVER['HTTP_REFERER'], "game.
     <button id="publish_button" name="publish_button" type="submit"  class="boton-mediano"onclick="publish()">Publish</button></p>
     </div>
     <div class="oculto" id="publicar">
-    <form method="post" id="publicar">
+    <form method="post"  id="publicar">
             <input type="text" name="nombre" id="nombre" placeholder="Introduce Your Name">
             <button type="submit" name="send" id="send">Send</button>
     </form> 
