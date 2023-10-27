@@ -11,6 +11,8 @@ document.getElementById("win_button").style.display = "none";
 document.getElementById("lose_button").style.display = "none";
 document.getElementById("pantalla").style.display = "none";
 
+
+
 function disableButtons(buttons) {
     for (let button of buttons) {
         button.disabled = true;
@@ -28,15 +30,18 @@ function failClick() {
     let correct = document.getElementById("res"+aciertos)
     correct.style.color="rgb(0,255,0)";
     correct.disabled = true;
+
+
 }
+
 
 function trueClick(button, pregunta_id) {
     playCorrect();
-    button.style.color = "rgb(0,255,0)";
+    button.style.color = "rgb(0, 255, 0)";
    
     let fails = document.getElementsByClassName("fail" + aciertos);
     for (let i = 0; i < fails.length; i++) {
-        fails[i].style.color = "rgb(255,0,0)";
+        fails[i].style.color = "rgb(255, 0, 0)";
         fails[i].disabled = true;
     }
 
@@ -52,13 +57,19 @@ function trueClick(button, pregunta_id) {
     } else {
         mostrarSiguiente(aciertos);
         currentQuestion++;
-         // Hacer scroll hacia la siguiente pregunta
-    var preguntaElement = document.getElementById("pregunta" + currentQuestion);
-    if (preguntaElement) {
-        preguntaElement.scrollIntoView({ behavior: "smooth" });
+
+        // Hacer scroll hacia la siguiente pregunta
+        var preguntaElement = document.getElementById("pregunta" + currentQuestion);
+        if (preguntaElement) {
+            preguntaElement.scrollIntoView({ behavior: "smooth" });
+        }
+
+        // Reiniciar el cronómetro a 30 segundos
+        tiempoRestante = tiempoInicial;
+        setTimeout(actualizarCronometro, tiempoDeEspera);
     }
 }
-}
+
 
 
 function mostrarSiguiente(numeroPregunta) {
@@ -92,8 +103,14 @@ function toWin() {
     window.location.href = "win.php";
 }
 
+function toWin() {
+    window.location.href = "win.php";
+}
+
 function recompensa() {
     document.getElementById("pantalla").style.display = "block";
     document.getElementById("mensaje").style.display = "none";
 }
+
+
 
