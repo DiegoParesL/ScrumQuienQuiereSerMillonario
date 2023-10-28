@@ -98,8 +98,8 @@ div > button {
 
 
 
-
-/* En tu archivo CSS */
+/* ***************************************************************************************
+/* ESTILOS PARA EL CONTADOR INVERSO */
 .normal-text {
     font-size: 24px;
     color: black; /* Color normal del texto */
@@ -121,3 +121,4 @@ div > button {
     }
 }
 
+/* *************************************************************************************** 

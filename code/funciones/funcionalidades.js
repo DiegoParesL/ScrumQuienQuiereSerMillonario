@@ -129,9 +129,6 @@ function toWin() {
     window.location.href = "win.php";
 }
 
-function toWin() {
-    window.location.href = "win.php";
-}
 
 function recompensa() {
     document.getElementById("pantalla").style.display = "block";
