@@ -136,11 +136,19 @@
 
 
     
+
+
     <?php if ($nivel >= 2) { ?>
-    <!-- Agrega esta sección al final del archivo HTML, justo antes de cerrar el cuerpo (</body>) -->
-    <div id="contadorRegresivo" style="font-size: 24px;"></div>
-    <div id="mensajeOK" style="font-size: 24px;"></div> <!-- Contenedor para el mensaje 'ok' -->
-    <?php } ?>
+        <br><br>
+    <div id="contadorRegresivo">
+        <span class="normal-text">
+            <span class="red-blinking-text">Time Left:</span>
+        </span>
+        <span id="tiempoRestante" class="red-blinking-text">30 s</span>
+    </div>
+    <div id="mensajeOK" class="hidden-message">¡Tiempo agotado! Has perdido.</div>
+<?php } ?>
+
 
 
 

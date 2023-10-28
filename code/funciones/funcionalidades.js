@@ -74,22 +74,22 @@ function trueClick(button, pregunta_id) {
         }
     }
 }
-
-
 function iniciarContador() {
-    const contador = document.getElementById('contadorRegresivo');
+    const contador = document.getElementById('tiempoRestante');
 
     const intervalo = setInterval(() => {
-        contador.textContent = `Tiempo restante: ${tiempoRestante} s`;
-
         if (tiempoRestante <= 0) {
             clearInterval(intervalo); // Detener el contador cuando el tiempo se agote
-            // Aquí puedes agregar lógica adicional cuando el tiempo se agote
+            document.getElementById('mensajeOK').style.display = 'block'; // Mostrar el mensaje
+            contador.style.display = 'none'; // Ocultar el contador cuando se agota el tiempo
+            window.location.href = 'lose.php'; // Redirigir a la página lose.php
         } else {
             tiempoRestante--; // Reducir el tiempo restante
+            contador.textContent = tiempoRestante + ' s'; // Actualizar el contador
         }
     }, 1000); // Intervalo de actualización: 1 segundo
 }
+
 
 // Función para reiniciar el contador
 function reiniciarContador() {

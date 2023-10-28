@@ -95,3 +95,29 @@ div > button {
 }
 
 /* **************************************************************************************
+
+
+
+
+/* En tu archivo CSS */
+.normal-text {
+    font-size: 24px;
+    color: black; /* Color normal del texto */
+}
+
+.red-blinking-text {
+    font-size: 24px;
+    color: red;
+    animation: blinker 1s linear infinite;
+}
+
+.hidden-message {
+    display: none; /* Para ocultar el mensaje hasta que se active */
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
