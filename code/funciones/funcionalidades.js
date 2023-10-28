@@ -22,23 +22,23 @@ function disableButtons(buttons) {
 function failClick() {
     playIncorrect();
     document.getElementById("lose_button").style.display = "block";
-    let fails = document.getElementsByClassName("fail"+aciertos);
+    let fails = document.getElementsByClassName("fail" + aciertos);
     for (let i = 0; i < fails.length; i++) {
-        fails[i].style.color="rgb(255,0,0)";
+        fails[i].style.color = "rgb(255, 0, 0)";
         fails[i].disabled = true;
     }
-    let correct = document.getElementById("res"+aciertos)
-    correct.style.color="rgb(0,255,0)";
+    let correct = document.getElementById("res" + aciertos);
+    correct.style.color = "rgb(0, 255, 0)";
     correct.disabled = true;
 
-
+    // Ocultar el contador al fallar una pregunta
+    document.getElementById('contadorRegresivo').style.display = 'none';
 }
-
 
 function trueClick(button, pregunta_id) {
     playCorrect();
     button.style.color = "rgb(0, 255, 0)";
-   
+
     let fails = document.getElementsByClassName("fail" + aciertos);
     for (let i = 0; i < fails.length; i++) {
         fails[i].style.color = "rgb(255, 0, 0)";
@@ -58,13 +58,36 @@ function trueClick(button, pregunta_id) {
         mostrarSiguiente(aciertos);
         currentQuestion++;
 
-        // Hacer scroll hacia la siguiente pregunta
         var preguntaElement = document.getElementById("pregunta" + currentQuestion);
         if (preguntaElement) {
             preguntaElement.scrollIntoView({ behavior: "smooth" });
         }
 
+        // Reiniciar el contador a 30 segundos después de responder correctamente
+        if (aciertos >= 1) {
+            reiniciarContador();
+        }
     }
+}
+
+function iniciarContador() {
+    const contador = document.getElementById('contadorRegresivo');
+
+    const intervalo = setInterval(() => {
+        contador.textContent = `Tiempo restante: ${tiempoRestante} s`;
+
+        if (tiempoRestante <= 0) {
+            clearInterval(intervalo); // Detener el contador cuando el tiempo se agote
+            // Aquí puedes agregar lógica adicional cuando el tiempo se agote
+        } else {
+            tiempoRestante--; // Reducir el tiempo restante
+        }
+    }, 1000); // Intervalo de actualización: 1 segundo
+}
+
+// Función para reiniciar el contador
+function reiniciarContador() {
+    tiempoRestante = 30; // Reiniciar el tiempo a 30 segundos
 }
 
 
@@ -108,6 +131,7 @@ function recompensa() {
     document.getElementById("pantalla").style.display = "block";
     document.getElementById("mensaje").style.display = "none";
 }
+
 
 
 
