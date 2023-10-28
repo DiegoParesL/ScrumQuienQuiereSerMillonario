@@ -136,7 +136,7 @@
     print_preguntas_aleatorias();
 
     ?>
-    <div id="cronometro" class="cronometro"></div>
+   
 
     <div class='oculto' id="botones">
     <form method="post" class="botones-container">
@@ -157,35 +157,7 @@
     <script src="funciones/sounds.js"></script>
     <script src="funciones/funcionalidades.js"></script>
 
-    <script>
-        // Tiempo inicial en segundos para cada pregunta
-        var tiempoInicial = 30; // Cambiado a 30 segundos
-        var tiempoRestante = tiempoInicial;
-        var tiempoDeEspera = 1200; // 1000 ms (1 segundo) de espera
-
-        function actualizarCronometro() {
-            var minutos = Math.floor(tiempoRestante / 60);
-            var segundos = tiempoRestante % 60;
-            document.getElementById("cronometro").innerHTML = minutos + "m " + segundos + "s";
-            
-            if (tiempoRestante === 0) {
-                // Aquí puedes agregar código para manejar lo que sucede cuando se agota el tiempo
-                // Por ejemplo, puedes redirigir al usuario a otra página o mostrar un mensaje.
-                alert("¡Tiempo agotado!");
-            } else {
-                tiempoRestante--;
-                setTimeout(actualizarCronometro, tiempoDeEspera); // Actualiza cada 1 segundo
-            }
-        }
-
-        function reiniciarCronometro() {
-            tiempoRestante = tiempoInicial; // Reinicia el tiempo
-            actualizarCronometro(); // Llama a la función para reiniciar el cronómetro
-        }
-
-        // Llama a la función de actualización del cronómetro cuando cargue la página
-        actualizarCronometro();
-    </script>
+   
 
 
 </body>

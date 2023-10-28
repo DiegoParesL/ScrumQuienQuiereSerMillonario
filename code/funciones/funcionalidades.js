@@ -64,9 +64,6 @@ function trueClick(button, pregunta_id) {
             preguntaElement.scrollIntoView({ behavior: "smooth" });
         }
 
-        // Reiniciar el cronómetro a 30 segundos
-        tiempoRestante = tiempoInicial;
-        setTimeout(actualizarCronometro, tiempoDeEspera);
     }
 }
 
