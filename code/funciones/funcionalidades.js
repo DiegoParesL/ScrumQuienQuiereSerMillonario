@@ -35,6 +35,7 @@ function failClick() {
     document.getElementById('contadorRegresivo').style.display = 'none';
 }
 
+
 function trueClick(button, pregunta_id) {
     playCorrect();
     button.style.color = "rgb(0, 255, 0)";
@@ -52,8 +53,12 @@ function trueClick(button, pregunta_id) {
 
     if (parseInt(nivel, 10) >= 6 && aciertos >= 3) {
         document.getElementById("win_button").style.display = "block";
+        const contador = document.getElementById('contadorRegresivo');
+        contador.style.display = 'none'; // Oculta el contador al mostrar el botón de "Next Level"
     } else if (aciertos >= totalPreguntas) {
         document.getElementById("botones").style.display = "block";
+        const contador = document.getElementById('contadorRegresivo');
+        contador.style.display = 'none'; // Oculta el contador al mostrar el botón de "Menu"
     } else {
         mostrarSiguiente(aciertos);
         currentQuestion++;
@@ -69,6 +74,7 @@ function trueClick(button, pregunta_id) {
         }
     }
 }
+
 
 function iniciarContador() {
     const contador = document.getElementById('contadorRegresivo');

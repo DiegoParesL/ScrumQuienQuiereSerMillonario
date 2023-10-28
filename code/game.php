@@ -134,11 +134,15 @@
         </form>
     </div>
 
-        <?php if ($nivel >= 2) { ?>
+
+    
+    <?php if ($nivel >= 2) { ?>
     <!-- Agrega esta sección al final del archivo HTML, justo antes de cerrar el cuerpo (</body>) -->
     <div id="contadorRegresivo" style="font-size: 24px;"></div>
     <div id="mensajeOK" style="font-size: 24px;"></div> <!-- Contenedor para el mensaje 'ok' -->
-<?php } ?>
+    <?php } ?>
+
+
 
     <p><button id="win_button" class="centrar-boton" onclick="window.location.href = 'win.php'">Show Stats</button></p>
     <p><button id="lose_button" class="centrar-boton" onclick="window.location.href = 'lose.php'">Wrong Answer</button></p>
