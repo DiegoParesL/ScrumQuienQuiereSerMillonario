@@ -9,7 +9,20 @@
 <body>
     <img src="images/milionari.png" alt="" height="150px" width="150px">
     <div id="preguntasContainer">
-        
+    
+    <div class="vertical-buttons">
+        <button onclick="funcionUno()">
+            <img src="images/comodin50.png" alt="" width="50" height="50">
+           
+        </button>
+        <button onclick="funcionDos()">
+            <img src="images/comodinpublico.png" alt="" width="50" height="50">
+            
+        </button>
+        <button onclick="funcionTres()">
+            <img src="images/comodintiempoextra.png" alt="" width="550" height="50">
+        </button>
+    </div>
     <?php
     session_start();
 
@@ -172,6 +185,8 @@
         iniciarContador();
     <?php } ?>
     </script>
+
+    
 
 </body>
 </html>
