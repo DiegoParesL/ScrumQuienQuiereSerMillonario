@@ -83,6 +83,7 @@ function iniciarContador() {
             document.getElementById('mensajeOK').style.display = 'block'; // Mostrar el mensaje
             contador.style.display = 'none'; // Ocultar el contador cuando se agota el tiempo
             window.location.href = 'lose.php'; // Redirigir a la página lose.php
+            alert("TIME IS OVER");
         } else {
             tiempoRestante--; // Reducir el tiempo restante
             contador.textContent = tiempoRestante + ' s'; // Actualizar el contador
@@ -95,6 +96,8 @@ function iniciarContador() {
 function reiniciarContador() {
     tiempoRestante = 30; // Reiniciar el tiempo a 30 segundos
 }
+
+
 
 
 
