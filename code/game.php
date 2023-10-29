@@ -9,7 +9,7 @@
 <body>
     <img src="images/milionari.png" alt="" height="150px" width="150px">
     <div id="preguntasContainer">
-    
+   
     <div class="vertical-buttons">
         <button onclick="funcionUno()">
             <img src="images/comodin50.png" alt="" width="50" height="50">
@@ -19,7 +19,7 @@
             <img src="images/comodinpublico.png" alt="" width="50" height="50">
             
         </button>
-        <button onclick="funcionTres()">
+        <button onclick="funcionTres()" id="comodinTiempoExtra" disabled>>
             <img src="images/comodintiempoextra.png" alt="" width="550" height="50">
         </button>
     </div>
@@ -168,8 +168,7 @@
     <p><button id="win_button" class="centrar-boton" onclick="window.location.href = 'win.php'">Show Stats</button></p>
     <p><button id="lose_button" class="centrar-boton" onclick="window.location.href = 'lose.php'">Wrong Answer</button></p>
 
-    <script src="funciones/sounds.js"></script>
-    <script src="funciones/funcionalidades.js"></script>
+    
 
     <script>
     let tiempoRestante = 30; // Por ejemplo, 30 segundos
@@ -186,7 +185,9 @@
     <?php } ?>
     </script>
 
-    
+    <script src="funciones/sounds.js"></script>
+    <script src="funciones/funcionalidades.js"></script>
+    <script src="funciones/pass_aciertos.js"></script>
 
 </body>
 </html>
