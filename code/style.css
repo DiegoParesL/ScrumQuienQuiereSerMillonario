@@ -131,8 +131,8 @@ div > button {
 
 .vertical-buttons {
     position: fixed;
-    left: 115px;
-    top: 58%;
+    left: 95px;
+    top: 64%;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
