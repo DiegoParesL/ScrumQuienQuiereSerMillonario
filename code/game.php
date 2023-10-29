@@ -9,7 +9,6 @@
 <body>
     <img src="images/milionari.png" alt="" height="150px" width="150px">
     <div id="preguntasContainer">
-   
     <div class="vertical-buttons">
         <button onclick="funcionUno()">
             <img src="images/comodin50.png" alt="" width="50" height="50">
@@ -23,7 +22,9 @@
             <img src="images/comodintiempoextra.png" alt="" width="550" height="50">
         </button>
     </div>
+    
     <?php
+    
     session_start();
 
     // Obtener el idioma del campo oculto
@@ -90,62 +91,53 @@
     }
 
     function print_preguntas_aleatorias() {
-    $preguntas_escogidas = preguntas_aleatorias();
-    $total = count($preguntas_escogidas);
-    $preguntas_restantes = $total;
-
-    foreach ($preguntas_escogidas as $key => $value) {
-        // Agrega un identificador único a cada pregunta
-        $pregunta_id = "pregunta" . ($total - $preguntas_restantes + 1);
-
-        // Extraer la información de la imagen asociada, si está presente
-        $imagen_path = "";
-        if (strpos($key, '#') !== false) {
-            $parts = explode("#", $key);
-            $imagen_path = trim($parts[1]);
-        }
-
-        if ($preguntas_restantes == $total) {
-            echo "<div>";
+        $preguntas_escogidas = preguntas_aleatorias();
+        $total = count($preguntas_escogidas);
+        $preguntas_restantes = $total;
+    
+        foreach ($preguntas_escogidas as $key => $value) {
+            $pregunta_id = "pregunta" . ($total - $preguntas_restantes + 1);
+            $imagen_path = "";
+    
+            // Extraer la información de la imagen asociada, si está presente
+            if (strpos($key, '#') !== false) {
+                $parts = explode("#", $key);
+                $imagen_info = trim($parts[1]);
+                $imagen_parts = explode(' ', $imagen_info);
+                $imagen_path = $imagen_parts[1];
+            }
+    
+            if ($preguntas_restantes == $total) {
+                echo "<div>";
+            } else {
+                echo "<div id='$pregunta_id' class='oculto'>";
+            }
+    
             echo "<h2>" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
-            echo "<div class='grid'>";
+    
             if (!empty($imagen_path)) {
                 echo "<img src='$imagen_path' alt='Imagen asociada a la pregunta'>";
             }
+    
+            echo "<div class='grid'>";
+    
             foreach ($value as $respuestas) {
                 if ($respuestas[0] === "+") {
                     echo "<p class=\"oculto\" id='respuesta" . ($total - $preguntas_restantes) . "'>$respuestas</p>";
-                    // Agrega la función de scroll hacia la siguiente pregunta en el botón de respuesta correcta
                     echo "<button style=\"font-size: 25px;\" id=\"res" . ($total - $preguntas_restantes) . "\" onclick=\"trueClick(this, '$pregunta_id')\">" . trim($respuestas, "+-") . "</button>";
                 } else {
                     echo "<button class=\"fail" . ($total - $preguntas_restantes) . "\" style=\"font-size: 25px;\" onclick=\"failClick(this)\">" . trim($respuestas, "+-") . "</button>";
                 }
             }
+    
             echo "</div>";
             echo "</div>";
-        } else {
-            echo "<div id='$pregunta_id' class='oculto'>";
-            echo "<h2>" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
-            echo "<div class='grid'>";
-            if (!empty($imagen_path)) {
-                echo "<img src='$imagen_path' alt='Imagen asociada a la pregunta'>";
-            }
-            foreach ($value as $respuestas) {
-                if ($respuestas[0] === "+") {
-                    echo "<p class=\"oculto\" id='respuesta" . ($total - $preguntas_restantes) . "'>$respuestas</p>";
-                    // Agrega la función de scroll hacia la siguiente pregunta en el botón de respuesta correcta
-                    echo "<button style=\"font-size: 25px;\" id=\"res" . ($total - $preguntas_restantes) . "\" onclick=\"trueClick(this, '$pregunta_id')\">" . trim($respuestas, "+-") . "</button>";
-                } else {
-                    echo "<button class=\"fail" . ($total - $preguntas_restantes) . "\" style=\"font-size: 25px;\" onclick \"failClick(this)\">" . trim($respuestas, "+-") . "</button>";
-                }
-            }
-            echo "</div>";
-            echo "</div>";
+            $preguntas_restantes--;
         }
-        $preguntas_restantes--;
     }
-    }
-
+    
+    
+    
 
     // Llama a la función para imprimir las preguntas
     print_preguntas_aleatorias();
@@ -176,7 +168,7 @@
     <div id="mensajeOK" class="hidden-message">¡Tiempo agotado! Has perdido.</div>
 <?php } ?>
 
-
+        
 
 
     <p><button id="win_button" class="centrar-boton" onclick="window.location.href = 'win.php'">Show Stats</button></p>

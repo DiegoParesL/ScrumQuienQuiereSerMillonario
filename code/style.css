@@ -143,7 +143,7 @@ div > button {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 99px; /* Diámetro del círculo */
+    width: 102px; /* Diámetro del círculo */
     height: 99px; /* Diámetro del círculo */
     border: none; /* Elimina el borde */
     border-radius: 50%; /* Borde redondo para hacer el círculo */
@@ -154,7 +154,7 @@ div > button {
 }
 
 .vertical-buttons button img {
-    width: 100%; /* Ocupa todo el ancho del botón */
+    width: 101%; /* Ocupa todo el ancho del botón */
     height: auto; /* Altura automática para mantener la proporción */
     object-fit: cover; /* Ajusta la imagen a las dimensiones del botón */
 }
