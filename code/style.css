@@ -3,6 +3,8 @@ body {
     background-color: rgb(18, 27, 42);
     margin: 5%;
 }
+
+
 table {
     margin-left: auto;
     margin-right: auto;
@@ -38,11 +40,14 @@ p {
     display: none;
 }
 
-.grid{
-    width: 100%;
+.grid {
+    max-width: 600px; /* Ancho máximo del grid, puedes ajustar el tamaño según tus necesidades */
+    margin: 0 auto; /* Márgenes automáticos para centrar horizontalmente */
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-  }
+    grid-template-columns: repeat(2, 1fr);
+    
+}
+
   
 div > button {
     border: 2px solid yellow;
@@ -121,4 +126,5 @@ div > button {
     }
 }
 
-/* *************************************************************************************** 
+/* *************************************************************************************** */
+
