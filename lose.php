@@ -39,6 +39,23 @@
     }
     session_destroy();
     ?>
+    <script>
+function final() {
+	var endDate = new Date();
+	let hour = endDate.getHours();
+	let minutes = endDate.getMinutes();
+	let seconds = endDate.getSeconds();
+	return {
+        "hours": hour,
+        "minutes":minutes,
+        "seconds":seconds
+    };
+}
+let fechaFinal = final();
+console.log(final())
+
+
+    </script>
 </body>
 </html>
 

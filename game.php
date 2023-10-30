@@ -6,15 +6,16 @@
     <title>Joc</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="inicio()">
+<body onload="empezarDetener(this)">
     <img src="images/milionari.png" alt="" height="150px" width="150px">
     <br>
     <span class="cronometro-sticky">
-        <p class="reloj" id="Minutos"></p>
-        <p class="reloj" id="Segundos"></p>  
+        <h2 id='crono'>00:00:00</h2>
+            <input type="button" value="Empezar" id="boton" onclick="empezarDetener(this);">
+
     </span>
     <br>
-    <div id="preguntasContainer" onload="inicio()">
+    <div id="preguntasContainer">
 <?php
 session_start();
 

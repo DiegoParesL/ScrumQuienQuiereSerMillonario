@@ -1,67 +1,63 @@
-let centesimas=0;
-let cookies = document.cookie;
-storage = window.localStorage;
-let minutos=document.getElementById("Minutos").innerText;
-let segundos=document.getElementById("Segundos").innerText;
+var inicio=0;
+var timeout=0;
 
-window.onload=function(){
-    if (localStorage.getItem("segundos")!=null && localStorage.getItem("minutos")!=null){
-        // Si al iniciar el navegador, la variable inicio que se guarda
-        // en la base de datos del navegador tiene valor, cargamos el valor
-        // y iniciamos el proceso.
-        sobreescribir();
-    }
-}
+function empezarDetener()
+{
+	if(timeout==0)
+	{
+		// empezar el cronometro
 
-function sobreescribir() {
-	let list_cookies = cookies.split(";");
-	let segundos_cookie = list_cookies[1];
-	let minutos_cookie = list_cookies[2];
-	minutos_cookie = minutos_cookie.split("=");
-	segundos_cookie = segundos_cookie.split("=");
-	localStorage.setItem("minutos",minutos_cookie[1])
-	localStorage.setItem("segundos",segundos_cookie[1])
-}
-sobreescribir();
-function inicio() {
-    control = setInterval(cronometro, 10);
-}
-inicio();
-function cronometro () {
-	var minutos = parseInt(localStorage.getItem("minutos"));
-	var segundos = parseInt(localStorage.getItem("segundos"));
-	console.log(minutos)
-	if (centesimas < 99) {
-		centesimas++;
-		if (centesimas < 10) { centesimas = "0"+centesimas }
+
+		// Obtenemos el valor actual
+		inicio=new Date().getTime();
+
+		// Guardamos el valor inicial en la base de datos del navegador
+		localStorage.setItem("inicio",inicio);
+
+		// iniciamos el proceso
+		funcionando();
+	}else{
+		// detemer el cronometro
+
+		clearTimeout(timeout);
+
+		// Eliminamos el valor inicial guardado
+		localStorage.removeItem("inicio");
+		timeout=0;
 	}
-	if (centesimas == 99) {
-		centesimas = -1;
-	}
-	if (centesimas == 0) {
-		segundos ++;
-		if (segundos < 10) { segundos = "0"+segundos }
-		Segundos.innerHTML = ":"+segundos;
-	}
-	if (segundos == 59) {
-		segundos = -1;
-	}
-	if ( (centesimas == 0)&&(segundos == 0) ) {
-		minutos++;
-		if (minutos < 10) { minutos = "0"+minutos }
-		Minutos.innerHTML = ""+minutos;
-	}
-	if (minutos == 59) {
-		minutos	 = -1;
-	}
-	sum_minutos = parseInt(localStorage.getItem("minutos"));
-	sum_segundos = parseInt(localStorage.getItem("segundos"));
-	
-	setTotalTime(minutos,segundos);
 }
 
-function setTotalTime(minutos_Set,segundos_Set) {
-	
-	localStorage.setItem("minutos",minutos_Set);
-	localStorage.setItem("segundos",segundos_Set);
+function funcionando()
+{
+	// obteneos la fecha actual
+	var actual = new Date().getTime();
+
+	// obtenemos la diferencia entre la fecha actual y la de inicio
+	var diff=new Date(actual-inicio);
+
+	// mostramos la diferencia entre la fecha actual y la inicial
+	var result=LeadingZero(diff.getUTCHours())+":"+LeadingZero(diff.getUTCMinutes())+":"+LeadingZero(diff.getUTCSeconds());
+	document.getElementById('crono').innerHTML = result;
+
+	// Indicamos que se ejecute esta función nuevamente dentro de 1 segundo
+	timeout=setTimeout("funcionando()",1000);
+}
+
+/* Funcion que pone un 0 delante de un valor si es necesario */
+function LeadingZero(Time)
+{
+	return (Time < 10) ? "0" + Time : + Time;
+}
+
+window.onload=function()
+{
+	if(localStorage.getItem("inicio")!=null)
+	{
+		// Si al iniciar el navegador, la variable inicio que se guarda
+		// en la base de datos del navegador tiene valor, cargamos el valor
+		// y iniciamos el proceso.
+		inicio=localStorage.getItem("inicio");
+		document.getElementById("boton").value="Detener";
+		funcionando();
+	}
 }
