@@ -10,8 +10,8 @@
     <img src="images/milionari.png" alt="" height="150px" width="150px">
     <br>
     <span class="cronometro-sticky">
-        <p class="reloj" id="Minutos">00</p>
-        <p class="reloj" id="Segundos">00</p>    
+        <p class="reloj" id="Minutos"></p>
+        <p class="reloj" id="Segundos"></p>  
     </span>
     <br>
     <div id="preguntasContainer" onload="inicio()">

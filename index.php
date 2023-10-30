@@ -1,8 +1,7 @@
 <?php
 session_start();
 // Restablecer el nivel del juego al nivel 1
-
-
+    
 unset($_SESSION['nivel']);
 ?>
 
@@ -39,6 +38,7 @@ unset($_SESSION['nivel']);
         <button type="submit" id="ranking" class="boton-mediano">Hall Of Fame</button>
     </form>
 
+    <script src="funciones/resetCookies.js"></script>
     <script src="funciones/funcionalidades.js"></script>
     <script src="funciones/translation.js"></script>
   
