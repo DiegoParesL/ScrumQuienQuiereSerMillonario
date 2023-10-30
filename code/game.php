@@ -73,23 +73,25 @@
         }
         return $array_of_number;
     }
-
     function preguntas_aleatorias() {
-        $i = 0;
         $preguntas = preguntas();
-        $positions = numeros_aleatorios(count($preguntas));
         $preguntas_nivel = [];
+        
         foreach ($preguntas as $key => $value) {
-            if (in_array($i, $positions)) {
-                foreach ($value as $respuestas) {
-                    $preguntas_nivel[$key][] = $respuestas;
-                }
+            $preguntas_nivel[$key] = $value;
+    
+            // Obtiene la imagen asociada si existe en la pregunta
+            if (strpos($key, '#') !== false) {
+                $image_info = explode('#', $key)[1];
+                $image_info_parts = explode(' ', $image_info);
+                $imagen_path = trim($image_info_parts[0]);
+                $preguntas_nivel[$key . ' #' . $i] = $imagen_path;
             }
-            $i++;
         }
+    
         return $preguntas_nivel;
     }
-
+    
     function print_preguntas_aleatorias() {
         $preguntas_escogidas = preguntas_aleatorias();
         $total = count($preguntas_escogidas);
@@ -102,9 +104,7 @@
             // Extraer la información de la imagen asociada, si está presente
             if (strpos($key, '#') !== false) {
                 $parts = explode("#", $key);
-                $imagen_info = trim($parts[1]);
-                $imagen_parts = explode(' ', $imagen_info);
-                $imagen_path = $imagen_parts[1];
+                $imagen_path = $parts[1];
             }
     
             if ($preguntas_restantes == $total) {
@@ -118,7 +118,7 @@
             if (!empty($imagen_path)) {
                 echo "<img src='$imagen_path' alt='Imagen asociada a la pregunta'>";
             }
-    
+
             echo "<div class='grid'>";
     
             foreach ($value as $respuestas) {

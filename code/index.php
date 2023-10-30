@@ -2,7 +2,7 @@
 session_start();
 // Restablecer el nivel del juego al nivel 1
 
-
+setcookie('aciertos', 0, time()-3600,'/');
 unset($_SESSION['nivel']);
 ?>
 
@@ -39,6 +39,7 @@ unset($_SESSION['nivel']);
     <script src="funciones/funcionalidades.js"></script>
    
     <script src="funciones/translation.js"></script>
-  
+    <script src="funciones/pass_aciertos.js"></script>
+    <script src="funciones/resetCookie.js"></script>
 </body>
 </html>
