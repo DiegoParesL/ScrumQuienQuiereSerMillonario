@@ -42,8 +42,8 @@
             $_SESSION['nivel'] = $nivel;
         }
     }
-
-    echo "<p class='' id='aciertos'>" . $nivel ."</p";
+    
+    echo "<p class='' id='aciertos'> Level: " . $nivel ."</p";
 
     function preguntas() {
         global $nivel, $idioma;
