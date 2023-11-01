@@ -46,10 +46,8 @@ function trueClick(button) {
     aciertos++;
 
     let nivel = document.getElementById("aciertos").innerText;
-
-    if (parseInt(nivel, 10) >= 6 && aciertos >= 3 ) {
+    if (parseInt(nivel, 10) >= 6 && aciertos >= 3) {
         document.getElementById("win_button").style.display = "block";
-        
     }else if  (aciertos >= totalPreguntas) {
         // El jugador ha respondido todas las preguntas correctamente
         // Mostrar los botones "Següents preguntes" e "Tornar a l'inici"
@@ -81,14 +79,6 @@ document.getElementById("inicio").addEventListener("click", function () {
 
 function publish() {
     document.getElementById('publicar').style.display = "block";
-}
-
-function toLose() {
-    window.location.href = "lose.php";
-}
-
-function toWin() {
-    window.location.href = "win.php";
 }
 
 function recompensa() {

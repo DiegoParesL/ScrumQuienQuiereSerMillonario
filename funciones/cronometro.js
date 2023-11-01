@@ -7,7 +7,6 @@ function empezarDetener()
 	{
 		// empezar el cronometro
 
-
 		// Obtenemos el valor actual
 		inicio=new Date().getTime();
 
@@ -41,6 +40,7 @@ function funcionando()
 
 	// Indicamos que se ejecute esta función nuevamente dentro de 1 segundo
 	timeout=setTimeout("funcionando()",1000);
+	document.cookie = "crono="+result
 }
 
 /* Funcion que pone un 0 delante de un valor si es necesario */

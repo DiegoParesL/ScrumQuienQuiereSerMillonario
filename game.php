@@ -6,12 +6,12 @@
     <title>Joc</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="empezarDetener(this)">
+<body>
     <img src="images/milionari.png" alt="" height="150px" width="150px">
     <br>
     <span class="cronometro-sticky">
         <h2 id='crono'>00:00:00</h2>
-            <input type="button" value="Empezar" id="boton" onclick="empezarDetener(this);">
+            <input type="button" class="oculto" value="Empezar" id="boton" >
 
     </span>
     <br>
@@ -107,7 +107,7 @@ function print_preguntas_aleatorias()
                     echo "<p class=\"oculto\" id='respuesta" . ($total - $preguntas_restantes) . "'>$respuestas</p>";
                     echo "<button name='incrementar' id=\"res" . ($total - $preguntas_restantes) . "\" onclick=\"trueClick(this)\">" . trim($respuestas, "+-") . "</button>";
                 } else {
-                    echo "<button class=\"fail" . ($total - $preguntas_restantes) . "\" onclick=\"failClick(this)\">" . trim($respuestas, "+-") . "</button>";
+                    echo "<button class=\"fail" . ($total - $preguntas_restantes) . "\" onclick=\"failClick(this);empezarDetener(this)\">" . trim($respuestas, "+-") . "</button>";
                 }
             }
             echo "</div>";
@@ -122,7 +122,7 @@ function print_preguntas_aleatorias()
                     echo "<p class=\"oculto\" id='respuesta" . ($total - $preguntas_restantes) . "'>$respuestas</p>";
                     echo "<button name='incrementar' id=\"res" . ($total - $preguntas_restantes) . "\" onclick=\"trueClick(this);contador_regresivo()\">" . trim($respuestas, "+-") . "</button>";
                 } else {
-                    echo "<button class=\"fail" . ($total - $preguntas_restantes) . "\" onclick=\"failClick(this)\">" . trim($respuestas, "+-") . "</button>";
+                    echo "<button class=\"fail" . ($total - $preguntas_restantes) . "\" onclick=\"failClick(this);empezarDetener(this)\">" . trim($respuestas, "+-") . "</button>";
                 }
             }
             echo "</div>";

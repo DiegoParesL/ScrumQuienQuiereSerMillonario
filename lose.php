@@ -34,28 +34,11 @@
     session_start();
     if (isset($_POST["nombre"])) {
         $file = fopen("records.txt", "a+");
-        fwrite($file, $_POST["nombre"] . ", 0, " . session_create_id() . "\n");
+        fwrite($file, $_POST["nombre"] . ", 0, " . session_create_id() . ", ".$_COOKIE["crono"]."\n");
         fclose($file);
     }
     session_destroy();
     ?>
-    <script>
-function final() {
-	var endDate = new Date();
-	let hour = endDate.getHours();
-	let minutes = endDate.getMinutes();
-	let seconds = endDate.getSeconds();
-	return {
-        "hours": hour,
-        "minutes":minutes,
-        "seconds":seconds
-    };
-}
-let fechaFinal = final();
-console.log(final())
-
-
-    </script>
 </body>
 </html>
 
