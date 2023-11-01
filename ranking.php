@@ -22,12 +22,17 @@
             $ranking = [];
             while (!feof($file)) {
                 $line = fgets($file);
-                $users = explode(",", $line);
-                $ranking[$users[0]." ".$users[1]] = $users[1];
+                trim($line, " ");
+                if (!ctype_space($line)) {
+                    $users = explode(",", $line);
+                    if(!empty($users[0])) {
+                        $ranking[$users[0]] = $users[1];
+                    }
+                }
             }
             arsort($ranking);
             foreach ($ranking as $order => $valor) {
-                $name = substr($order, 0, strlen($order) - 3);
+                $name = substr($order, 0, strlen($order));
                 echo "<tr>";
                 echo "<td>$name</td>";
                 echo "<td>$valor</td>";
