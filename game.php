@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['siguiente'])) {
     }
 }
 
-echo "<p class='' id='aciertos'>Nivel: " . $nivel . "</p";
+echo "<p id='aciertos'>Nivel: " . $nivel . "</p";
 
 function preguntas()
 {

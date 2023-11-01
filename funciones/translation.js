@@ -5,16 +5,15 @@ function changeLanguage(lang) {
         'spanish': {
             'titulo': 'Bienvenido al juego ¿Quién quiere ser millonario?',
             'descripcion': 'Este juego está basado en el programa de televisión. En él, hay diferentes niveles de dificultad en las preguntas. Comenzaremos en el nivel 1 y a medida que respondamos preguntas, n\' subiremos de nivel hasta el nivel 6. Cada nivel de dificultad consta de 3 preguntas en total y una vez que respondamos correctamente las 3, pasaremos al siguiente nivel, hasta que respondamos las 18 preguntas en total o fallemos.',
-            'boton-jugar': 'Play',
-            'ranking' : 'Hall of Fame'
-            
-           
+            'boton-jugar': 'Jugar',
+            'ranking' : 'Salón de la Fama'
+                       
         },
         'catalan': {
             'titulo': 'Benvingut al joc Qui vol ser milionari?',
             'descripcion': 'Aquest joc està basat en el programa de televisió. En ell, hi ha diferents nivells de dificultat en les preguntes. Començarem en el nivell 1 i a mesura que anem encertant preguntes, pujarem de nivell fins al nivell 6. Cada nivell de dificultat consta de 3 preguntes en total y un cop n\'haguem encertat les 3, passarem al següent nivell, fins que n\'haguem encertat les 18 preguntes en total o fallat.',
-            'boton-jugar': 'Play',
-            'ranking' : 'Hall of Fame'
+            'boton-jugar': 'Jugar',
+            'ranking' : 'Saló de la Fama'
             
         },
         'english': {
