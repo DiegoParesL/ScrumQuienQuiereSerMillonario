@@ -9,11 +9,8 @@
 <body>
     <img src="images/milionari.png" alt="" height="150px" width="150px">
     <br>
-    <span class="cronometro-sticky">
-        <h2 id='crono'>00:00:00</h2>
-            <input type="button" class="oculto" value="Empezar" id="boton" >
-
-    </span>
+    <h2 id='crono'>00:00:00</h2>
+    <input type="button" class="oculto" value="Empezar" id="boton" >
     <br>
     <div id="preguntasContainer">
 <?php
@@ -116,13 +113,13 @@ function print_preguntas_aleatorias()
             echo "<div id='pregunta" . ($total - $preguntas_restantes + 1) . "' class='oculto' >";
             echo "<p id='cronometro-preguntas'></p>";
             echo "<h2>" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
-            echo "<div class='grid' onload='cuenta_atras()'>";
+            echo "<div class='grid'>";
             foreach ($value as $respuestas) {
                 if ($respuestas[0] === "+") {
                     echo "<p class=\"oculto\" id='respuesta" . ($total - $preguntas_restantes) . "'>$respuestas</p>";
-                    echo "<button name='incrementar' id=\"res" . ($total - $preguntas_restantes) . "\" onclick=\"trueClick(this);contador_regresivo()\">" . trim($respuestas, "+-") . "</button>";
+                    echo "<button name='incrementar' id=\"res" . ($total - $preguntas_restantes) . "\" onclick=\"trueClick(this)\">" . trim($respuestas, "+-") . "</button>";
                 } else {
-                    echo "<button class=\"fail" . ($total - $preguntas_restantes) . "\" onclick=\"failClick(this)\">" . trim($respuestas, "+-") . "</button>";
+                    echo "<button class=\"fail" . ($total - $preguntas_restantes) . "\" onclick=\"failClick(this);empezarDetener(this)\">" . trim($respuestas, "+-") . "</button>";
                 }
             }
             echo "</div>";

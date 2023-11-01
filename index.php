@@ -38,7 +38,6 @@ unset($_SESSION['nivel']);
         <button type="submit" id="ranking" class="boton-mediano">Saló de la Fama</button>
     </form>
     <script src="funciones/cronometro.js"></script>
-    <script src="funciones/resetCookies.js"></script>
     <script src="funciones/funcionalidades.js"></script>
     <script src="funciones/translation.js"></script>
   
