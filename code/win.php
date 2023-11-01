@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+if (!isset($_SERVER['HTTP_REFERER']) || !strpos($_SERVER['HTTP_REFERER'], "game.php")) {
+    // Si la página no se accede desde "game.php", redirige o muestra un mensaje de error.
+    header("HTTP/1.1 403 Forbidden");
+   
+    exit;
+}
+// El contenido de la página "win.php" continua aquí
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +23,7 @@
         <h3>You got it</h3>
         <p><button id="win" class="boton-mediano" onclick="recompensa()">Show Correct Answers</button></p>
         <form action="index.php" method="post">
-            <button class="boton-mediano">Back To Start</button>
+            <button class="boton-mediano" >Back To Start</button>
         </form>
     </div>
 
@@ -26,8 +38,8 @@
     <br>
     <div class="oculto" id="publicar">
     <form method="post" id="publicar">
-        <input type="text" name="nombre" id="nombre" required>
-        <button onclick="toIndex()" type="submit" name="send" id="send">Enviar</button>
+        <input type="text" name="nombre" id="nombre">
+        <button type="submit" name="send" id="send">Enviar</button>
     </form>
     </div>
 
@@ -35,11 +47,11 @@
     <script src="funciones/funcionalidades.js"></script>
     <?php
         session_start();
-        $aciertos = $_COOKIE["aciertos"];
         if (isset($_POST["nombre"])) {
             $file = fopen("records.txt", "a+");
-            fwrite($file,$_POST["nombre"].", ". strval($aciertos).", ".session_create_id()."\n");
+            fwrite($file,$_POST["nombre"].", 18, ".session_id()."\n");
             fclose($file);           
+             
         }
         session_destroy();
     ?>
