@@ -122,7 +122,7 @@ function print_preguntas_aleatorias()
                     echo "<p class=\"oculto\" id='respuesta" . ($total - $preguntas_restantes) . "'>$respuestas</p>";
                     echo "<button name='incrementar' id=\"res" . ($total - $preguntas_restantes) . "\" onclick=\"trueClick(this);contador_regresivo()\">" . trim($respuestas, "+-") . "</button>";
                 } else {
-                    echo "<button class=\"fail" . ($total - $preguntas_restantes) . "\" onclick=\"failClick(this);empezarDetener(this)\">" . trim($respuestas, "+-") . "</button>";
+                    echo "<button class=\"fail" . ($total - $preguntas_restantes) . "\" onclick=\"failClick(this)\">" . trim($respuestas, "+-") . "</button>";
                 }
             }
             echo "</div>";
