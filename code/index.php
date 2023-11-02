@@ -44,6 +44,7 @@ unset($_SESSION['nivel']);
     <script src="funciones/funcionalidades.js"></script>
     <script src="funciones/cronometro.js"></script>
     <script src="funciones/publicoLocalStorage.js"></script>
+    <script src="funciones/resetCookie.js"></script>
     <script src="funciones/translation.js"></script>
     <script>
         document.cookie = "crono=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";

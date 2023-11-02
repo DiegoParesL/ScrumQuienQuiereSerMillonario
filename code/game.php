@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<?php
+        echo"<div id=\"oculto\" class=\"publico\">";
+        echo"<div class=\"publicOcult red-bar\">";
+        echo"</div>";
+        echo"<div class=\"publicOcult blue-bar\">";
+        echo"</div>";
+        echo"<div class=\"publicOcult orange-bar\">";
+        echo"</div>";
+        echo"<div class=\"publicOcult yellow-bar\">";
+        echo"</div>";
+        echo"</div>";
+    ?>  
 <a href="win.php">
     <img src="images/milionari.png" alt="" height="150px" width="150px">
 </a>
