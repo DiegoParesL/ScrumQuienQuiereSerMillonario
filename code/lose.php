@@ -54,7 +54,9 @@ if (
         //print_r($segundos_totales);
         if (isset($_POST["nombre"])) {
             $file = fopen("records.txt", "a+");
-            fwrite($file,$_POST["nombre"].", ".$_COOKIE["aciertos"].", ".session_create_id().", ".$tiempo."\n");
+
+            $puntuacion = intval("-1")*((intval("1") - pow(intval("2.718"),(intval("1") + intval($_COOKIE["aciertos"])))/(intval("1")+intval($tiempo)*intval("3")))*intval("100"));
+            fwrite($file,$_POST["nombre"].", ".$_COOKIE["aciertos"].", ".session_create_id().", ".$tiempo.", ".$puntuacion."\n");
             fclose($file);            
         }
     ?>

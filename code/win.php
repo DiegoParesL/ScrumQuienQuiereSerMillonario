@@ -51,10 +51,10 @@ if (
     <script src="funciones/win_sound.js"></script>
     <script src="funciones/funcionalidades.js"></script>
     <?php
-        session_start();
         if (isset($_POST["nombre"])) {
             $file = fopen("records.txt", "a+");
-            fwrite($file,$_POST["nombre"].", 18, ".session_id()."\n");
+            $puntuacion = intval("-1")*((intval("1") - pow(intval("2.718"),(intval("1") + intval($_COOKIE["aciertos"])))/(intval("1")+intval($tiempo)*intval("3")))*intval("100"));
+            fwrite($file,$_POST["nombre"].", 18, ".session_id().", ".$puntuacion."\n");
             fclose($file);           
              
         }
