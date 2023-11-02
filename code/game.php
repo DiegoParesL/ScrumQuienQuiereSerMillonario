@@ -38,7 +38,7 @@
     <div class="vertical-buttons">
     <h2 id='crono'>00:00:00</h2>
         <button onclick="comodin50_50()">
-            <img src="images/comodin50.png" alt="" width="50" height="50">
+            <img src="images/COMODIN50.png" alt="" width="50" height="50">
            
         </button>
         <button onclick="preguntaAlPublico()" id="comodinPublico">
