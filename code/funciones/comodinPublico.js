@@ -90,7 +90,7 @@ function preguntaAlPublico() {
         let padreAnimacion = document.getElementById("oculto");
         //get child elements from div id = oculto
         let bars =document.getElementById("oculto").children;
-        let res = document.getElementsByClassName("grid")[numPregunta].children;
+        let res = document.getElementsByClassName("grid")[(numPregunta%3)].children;
         let cond = Math.floor(Math.random()*100)<=80;
         let cont = 0;
         
@@ -104,7 +104,7 @@ function preguntaAlPublico() {
                     }
                     cont++;
                     //console.log(res[i]);
-                    animacion(bars[cont-1],padreAnimacion, cont, res[i],cond,numPregunta);
+                    animacion(bars[cont-1],padreAnimacion, cont, res[i],cond,(numPregunta%3));
                 }
             }
         }

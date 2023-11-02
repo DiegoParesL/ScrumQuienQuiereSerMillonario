@@ -43,7 +43,7 @@ unset($_SESSION['nivel']);
 
     <script src="funciones/funcionalidades.js"></script>
     <script src="funciones/cronometro.js"></script>
-    <script src="funciones/publicoLocalStorage.js"></script>
+    <script src="funciones/LocalStorageComodinesU.js"></script>
     <script src="funciones/resetCookie.js"></script>
     <script src="funciones/translation.js"></script>
     <script>

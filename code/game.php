@@ -30,7 +30,7 @@
     <div id="preguntasContainer">
     <div class="vertical-buttons">
     <h2 id='crono'>00:00:00</h2>
-        <button onclick="funcionUno()">
+        <button onclick="comodin50_50()">
             <img src="images/comodin50.png" alt="" width="50" height="50">
            
         </button>
@@ -118,7 +118,7 @@
         $aciertos = $_COOKIE["aciertos"];
     }
     echo "<form>";
-    echo "<input type='hidden' id='valueAciertos' name='aciertos' value='$aciertos' > ";
+    echo "<input type='text' id='valueAciertos' name='aciertos' value='$aciertos' > ";
     echo "</form>";
    
     function print_preguntas_aleatorias()
@@ -126,14 +126,9 @@
         $preguntas_escogidas = preguntas_aleatorias();
         $total = count($preguntas_escogidas);
         $preguntas_restantes = $total;
-        echo "<form method='post' action='#'>";
+        
 
-        if (!isset($_COOKIE["aciertos"])) {
-            $_COOKIE["aciertos"] = 0;
-            $aciertos = $_COOKIE["aciertos"];
-        }else{
-            $aciertos = $_COOKIE["aciertos"];
-        }
+        
         //echo "<input type='text' id='valueAciertos' name='aciertos' value='$aciertos' > ";
         foreach ($preguntas_escogidas as $key => $value) {
             if ($preguntas_restantes == $total) {
@@ -215,6 +210,7 @@
     <script src="funciones/funcionalidades.js"></script>
     <script src="funciones/pass_aciertos.js"></script>
     <script src="funciones/comodinPublico.js"></script>
+    <script src="funciones/comodin50_50.js"></script>
     <script src="funciones/cronometro.js"></script>
 
     <script>
