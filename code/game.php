@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <noscript>
+    <h1 id="jsDisabledMessage">Javascript is disabled, activate it to play</h1>
+</noscript>
 <?php
         echo"<div id=\"oculto\" class=\"publico\">";
         echo"<div class=\"publicOcult red-bar\">";
