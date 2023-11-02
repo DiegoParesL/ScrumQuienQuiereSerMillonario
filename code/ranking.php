@@ -24,19 +24,21 @@
             <?php
             $file = fopen("records.txt", "r");
             $ranking = [];
+            $num_user = 0;
             while (!feof($file)) {
                 $line = fgets($file);
                 trim($line, " ");
                 if (!ctype_space($line)) {
                     $users = explode(",", $line);
                     if(!empty($users[0])) {
-                        $ranking[$users[0]] = $users[1];
+                        $ranking[$users[0]." ".$num_user] = $users[1];
+                        $num_user++;
                     }
                 }
             }
             arsort($ranking);
             foreach ($ranking as $order => $valor) {
-                $name = substr($order, 0, strlen($order));
+                $name = substr($order, 0, strlen($order)-3);
                 
                 echo "<tr>";
                 

@@ -1,5 +1,5 @@
-a, 1, kr6fotqda0ls62drqo0rjrd32u, 00:00:01, 300
-sprint_2_fail, 4, o075a6e7lonlo1h2ot04lpj2ch, 00:00:05, 3100
-prueba_2, 9, 911hdknjugrhrn7142nfdsf7ne, 00:00:12, 102300
-presentacion, 4, og7od4mevmvl7glm9fmf3s03mc, 00:02:43, 3100
-winner, 18, s5e20lso6l2gcdjsruqjj1fpmi, 100
+imbecil , 0, ingjdp8dl0jfiebqv6t11oldgi, 00:00:00, 100
+imbecil , 0, e95b0mmvrnucdtnpo3isqmvvka, 00:00:00, 100
+imbecil , 0, j7812f1hk0a5blu9udbs0bs6cv, 00:00:00, 100
+imbecil , 0, h5b4tucadredav0egu6qcqr6oe, 00:00:00, 100
+idiota , 1, fe213en69f4g9bbhl8tfb9b8ig, 00:00:01, 300

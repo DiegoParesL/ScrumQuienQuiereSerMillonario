@@ -51,14 +51,21 @@ if (
     <script src="funciones/win_sound.js"></script>
     <script src="funciones/funcionalidades.js"></script>
     <?php
+        $tiempo = $_COOKIE["crono"];
+        $tiempo_separado = explode(":", $tiempo);
+        $segundos_totales = (($tiempo_separado[0]*3600)+($tiempo_separado[1]*60)+($tiempo_separado[2]));
+        //print_r($segundos_totales);
         if (isset($_POST["nombre"])) {
             $file = fopen("records.txt", "a+");
             $puntuacion = intval("-1")*((intval("1") - pow(intval("2.718"),(intval("1") + intval($_COOKIE["aciertos"])))/(intval("1")+intval($tiempo)*intval("3")))*intval("100"));
-            fwrite($file,$_POST["nombre"].", 18, ".session_id().", ".$puntuacion."\n");
-            fclose($file);           
-             
+            fwrite($file,$_POST["nombre"].", ".$_COOKIE["aciertos"].", ".session_create_id().", ".$tiempo.", ".$puntuacion."\n");
+            fclose($file);
+            ?>
+            <script type="text/javascript">
+                document.getElementById("publish_button").style.display = "none";    
+            </script>
+            <?php
         }
-        session_destroy();
     ?>
 </body>
 </html>
