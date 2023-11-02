@@ -134,6 +134,7 @@
         $total = count($preguntas_escogidas);
         $preguntas_restantes = $total;
         
+        
 
         
         //echo "<input type='text' id='valueAciertos' name='aciertos' value='$aciertos' > ";

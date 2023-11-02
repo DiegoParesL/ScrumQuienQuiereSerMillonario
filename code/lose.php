@@ -38,10 +38,10 @@ if (
     <p><button class="boton-mediano" onclick="window.location.href = 'index.php'">Back To Start</button>
     <button id="publish_button" name="publish_button" type="submit"  class="boton-mediano"onclick="publish()">Publish</button></p>
     </div>
-    <div class="oculto" id="publicar">
+    <div class="oculto"  id="publicar">
     <form method="post"  id="publicar">
             <input type="text" name="nombre" id="nombre" placeholder="Introduce Your Name">
-            <button type="submit" name="send" id="send">Send</button>
+            <input type="submit" name="send" onclick="index()" id="send">
     </form> 
     </div>
 
