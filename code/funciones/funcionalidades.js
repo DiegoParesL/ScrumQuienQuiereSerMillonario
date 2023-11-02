@@ -34,9 +34,30 @@ function failClick() {
     // Ocultar el contador al fallar una pregunta
     document.getElementById('contadorRegresivo').style.display = 'none';
 }
-
-
+//para el comodin del publico, que le pase el valor del grid al js de comodin_publico.js
+function setNumPadreGrid() {
+    let cont =0;
+    return cont
+}
+function createCont() {
+    let c =0;
+    return c;
+}
 function trueClick(button, pregunta_id) {
+    //para el comodin del publico, que incremente el valor del grid para el js de comodin_publico.js
+    
+    if (createCont()==0) {
+        let cont = createCont();
+        console.log("cont de valor: "+cont);
+        window.localStorage.setItem("numPregunta",cont);
+        cont ++
+    } else{
+        cont++
+        window.localStorage.setItem("numPregunta",cont);
+    }
+    
+    //para el comodin del publico, que le pase el valor del grid al js de comodin_publico.js
+    
     playCorrect();
     button.style.color = "rgb(0, 255, 0)";
 

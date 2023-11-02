@@ -15,7 +15,7 @@ unset($_SESSION['nivel']);
     <title>Qui vol ser milionari?</title>
 </head>
 
-<body>
+<body >
     <header>
         <p>
             <a href="#" onclick="changeLanguage('spanish');"><img src="images/spain.png" alt="Español" height="50px"></a>&nbsp;
@@ -37,8 +37,8 @@ unset($_SESSION['nivel']);
     </form>
 
     <script src="funciones/funcionalidades.js"></script>
-   
+    <script src="funciones/resetCookie.js"></script>
+    <script src="funciones/publicoLocalStorage.js"></script>
     <script src="funciones/translation.js"></script>
-  
 </body>
 </html>

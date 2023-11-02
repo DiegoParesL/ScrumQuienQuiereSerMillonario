@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <?php
+        echo"<div id=\"oculto\" class=\"publico\">";
+        echo"<div class=\"publicOcult red-bar\">";
+        echo"</div>";
+        echo"<div class=\"publicOcult blue-bar\">";
+        echo"</div>";
+        echo"<div class=\"publicOcult orange-bar\">";
+        echo"</div>";
+        echo"<div class=\"publicOcult yellow-bar\">";
+        echo"</div>";
+        echo"</div>";
+    ?>  
     <img src="images/milionari.png" alt="" height="150px" width="150px">
     <div id="preguntasContainer">
     <div class="vertical-buttons">
@@ -14,7 +26,7 @@
             <img src="images/comodin50.png" alt="" width="50" height="50">
            
         </button>
-        <button onclick="preguntaAlPublico()">
+        <button id="trigger" onclick="preguntaAlPublico()">
             <img src="images/comodinpublico.png" alt="" width="50" height="50">
             
         </button>
@@ -91,7 +103,15 @@
     }
 
    
-    
+    if (!isset($_COOKIE["aciertos"])) {
+        $_COOKIE["aciertos"] = 0;
+        $aciertos = $_COOKIE["aciertos"];
+    } else {
+        $aciertos = $_COOKIE["aciertos"];
+    }
+    echo "<form>";
+    echo "<input type='hidden' id='valueAciertos' name='aciertos' value='$aciertos' > ";
+    echo "</form>";
     function print_preguntas_aleatorias()
 
     {
@@ -101,6 +121,7 @@
             'What Did Gandhi Do For The World?' => './imagesGame/Question1.png',
             '¿Qué hizo Gandhi por el mundo?' => './imagesGame/Question1.png'
         ];
+        
         $preguntas_escogidas = preguntas_aleatorias();
         $total = count($preguntas_escogidas);
         $preguntas_restantes = $total;
@@ -211,18 +232,7 @@
         iniciarContador();
     <?php } ?>
     </script>
-    <?php
-            echo"<div id=\"oculto\" class=\"publico\">";
-            echo"<div class=\"publicOcult red-bar\">";
-            echo"</div>";
-            echo"<div class=\"publicOcult blue-bar\">";
-            echo"</div>";
-            echo"<div class=\"publicOcult orange-bar\">";
-            echo"</div>";
-            echo"<div class=\"publicOcult yellow-bar\">";
-            echo"</div>";
-            echo"</div>";
-        ?>
+    
  
 
 </body>
