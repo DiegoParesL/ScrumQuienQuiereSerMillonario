@@ -359,6 +359,62 @@ div > button {
 
 
     /***************************************************************************/
-    /****************************** GAME.PHP **********************************/
+    /****************************** GAME.PHP ***********************************/
+
+    .bodyGame{
+        padding-top: 60px;
+    }
+
+    .imgGame {
+        padding-top: 12px;
+        width: 320px;
+        height: 300px;
+    }
     
-}
+    .botonesGame {
+        padding-top: 300px;
+        margin-right: 257px;
+    }
+
+    .preguntaGame {
+        font-size: 200px;
+    }
+    .vertical-buttons {
+        position: fixed;
+        padding-left: 150px;
+        padding-top: 150px;
+        left: 95px;
+        top: 26%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .vertical-buttons button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 202px; /* Diámetro del círculo */
+        height: 159px; /* Diámetro del círculo */
+        border: none; /* Elimina el borde */
+        border-radius: 70%; /* Borde redondo para hacer el círculo */
+        cursor: pointer;
+        overflow: hidden; /* Recorta la imagen para adaptarla al círculo */
+        padding: 0; /* Elimina el relleno interno del botón */
+        border: 2px solid rgb(246, 251, 255); /* Borde azul con grosor de 2px */
+    }
+    
+    .vertical-buttons button img {
+        width: 95%; /* Ocupa todo el ancho del botón */
+        height: auto; /* Altura automática para mantener la proporción */
+        object-fit: cover; /* Ajusta la imagen a las dimensiones del botón */
+    }
+    
+    button {
+        width: 400px;
+        height: 140px;
+        padding-right: 200px;
+        margin-right: 200px;
+    }
+
+    }

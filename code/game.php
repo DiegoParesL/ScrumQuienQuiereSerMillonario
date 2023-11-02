@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head >
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joc</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="bodyGame">
     <noscript>
     <h1 id="jsDisabledMessage">Javascript is disabled, activate it to play</h1>
 </noscript>
@@ -26,26 +26,27 @@
         echo"</div>";
         echo"</div>";
     ?>  
-<a href="win.php">
-    <img src="images/milionari.png" alt="" height="150px" width="150px">
-</a>
+    <a href="win.php">
+    <img class="imgGame"src="images/milionari.png" alt="" height="150px" width="150px">
+    </a>
     <br>
     
     <input type="button" class="oculto" value="Empezar" id="boton" >
     <br>
 
     <div id="preguntasContainer">
-    <div class="vertical-buttons">
-    <h2 id='crono'>00:00:00</h2>
-        <button onclick="comodin50_50()">
+        <h2 id='crono'>00:00:00</h2>
+        <div class="vertical-buttons">
+        
+        <button  onclick="comodin50_50()">
             <img src="images/COMODIN50.png" alt="" width="50" height="50">
-           
+            
         </button>
         <button onclick="preguntaAlPublico()" id="comodinPublico">
             <img src="images/comodinpublico.png" alt="" width="50" height="50">
             
         </button>
-        <button onclick="tiempoExtra()" id="comodinTiempoExtra" >
+        <button  onclick="tiempoExtra()" id="comodinTiempoExtra" >
             <img src="images/comodintiempoextra.png" alt="" width="550" height="50">
         </button>
     </div>
@@ -139,7 +140,7 @@
         //echo "<input type='text' id='valueAciertos' name='aciertos' value='$aciertos' > ";
         foreach ($preguntas_escogidas as $key => $value) {
             if ($preguntas_restantes == $total) {
-                echo "<div>";
+                echo "<div class='botonesGame'>";
                 echo "<h2 style='font-size: 40px;' >" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
                 echo "<p id='cronometro-preguntas'></p>";
 
