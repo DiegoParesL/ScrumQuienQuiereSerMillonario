@@ -1,5 +1,1 @@
-imbecil , 0, ingjdp8dl0jfiebqv6t11oldgi, 00:00:00, 100
-imbecil , 0, e95b0mmvrnucdtnpo3isqmvvka, 00:00:00, 100
-imbecil , 0, j7812f1hk0a5blu9udbs0bs6cv, 00:00:00, 100
-imbecil , 0, h5b4tucadredav0egu6qcqr6oe, 00:00:00, 100
-idiota , 1, fe213en69f4g9bbhl8tfb9b8ig, 00:00:01, 300
+f , 0, 858bihed0sfkq33ic2lhq9mmvh, 00:00:00, 100
