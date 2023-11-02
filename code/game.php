@@ -69,7 +69,7 @@
         }
     }
 
-    echo "<p> LEVEL <p class='' id='aciertos'>" .$nivel ."</p></p>";
+    echo "<p class='' id='aciertos'>NIVEL " . $nivel . "</p>";
 
     function preguntas() {
         global $nivel, $idioma;
