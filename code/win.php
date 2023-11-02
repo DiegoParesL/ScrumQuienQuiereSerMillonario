@@ -1,10 +1,15 @@
 <?php
 session_start();
 
-if (!isset($_SERVER['HTTP_REFERER']) || !strpos($_SERVER['HTTP_REFERER'], "game.php")) {
-    // Si la página no se accede desde "game.php", redirige o muestra un mensaje de error.
+if (
+    !isset($_SERVER['HTTP_REFERER']) || 
+    (
+        strpos($_SERVER['HTTP_REFERER'], "game.php") === false && 
+        strpos($_SERVER['HTTP_REFERER'], "win.php") === false
+    )
+) {
+    // Si la página no se accede desde "game.php" ni desde "win.php", redirige o muestra un mensaje de error.
     header("HTTP/1.1 403 Forbidden");
-   
     exit;
 }
 // El contenido de la página "win.php" continua aquí

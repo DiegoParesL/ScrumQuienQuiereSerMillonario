@@ -21,6 +21,7 @@ function disableButtons(buttons) {
 
 function failClick() {
     playIncorrect();
+    empezarDetener();
     document.getElementById("lose_button").style.display = "block";
     let fails = document.getElementsByClassName("fail" + aciertos);
     for (let i = 0; i < fails.length; i++) {
@@ -76,6 +77,7 @@ function trueClick(button, pregunta_id) {
         document.getElementById("win_button").style.display = "block";
         let contador = document.getElementById('contadorRegresivo');
         contador.style.display = 'none'; // Oculta el contador al mostrar el botón de "Next Level"
+        empezarDetener();
     } else if (aciertos >= totalPreguntas) {
         document.getElementById("botones").style.display = "block";
         let contador = document.getElementById('contadorRegresivo');
