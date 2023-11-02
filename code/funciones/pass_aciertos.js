@@ -1,5 +1,4 @@
-function setAciertos() {
-    let numAciertos;
+let numAciertos;
     if(document.getElementById("valueAciertos").value == 0 || document.getElementById("valueAciertos").value =='' ) {
         numAciertos=0;
         console.log(numAciertos,"numAciertos")
@@ -7,6 +6,8 @@ function setAciertos() {
         numAciertos = document.getElementById("valueAciertos").value;
         console.log(numAciertos,"numAciertos")
     }
+function setAciertos() {
+    
     
     
     numAciertos++;

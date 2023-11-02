@@ -118,25 +118,19 @@ function reiniciarContador() {
     tiempoRestante = 30; // Reiniciar el tiempo a 30 segundos
 }
 
+
+// *********************************************************************************************************
+// FUNCION COMODIN TIEMPO EXTRA
 function tiempoExtra() {
-    const mensaje = "You get 30 extra seconds!";
-    alert(mensaje); // Mostrar un mensaje al hacer clic en el botón de tiempo extra
-
-    // Obtener el contador actual
     const contador = document.getElementById('tiempoRestante');
-
-    // Sumar 30 segundos al tiempo restante
     tiempoRestante += 30;
-
-    // Mostrar el tiempo restante actualizado en el contador
     contador.textContent = tiempoRestante + ' s';
 
-    // Deshabilitar el botón después de usarlo
     const botonTiempoExtra = document.getElementById('comodinTiempoExtra');
     botonTiempoExtra.disabled = true;
+    //botonTiempoExtra.classList.add('boton-usado'); // Agrega una clase para aplicar estilos de botón usado
 }
-
-
+// *********************************************************************************************************
 
 
 
@@ -156,6 +150,9 @@ function mostrarSiguiente(numeroPregunta) {
     }
 }
 
+
+
+
 // Agregar la función para redirigir a index.php
 document.getElementById("inicio").addEventListener("click", function () {
     window.location.href = "index.php";
@@ -173,6 +170,9 @@ function toWin() {
     window.location.href = "win.php";
 }
 
+function index() {
+    window.location.href = "index.php";
+}
 
 function recompensa() {
     document.getElementById("pantalla").style.display = "block";

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <?php
+<?php
         echo"<div id=\"oculto\" class=\"publico\">";
         echo"<div class=\"publicOcult red-bar\">";
         echo"</div>";
@@ -19,14 +19,22 @@
         echo"</div>";
         echo"</div>";
     ?>  
+<a href="win.php">
     <img src="images/milionari.png" alt="" height="150px" width="150px">
+</a>
+    <br>
+    
+    <input type="button" class="oculto" value="Empezar" id="boton" >
+    <br>
+
     <div id="preguntasContainer">
     <div class="vertical-buttons">
-        <button onclick="funcionUno()">
+    <h2 id='crono'>00:00:00</h2>
+        <button onclick="comodin50_50()">
             <img src="images/comodin50.png" alt="" width="50" height="50">
            
         </button>
-        <button id="trigger" onclick="preguntaAlPublico()">
+        <button onclick="preguntaAlPublico()" id="comodinPublico">
             <img src="images/comodinpublico.png" alt="" width="50" height="50">
             
         </button>
@@ -34,6 +42,8 @@
             <img src="images/comodintiempoextra.png" alt="" width="550" height="50">
         </button>
     </div>
+
+   
     
     <?php
     
@@ -52,7 +62,7 @@
         }
     }
 
-    echo "<p class='' id='aciertos'>" . $nivel ."</p";
+    echo "<p class='' id='aciertos'>". "LEVEL ". $nivel ."</p";
 
     function preguntas() {
         global $nivel, $idioma;
@@ -101,8 +111,6 @@
         }
         return $preguntas_nivel;
     }
-
-   
     if (!isset($_COOKIE["aciertos"])) {
         $_COOKIE["aciertos"] = 0;
         $aciertos = $_COOKIE["aciertos"];
@@ -110,72 +118,54 @@
         $aciertos = $_COOKIE["aciertos"];
     }
     echo "<form>";
-    echo "<input type='hidden' id='valueAciertos' name='aciertos' value='$aciertos' > ";
+    echo "<input type='text' id='valueAciertos' name='aciertos' value='$aciertos' > ";
     echo "</form>";
+   
     function print_preguntas_aleatorias()
-
     {
-
-        $preguntasConImagenes = [
-            'Què va fer Gandhi pel món?' => './imagesGame/Question1.png',
-            'What Did Gandhi Do For The World?' => './imagesGame/Question1.png',
-            '¿Qué hizo Gandhi por el mundo?' => './imagesGame/Question1.png'
-        ];
-        
         $preguntas_escogidas = preguntas_aleatorias();
         $total = count($preguntas_escogidas);
         $preguntas_restantes = $total;
-        echo "<form method='post' action='#'>";
-        if (!isset($_COOKIE["aciertos"])) {
-            $_COOKIE["aciertos"] = 0;
-            $aciertos = $_COOKIE["aciertos"];
-        } else {
-            $aciertos = $_COOKIE["aciertos"];
-        }
+        
+
+        
+        //echo "<input type='text' id='valueAciertos' name='aciertos' value='$aciertos' > ";
         foreach ($preguntas_escogidas as $key => $value) {
             if ($preguntas_restantes == $total) {
                 echo "<div>";
-                echo "<h2>" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
-    
-                // Verificar si la pregunta actual tiene una imagen asociada
-                if (array_key_exists($key, $preguntasConImagenes)) {
-                    echo "<img src='" . $preguntasConImagenes[$key] . "' alt='Imagen relacionada a la pregunta'>";
-                }
-    
+                echo "<h2 style='font-size: 40px;' >" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
+                echo "<p id='cronometro-preguntas'></p>";
+
                 echo "<div class='grid'>";
                 foreach ($value as $respuestas) {
                     if ($respuestas[0] === "+") {
                         echo "<p class=\"oculto\" id='respuesta" . ($total - $preguntas_restantes) . "'>$respuestas</p>";
-                        echo "<button id=\"res" . ($total - $preguntas_restantes) . "\" onclick=\"trueClick(this);setAciertos();\">" . trim($respuestas, "+-") . "</button>";
+                        echo "<button name='incrementar' id=\"res" . ($total - $preguntas_restantes) . "\" style='font-size: 20px;' onclick=\"trueClick(this);setAciertos();\">" . trim($respuestas, "+-") . "</button>";
                     } else {
-                        echo "<button class=\"fail" . ($total - $preguntas_restantes) . "\" onclick=\"failClick(this)\">" . trim($respuestas, "+-") . "</button>";
+                        echo "<button class=\"fail" . ($total - $preguntas_restantes) . "\" style='font-size: 20px;' onclick=\"failClick(this)\">" . trim($respuestas, "+-") . "</button>";
                     }
                 }
                 echo "</div>";
                 echo "</div>";
             } else {
                 echo "<div id='pregunta" . ($total - $preguntas_restantes + 1) . "' class='oculto'>";
-                echo "<h2>" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
-    
-                // Verificar si la pregunta actual tiene una imagen asociada
-                if (array_key_exists($key, $preguntasConImagenes)) {
-                    echo "<img src='" . $preguntasConImagenes[$key] . "' alt='Imagen relacionada a la pregunta'>";
-                }
-    
+                echo "<p id='cronometro-preguntas'></p>";
+                echo "<h2 style='font-size: 40px;' >" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
                 echo "<div class='grid'>";
                 foreach ($value as $respuestas) {
                     if ($respuestas[0] === "+") {
                         echo "<p class=\"oculto\" id='respuesta" . ($total - $preguntas_restantes) . "'>$respuestas</p>";
-                        echo "<button id=\"res" . ($total - $preguntas_restantes) . "\" onclick=\"trueClick(this);setAciertos();\">" . trim($respuestas, "+-") . "</button>";
+                        echo "<button name='incrementar' id=\"res" . ($total - $preguntas_restantes) . "\" style='font-size: 20px;'onclick=\"trueClick(this);setAciertos();\">" . trim($respuestas, "+-") . "</button>";
                     } else {
-                        echo "<button class=\"fail" . ($total - $preguntas_restantes) . "\" onclick=\"failClick(this)\">" . trim($respuestas, "+-") . "</button>";
+                        echo "<button class=\"fail" . ($total - $preguntas_restantes) . "\" style='font-size: 20px;' onclick=\"failClick(this)\">" . trim($respuestas, "+-") . "</button>";
                     }
                 }
-                echo "</div>";
+                echo "</div>";  
                 echo "</div>";
             }
             $preguntas_restantes--;
         }
+        
     }
     
 
@@ -189,7 +179,7 @@
             <br>
             <button name="siguiente" class="boton-accion grande" id="siguiente">Next Level</button>
             <br>
-            <button class="boton-accion grande" onclick="window.location.href='index.php'">Menu</button>
+            <button type="button" class="boton-accion grande" onclick="window.location.href='index.php'">Menu</button>
         </form>
     </div>
 
@@ -219,20 +209,25 @@
      <script src="funciones/sounds.js"></script>
     <script src="funciones/funcionalidades.js"></script>
     <script src="funciones/pass_aciertos.js"></script>
-    <script src="funciones/comodin_publico.js"></script>'
-    
+    <script src="funciones/comodinPublico.js"></script>
+    <script src="funciones/comodin50_50.js"></script>
+    <script src="funciones/cronometro.js"></script>
+
     <script>
-    
     let tiempoRestante = 30; // Por ejemplo, 30 segundos
     // Solo si el nivel es mayor o igual a 2, inicia el contador
 
     <?php if ($nivel >= 2) { ?>
         // Establecer el tiempo inicial en segundos
+        
+
         // Llamar a la función para iniciar el contador
         iniciarContador();
     <?php } ?>
     </script>
+
     
+
  
 
 </body>

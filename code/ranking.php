@@ -12,8 +12,9 @@
     <table>
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Score</th>
+                <th style='font-size: 40px; padding-right: 20px;'>Name</th>
+                <br>
+                <th style='font-size: 40px; padding-left: 20px;'>Score</th>
             </tr>
         </thead>
         <tbody>
@@ -33,9 +34,12 @@
             arsort($ranking);
             foreach ($ranking as $order => $valor) {
                 $name = substr($order, 0, strlen($order));
+                
                 echo "<tr>";
-                echo "<td>$name</td>";
-                echo "<td>$valor</td>";
+                
+                echo "<td style='font-size: 30px;'>$name</td>";
+                echo "<td style='font-size: 30px;'>$valor</td>";
+                
                 echo "</tr>";
             }
             fclose($file);
@@ -43,6 +47,7 @@
         </tbody>
     </table>
 </div>
+<br><br><br>
 <div class="button-container">
     <form action="index.php" method="post">
         <button class="boton-mediano" type="submit" id="index">Home</button>

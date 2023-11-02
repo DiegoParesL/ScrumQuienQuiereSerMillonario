@@ -1,12 +1,19 @@
 <?php
 session_start();
 
-if (!isset($_SERVER['HTTP_REFERER']) || !strpos($_SERVER['HTTP_REFERER'], "game.php")) {
-    // Si la página no se accede desde "game.php", redirige o muestra un mensaje de error.
+if (
+    !isset($_SERVER['HTTP_REFERER']) || 
+    (
+        strpos($_SERVER['HTTP_REFERER'], "game.php") === false && 
+        strpos($_SERVER['HTTP_REFERER'], "lose.php") === false
+    )
+) {
+    // Si la página no se accede desde "game.php" ni desde "lose.php", redirige o muestra un mensaje de error.
     header("HTTP/1.1 403 Forbidden");
-    
     exit;
 }
+
+
 // El contenido de la página "lose.php" continua aquí
 ?>
 <!DOCTYPE html>
@@ -42,14 +49,15 @@ if (!isset($_SERVER['HTTP_REFERER']) || !strpos($_SERVER['HTTP_REFERER'], "game.
     <script src="funciones/lose_sound.js"></script>
     <script src="funciones/funcionalidades.js"></script>
     <?php
-        session_start();
+        $tiempo = $_COOKIE["crono"];
+        $tiempo_separado = explode(":", $tiempo);
+        $segundos_totales = (($tiempo_separado[0]*3600)+($tiempo_separado[1]*60)+($tiempo_separado[2]));
+        //print_r($segundos_totales);
         if (isset($_POST["nombre"])) {
             $file = fopen("records.txt", "a+");
-            fwrite($file,$_POST["nombre"].", 0, ".session_create_id()."\n");
+            fwrite($file,$_POST["nombre"].", ".$_COOKIE["aciertos"].", ".session_create_id().", ".$tiempo."\n");
             fclose($file);            
         }
-        session_destroy();
     ?>
 </body>
 </html>
-
