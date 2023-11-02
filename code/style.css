@@ -33,6 +33,14 @@ p {
     text-align: center;
 }
 
+
+.texto-ajustado {
+    text-align: center; /* Centra el texto */
+    max-width: 1500px; /* Establece un ancho máximo para el texto */
+    margin: 0 auto; /* Centra el párrafo horizontalmente */
+    font-family: Arial, sans-serif; /* Establece una fuente */
+    line-height: 1.6; /* Ajusta la altura de línea para una mejor legibilidad */
+}
 .visible {
     display: block;
 }
@@ -270,4 +278,87 @@ div > button {
     max-height: var(--height4);
     transition: max-height 4s ease-out;
     z-index: 301;
+}
+
+
+
+
+/* ************************************************************************** */
+/* ******************* RESPONSIVE TAMAÑO IPHONE 15 ************************** */
+
+
+@media (max-width: 1179px) and (max-height: 2556px) {
+    /* Estilos para iPhone15 u otras resoluciones similares */
+    /* Puedes ajustar los estilos según sea necesario */
+    body {
+        text-align: center;
+        background-color: rgb(18, 27, 42);
+        margin-top: 5%; /* Aumentar el espacio en la parte superior */
+    }
+    header {
+        color: #fff; /* Color del texto en el encabezado */
+        padding: 70px ; /* Espaciado interno del encabezado (20px arriba/abajo, 10px izquierda/derecha) */
+        padding-bottom: 190px;
+        margin: 20px;
+        margin-top: 10px;
+    }
+
+    p {
+        display: flex; /* Utiliza flexbox para alinear elementos */
+        
+    }
+    
+    p a {
+        display: flex; /* Utiliza flexbox para alinear elementos */
+        align-items: flex-start; /* Alinea los elementos en la parte superior */
+    }
+    
+    p a img {
+    display: flex; /* Utiliza flexbox para alinear elementos */
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+    border: 2px solid #333; /* Borde de 2px sólido color gris oscuro (#333) */
+    margin-right: 10px; /* Espacio a la derecha de cada imagen */
+    width: 120px; /* Ajusta el ancho de la imagen */
+    height: 90px; /* Ajusta el alto de la imagen */
+}
+    
+   /* Estilos para la imagen con espacio adicional */
+    .espacio-imagen {
+        margin-top: 90px; /* Espacio extra encima de la imagen */
+        margin-bottom: 90px; /* Espacio extra debajo de la imagen */
+        width: 300px; /* Ancho de la imagen */
+        height: 300px; /* Alto de la imagen */
+    }
+
+    /* Estilos para el texto con la clase 'texto-ajustado' */
+    .texto-ajustado {
+        font-size: 45px;
+        text-align: center; /* Centra el texto */
+        max-width: 980px; /* Establece un ancho máximo para el texto */
+        margin: 0 auto; /* Centra el párrafo horizontalmente */
+        font-family: Arial, sans-serif; /* Establece una fuente */
+        line-height: 1.6; /* Ajusta la altura de línea para una mejor legibilidad */
+        background-color: rgb(24, 40, 66);
+        border-radius: 35px;
+    }
+
+    
+    .boton-grande {
+        margin-top: 120px;
+        font-size: 120px; /* Tamaño de fuente más grande */
+        padding: 15px 30px; /* Aumenta el espacio interior del botón */
+    }
+
+    .boton-mediano {
+        margin-top: 30px;
+
+        font-size: 70px; /* Tamaño de fuente más grande */
+        padding: 15px 30px; /* Aumenta el espacio interior del botón */
+    }
+
+
+
+    /***************************************************************************/
+    /****************************** GAME.PHP **********************************/
+    
 }
