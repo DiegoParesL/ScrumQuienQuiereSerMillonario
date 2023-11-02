@@ -19,17 +19,17 @@ if (!isset($_SERVER['HTTP_REFERER']) || !strpos($_SERVER['HTTP_REFERER'], "game.
     <title>Win</title>
 </head>
 <body>
-    <div id="mensaje">
-        <h3>You got it</h3>
-        <p><button id="win" class="boton-mediano" onclick="recompensa()">Show Correct Answers</button></p>
-        <form action="index.php" method="post">
-            <button class="boton-mediano" >Back To Start</button>
-        </form>
-    </div>
+    <h3>You got it</h3>
+    <img src="images/winner.gif" alt="" height="290px" width="290px">
+   
 
-    <div class="oculto" id="pantalla">
-    <img src="images/congratulations.gif" alt="" >
+    <div  id="pantalla">
+    <br> <br>
+    <?php 
+    echo "<p>Questions answered correctly: " . $_COOKIE["aciertos"] . "</p>";
+?>
 
+    <br><br>
     <p>
     <button class="boton-mediano" onclick="window.location.href = 'index.php'">Back To Start</button>
     <button class="boton-mediano" id="publish_button" name="publish_button" type="submit" onclick="publish()">Publish</button>
