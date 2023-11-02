@@ -30,7 +30,7 @@ function animacion(child, padre, i, res, cond,numPregunta) {
     }
     
     if (respuesta.localeCompare("res"+numPregunta)===0) {
-        console.log(respuesta.localeCompare("res0")===0, "num:",calculoCorrecto,"res:", "index:",i)
+        
         for (let k = 0; k < 4; k++) {
             setTimeout(() => {
                 randomizarVotos(modificarCSS, i);
@@ -86,7 +86,7 @@ function preguntaAlPublico() {
     }
     if(window.localStorage.getItem("usedPublic") !=1){
         let numPregunta = valorGalleta;
-        console.log(numPregunta);
+        //console.log(numPregunta);
         let padreAnimacion = document.getElementById("oculto");
         //get child elements from div id = oculto
         let bars =document.getElementById("oculto").children;
@@ -97,12 +97,12 @@ function preguntaAlPublico() {
         for (let i = 0; i < res.length; i++) {
             
             if(res[i].tagName === "BUTTON"){
+                cont++;
                 if(res[i].disabled != true){
-                    if(cont ==0){
+                    if(cont ==1){
                         var audioPublico = new Audio("audio/comodinPublico10s.mp3");
                         audioPublico.play();
                     }
-                    cont++;
                     //console.log(res[i]);
                     animacion(bars[cont-1],padreAnimacion, cont, res[i],cond,(numPregunta%3));
                 }

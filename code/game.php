@@ -10,12 +10,16 @@
 <?php
         echo"<div id=\"oculto\" class=\"publico\">";
         echo"<div class=\"publicOcult red-bar\">";
+        echo "<p>(1,1)</p>";
         echo"</div>";
         echo"<div class=\"publicOcult blue-bar\">";
+        echo "<p>(1,2)</p>";
         echo"</div>";
         echo"<div class=\"publicOcult orange-bar\">";
+        echo "<p>(2,1)</p>";
         echo"</div>";
         echo"<div class=\"publicOcult yellow-bar\">";
+        echo "<p>(2,2)</p>";
         echo"</div>";
         echo"</div>";
     ?>  
@@ -118,7 +122,7 @@
         $aciertos = $_COOKIE["aciertos"];
     }
     echo "<form>";
-    echo "<input type='text' id='valueAciertos' name='aciertos' value='$aciertos' > ";
+    echo "<input type='hidden' id='valueAciertos' name='aciertos' value='$aciertos' > ";
     echo "</form>";
    
     function print_preguntas_aleatorias()

@@ -52,11 +52,11 @@ function comodin50_50() {
                 let numeroAciertos = galleta[1];
                 for (let i = 0; i < arrayABloquear.length; i++) {
                     document.getElementsByClassName("fail"+(numeroAciertos%3))[arrayABloquear[i]].disabled = true;
-                    console.log(arrayABloquear[i]);
+                    //console.log(arrayABloquear[i]);
                 }
             } 
         }
        window.localStorage.setItem("used5050",1); 
-       console.log("localStorage del 50 50",window.localStorage.getItem("used5050",1) );
+       //console.log("localStorage del 50 50",window.localStorage.getItem("used5050",1) );
     }
 }

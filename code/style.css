@@ -220,7 +220,7 @@ div > button {
     left:calc(50vw - 40vw/2);
     width: 40vw;
     height: 40vh;
-    background:linear-gradient(to bottom,rgb(88, 99, 255),rgb(3, 16, 206));
+    background:linear-gradient(to bottom,rgb(88, 99, 255),rgb(0, 8, 125));
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
