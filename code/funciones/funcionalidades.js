@@ -69,10 +69,10 @@ function trueClick(button, pregunta_id) {
 
     document.getElementById("res" + aciertos).disabled = true;
     aciertos++;
-
+    
     let nivel = document.getElementById("aciertos").innerText;
 
-    if (parseInt(nivel, 10) >= 6 && aciertos >= 3) {
+    if (parseInt(nivel) >= 6 && aciertos >= 3) {
         document.getElementById("win_button").style.display = "block";
         let contador = document.getElementById('contadorRegresivo');
         contador.style.display = 'none'; // Oculta el contador al mostrar el botón de "Next Level"
