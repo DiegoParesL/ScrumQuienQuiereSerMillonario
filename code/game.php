@@ -84,11 +84,27 @@
                 $preguntas_por_nivel[$llave][] = $linea;
             } elseif ($linea[0] === "-") {
                 $preguntas_por_nivel[$llave][] = $linea;
+            } elseif ($linea[0] === "#") {
+                $imagenes_por_nivel[$llave] = $linea;
             }
         }
         return $preguntas_por_nivel;
     }
-
+    function imagenes_preguntas() {
+        global $nivel, $idioma;
+        $question_mark = '*';
+        $preguntas_nivel = file("questions/{$idioma}_{$nivel}.txt");
+        $imagenes_por_nivel = [];
+        $llave = '';
+        foreach ($preguntas_nivel as $linea) {
+            if ($linea[0] === $question_mark) {
+                $llave = $linea;
+            }  elseif ($linea[0] === "#") {
+                $imagenes_por_nivel[$llave] = $linea;
+            }
+        }
+        return $imagenes_por_nivel;
+    }
     function numeros_aleatorios($max) {
         $array_of_number = [];
         for ($i = 0; $i < 3; $i++) {
@@ -133,8 +149,7 @@
         $preguntas_escogidas = preguntas_aleatorias();
         $total = count($preguntas_escogidas);
         $preguntas_restantes = $total;
-        
-
+        $imagenes = imagenes_preguntas();
         
         //echo "<input type='text' id='valueAciertos' name='aciertos' value='$aciertos' > ";
         foreach ($preguntas_escogidas as $key => $value) {
@@ -142,7 +157,11 @@
                 echo "<div>";
                 echo "<h2 style='font-size: 40px;' >" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
                 echo "<p id='cronometro-preguntas'></p>";
-
+                $clean_img = substr($imagenes[$key],1);
+                $clean_img = trim($clean_img, " ");
+                if ($clean_img != "") {
+                    echo "<img src=". $clean_img ." alt='' height='250px' width='250px'>";
+                }
                 echo "<div class='grid'>";
                 foreach ($value as $respuestas) {
                     if ($respuestas[0] === "+") {

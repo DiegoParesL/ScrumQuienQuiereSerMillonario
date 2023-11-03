@@ -45,7 +45,6 @@ p {
     margin: 0 auto; /* Márgenes automáticos para centrar horizontalmente */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    
 }
 
   
@@ -270,4 +269,15 @@ div > button {
     max-height: var(--height4);
     transition: max-height 4s ease-out;
     z-index: 301;
+}
+td {
+    width: 25%;
+  }
+@media only screen and (max-width: 600px) {
+    .grid {
+        max-width: 600px; /* Ancho máximo del grid, puedes ajustar el tamaño según tus necesidades */
+        margin: 0 auto; /* Márgenes automáticos para centrar horizontalmente */
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

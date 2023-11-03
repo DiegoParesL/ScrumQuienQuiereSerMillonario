@@ -3,11 +3,13 @@
 + 1 Copa del Món
 - 2 Copes del Món
 - Mai ha anat
+# imagesGame/cups_england.jpeg
 * En quin costat condueixen les persones angleses?
 + Conduint pel carril esquerre i el conductor a la dreta.
 - Conduint pel carril dret i el conductor a l'esquerra.
 - Com tothom.
 - Al revés.
+# imagesGame/english_drive.jpg
 * Quin país de la Commonwealth creus que té la millor situació econòmica?
 + Índia
 - Canadà
@@ -38,6 +40,7 @@
 + El Regne Unit 
 - Espanya 
 - França
+# imagesGame/more_tea.webp
 * Quin país colonial té més Copes del Món? 
 - França 
 - Espanya 

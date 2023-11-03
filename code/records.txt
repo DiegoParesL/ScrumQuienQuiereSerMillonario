@@ -1,0 +1,6 @@
+hola , 2, 00:02:23, 700, i9ikus082btfpbb13q5etlcuqj
+adios , 0, 00:00:00, 100, 55i07t51gpup7voucurb4ta2gj
+aaa , 0, 00:00:00, 100, 55i07t51gpup7voucurb4ta2gj
+mas pruebas , 3, 00:00:04, 1500, 20ck851r4u6r1isguut6dmr18k
+prueba22 , 0 , 00:00:00, 100, 0340u1pogjgrfr2k8pm83fs978
+pau , 0, 00:00:00, 100, anvct1cks8tsvjqch7oqcntsio

@@ -3,11 +3,13 @@
 - Harry Soutar
 - Milos Degenek
 - Leo Messi
+# imagesGame/australian_player.jpg
 * Són els britànics puntuals?
 + Sempre
 - Generalment
 - Potser
 - Mai
+# imagesGame/british_punctual.webp
 * Quins d'aquests països no van ser colonitzats per Anglaterra?
 - Illes Maldives
 - Illes Caiman
@@ -33,3 +35,4 @@
 + Llençar formatge per un pujol
 - Fer una tarta de formatge rodona
 - Compra un formatge rodó gegant
+# imagesGame/rolling_cheese.png

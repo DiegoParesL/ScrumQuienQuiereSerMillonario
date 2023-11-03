@@ -66,7 +66,7 @@ if (
             }
         }
         if ($palabra_valida) {
-            fwrite($file, $_POST["nombre"] .  " , " . $_COOKIE["aciertos"] . ", " . session_create_id() . ", " . $tiempo . ", " . $puntuacion . "\n");
+            fwrite($file, $_POST["nombre"] . " , " . $_COOKIE["aciertos"] . ", " . $tiempo . ", " . $puntuacion . ", " . session_create_id() . "\n");
             fclose($file);
             ?>
                 <script>
