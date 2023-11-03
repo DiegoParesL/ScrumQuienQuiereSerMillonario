@@ -272,7 +272,10 @@ div > button {
 }
 td {
     width: 25%;
-  }
+}
+label {
+    color: white;
+}
 @media only screen and (max-width: 600px) {
     .grid {
         max-width: 600px; /* Ancho máximo del grid, puedes ajustar el tamaño según tus necesidades */

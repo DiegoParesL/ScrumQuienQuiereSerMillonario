@@ -25,8 +25,7 @@ if (
     <title>Lose</title>
 </head>
 <body>
-    
-    
+<audio id="my_audio" src="audio/lose.mp3" loop="loop"></audio>
 
     <div  id="pantalla">
         <br>
