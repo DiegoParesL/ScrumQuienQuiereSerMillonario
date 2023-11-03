@@ -8,6 +8,7 @@
 + Londres
 - Andorra
 - Alemanya
+# imagesGame/big_ben.jpg
 * "La vida és com muntar una bicicleta. Per mantenir el balanç, has de continuar movent-te". Qui va dir aquesta frase?
 + Albert Einstein
 - Forrest Gump
@@ -38,6 +39,7 @@
 + Anglaterra
 - Itàlia
 - Sudàfrica.
+# imagesGame/buckingham_palace.jpg
 * "Oh Romeu, Romeu! Per què ets Romeu? Nega el teu pare i rebutja el teu nom; o, si et podrís, et juro amor meu i ja no seré una Capulet." Qui va escriure això?
 + Shakespeare
 - Zorrilla

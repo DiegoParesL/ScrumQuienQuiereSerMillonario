@@ -3,6 +3,7 @@
 + Pau
 - Revolució
 - El racisme
+# imagesGame/ghandi.png
 
 * D'on és Gandhi?
 - El Marroc
@@ -16,11 +17,13 @@
 - Atac de cor
 - Malaltia
 + Assassinat
+
 * En quin segle es va crear el futbol?
 + Segle Xix
 - Segle XX
 - Segle I
 - Ara
+# imagesGame/futbol_created.png
 
 * On del món es va crear el futbol?
 - Xina

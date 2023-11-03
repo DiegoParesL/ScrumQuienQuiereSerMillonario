@@ -2,9 +2,9 @@
 session_start();
 
 if (
-    !isset($_SERVER['HTTP_REFERER']) || 
+    !isset($_SERVER['HTTP_REFERER']) ||
     (
-        strpos($_SERVER['HTTP_REFERER'], "game.php") === false && 
+        strpos($_SERVER['HTTP_REFERER'], "game.php") === false &&
         strpos($_SERVER['HTTP_REFERER'], "lose.php") === false
     )
 ) {
@@ -31,7 +31,7 @@ if (
     <div  id="pantalla">
         <br>
     <h3 >You lose </h3>
-    <?php 
+    <?php
     echo "<p>You answered " . $_COOKIE["aciertos"] . " questions correctly.</p>";
     ?>
     <br><br>
@@ -48,15 +48,36 @@ if (
     <script src="funciones/lose_sound.js"></script>
     <script src="funciones/funcionalidades.js"></script>
     <?php
-        $tiempo = $_COOKIE["crono"];
-        $tiempo_separado = explode(":", $tiempo);
-        $segundos_totales = (($tiempo_separado[0]*3600)+($tiempo_separado[1]*60)+($tiempo_separado[2]));
-        //print_r($segundos_totales);
-        if (isset($_POST["nombre"])) {
-            $file = fopen("records.txt", "a+");
-            fwrite($file,$_POST["nombre"].", ".$_COOKIE["aciertos"].", ".session_create_id().", ".$tiempo."\n");
-            fclose($file);            
+    $palabras_prohibidas = file("nombres_prohibidos.txt");
+    $file = fopen("records.txt", "a+");
+    $palabra_valida = true;
+    $tiempo = $_COOKIE["crono"];
+    $tiempo_separado = explode(":", $tiempo);
+    $segundos_totales = (($tiempo_separado[0] * 3600) + ($tiempo_separado[1] * 60) + ($tiempo_separado[2]));
+    $puntuacion = intval("-1") * ((intval("1") - pow(intval("2.718"), (intval("1") + intval($_COOKIE["aciertos"]))) / (intval("1") + intval($tiempo) * intval("3"))) * intval("100"));
+
+    if (isset($_POST["nombre"])) {
+        for ($i = 0; $i < count($palabras_prohibidas); $i++) {
+            if (str_contains($palabras_prohibidas[$i], $_POST["nombre"])) {
+                $palabra_valida = false;
+            }
         }
+        if ($palabra_valida) {  //
+            fwrite($file, $_POST["nombre"] . " , " . $_COOKIE["aciertos"] . ", " . $tiempo . ", " . $puntuacion . ", " . session_create_id() . "\n");
+            fclose($file);
+            ?>
+                    <script>
+                        document.getElementById("publish_button").style.display = "none";
+                    </script>
+            <?php
+        } else {
+            ?>
+                    <script>
+                        window.alert("Nombre no apropiado")
+                    </script>
+            <?php
+        }
+    }
     ?>
 </body>
 </html>

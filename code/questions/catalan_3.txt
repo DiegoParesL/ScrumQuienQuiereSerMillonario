@@ -23,6 +23,7 @@
 - Camerun
 + Índia
 - Nova Zelanda
+# imagesGame/More_Population.jpeg
 * El país més fred?
 - Anglaterra
 + Canadà
@@ -33,6 +34,7 @@
 - Camerun
 - Ghana
 - Malàsia
+# imagesGame/More_Hours_Working.jpg
 * Més reserves naturals?
 - Nauru
 - Ruanda
@@ -43,6 +45,7 @@
 - Canadà
 - Nova Zelanda
 + Anglaterra
+# imagesGame/Better_Education_System.jpg
 * Millor sistema educatiu?
 + Singapur
 - Nova Zelanda
