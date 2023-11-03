@@ -6,16 +6,27 @@
     <title>Joc</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="bloquearEntreNivelesPublico()">
 <?php
         echo"<div id=\"oculto\" class=\"publico\">";
         echo"<div class=\"publicOcult red-bar\">";
+        echo "<p>(1,1)</p>";
         echo"</div>";
         echo"<div class=\"publicOcult blue-bar\">";
+        echo "<p>(1,2)</p>";
         echo"</div>";
         echo"<div class=\"publicOcult orange-bar\">";
+        echo "<p>(2,1)</p>";
         echo"</div>";
         echo"<div class=\"publicOcult yellow-bar\">";
+        echo "<p>(2,2)</p>";
+        echo"</div>";
+        echo"</div>";
+    ?>  
+    <?php
+        echo"<div id=\"ocultoLlamda\" class=\"llamada\">";
+        echo"<div id=\"contenedorTelefono\">";
+        echo "<img id=\"imgTel\" src=\"images/telefono.png\" alt=\"imagen de telefono antiguo\">";
         echo"</div>";
         echo"</div>";
     ?>  
@@ -28,21 +39,29 @@
     <br>
 
     <div id="preguntasContainer">
-    <div class="vertical-buttons">
-    <h2 id='crono'>00:00:00</h2>
-        <button onclick="comodin50_50()">
-            <img src="images/comodin50.png" alt="" width="50" height="50">
-           
-        </button>
-        <button onclick="preguntaAlPublico()" id="comodinPublico">
-            <img src="images/comodinpublico.png" alt="" width="50" height="50">
+        <div class="vertical-buttons">
+        <h2 id='crono'>00:00:00</h2>
+            <button  id="CLlamada" onclick="llamada()">
+                <img id="tel" src="images/telefono.png" alt="" width="50" height="50">
+                <img id="xtel" src="images/xtel.png" alt="" width="50" height="50">
             
-        </button>
-        <button onclick="tiempoExtra()" id="comodinTiempoExtra" >
-            <img src="images/comodintiempoextra.png" alt="" width="550" height="50">
-        </button>
+            </button>
+            <button onclick="comodin50_50()">
+                <img id="C50" src="images/comodin50.png" alt="" width="50" height="50">
+                <img id="xC50" src="images/xcomodin50.png" alt="" width="50" height="50">
+            
+            </button>
+            <button onclick="preguntaAlPublico()" id="comodinPublico">
+                <img id="publ" src="images/comodinpublico.png" alt="" width="50" height="50">
+                <img  id="xpubl" src="images/xcomodinpublico.png" alt="" width="50" height="50">
+                
+            </button>
+            <button onclick="tiempoExtra()" id="comodinTiempoExtra" >
+                <img id="TE" src="images/comodintiempoextra.png" alt="" width="550" height="50">
+                <img id="XTE" src="images/xcomodintiempoextra.png" alt="" width="550" height="50">
+            </button>
+        </div>
     </div>
-
    
     
     <?php
@@ -62,7 +81,7 @@
         }
     }
 
-    echo "<p class='' id='aciertos'>". "LEVEL ". $nivel ."</p";
+    echo "<p> LEVEL <p class='' id='aciertos'>" .$nivel ."</p></p>";
 
     function preguntas() {
         global $nivel, $idioma;
@@ -118,7 +137,7 @@
         $aciertos = $_COOKIE["aciertos"];
     }
     echo "<form>";
-    echo "<input type='text' id='valueAciertos' name='aciertos' value='$aciertos' > ";
+    echo "<input type='hidden' id='valueAciertos' name='aciertos' value='$aciertos' > ";
     echo "</form>";
    
     function print_preguntas_aleatorias()
@@ -211,6 +230,7 @@
     <script src="funciones/pass_aciertos.js"></script>
     <script src="funciones/comodinPublico.js"></script>
     <script src="funciones/comodin50_50.js"></script>
+    <script src="funciones/comodinLlamada.js"></script>
     <script src="funciones/cronometro.js"></script>
 
     <script>

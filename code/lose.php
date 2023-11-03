@@ -26,16 +26,15 @@ if (
 </head>
 <body>
     
-    <div id="mensaje">
-        <h3 >You lose </h3>
-        <p><button id="lose" class="boton-mediano" onclick="recompensa()">Show Correct Answers</button></p>
-        <form action="index.php" method="post">
-            <button class="boton-mediano">Back to start</button>
-        </form>
-    </div>
+    
 
-    <div class="oculto" id="pantalla">
-    <img src="images/lose.png" alt="" srcset="" width="540px" height="540px">
+    <div  id="pantalla">
+        <br>
+    <h3 >You lose </h3>
+    <?php 
+    echo "<p>You answered " . $_COOKIE["aciertos"] . " questions correctly.</p>";
+    ?>
+    <br><br>
     <p><button class="boton-mediano" onclick="window.location.href = 'index.php'">Back To Start</button>
     <button id="publish_button" name="publish_button" type="submit"  class="boton-mediano"onclick="publish()">Publish</button></p>
     </div>
@@ -55,7 +54,9 @@ if (
         //print_r($segundos_totales);
         if (isset($_POST["nombre"])) {
             $file = fopen("records.txt", "a+");
-            fwrite($file,$_POST["nombre"].", ".$_COOKIE["aciertos"].", ".session_create_id().", ".$tiempo."\n");
+            echo $segundos_totales;
+            $puntuacion = floor(1 - pow(2.71828,(intval($_COOKIE["aciertos"]))/(1+(intval($segundos_totales))*0.4)))*100;
+            fwrite($file,$_POST["nombre"].", ".$_COOKIE["aciertos"].", ".session_create_id().", ".$tiempo.", puntuacion ".$puntuacion."\n");
             fclose($file);            
         }
     ?>

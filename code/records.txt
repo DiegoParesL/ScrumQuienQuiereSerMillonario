@@ -1,4 +1,3 @@
-aaa, 2, 904db5fae214c3a7eb0fe56f7bd81708, 00:00:03
-asdada, 12, 2c4e47fcf19ebe21e738baa7120e10bc, 00:00:44
-aaa, NaN, 7g48kf36rup9ck8ff0klingcjd, 00:01:10
-eqweqe, 1, q9bg8ae29q9iques9812ndamg3, 00:00:01
+diego2, 1, 5f9j9t38blkl9pujg6c7c6i6l8, 00:00:02, puntuacion 300
+prueba, 2, 50697u68dh0q4q8ebui9b3pq7g, 19:07:04, puntuacion 1
+kkkk, 1, 9vmlovju74g339bc69672boqeu, 00:00:04, puntuacion 6

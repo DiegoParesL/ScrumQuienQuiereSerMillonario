@@ -21,6 +21,7 @@ function disableButtons(buttons) {
 
 function failClick() {
     playIncorrect();
+    empezarDetener();
     document.getElementById("lose_button").style.display = "block";
     let fails = document.getElementsByClassName("fail" + aciertos);
     for (let i = 0; i < fails.length; i++) {
@@ -69,17 +70,18 @@ function trueClick(button, pregunta_id) {
 
     document.getElementById("res" + aciertos).disabled = true;
     aciertos++;
-
+    
     let nivel = document.getElementById("aciertos").innerText;
 
-    if (parseInt(nivel, 10) >= 6 && aciertos >= 3) {
+    if (parseInt(nivel) >= 6 && aciertos >= 3) {
         document.getElementById("win_button").style.display = "block";
-        const contador = document.getElementById('contadorRegresivo');
+        let contador = document.getElementById('contadorRegresivo');
         contador.style.display = 'none'; // Oculta el contador al mostrar el botón de "Next Level"
+        empezarDetener();
     } else if (aciertos >= totalPreguntas) {
         document.getElementById("botones").style.display = "block";
-        const contador = document.getElementById('contadorRegresivo');
-        contador.style.display = 'none'; // Oculta el contador al mostrar el botón de "Menu"
+        let contador = document.getElementById('contadorRegresivo');
+        //contador.style.display = 'none'; // Oculta el contador al mostrar el botón de "Menu"
     } else {
         mostrarSiguiente(aciertos);
         currentQuestion++;
@@ -122,6 +124,8 @@ function reiniciarContador() {
 // *********************************************************************************************************
 // FUNCION COMODIN TIEMPO EXTRA
 function tiempoExtra() {
+    document.getElementById("TE").display = "none";
+    document.getElementById("XTE").display ="block";
     const contador = document.getElementById('tiempoRestante');
     tiempoRestante += 30;
     contador.textContent = tiempoRestante + ' s';

@@ -1,10 +1,15 @@
 <?php
 session_start();
 
-if (!isset($_SERVER['HTTP_REFERER']) || !strpos($_SERVER['HTTP_REFERER'], "game.php")) {
-    // Si la página no se accede desde "game.php", redirige o muestra un mensaje de error.
+if (
+    !isset($_SERVER['HTTP_REFERER']) || 
+    (
+        strpos($_SERVER['HTTP_REFERER'], "game.php") === false && 
+        strpos($_SERVER['HTTP_REFERER'], "win.php") === false
+    )
+) {
+    // Si la página no se accede desde "game.php" ni desde "win.php", redirige o muestra un mensaje de error.
     header("HTTP/1.1 403 Forbidden");
-   
     exit;
 }
 // El contenido de la página "win.php" continua aquí
@@ -19,17 +24,17 @@ if (!isset($_SERVER['HTTP_REFERER']) || !strpos($_SERVER['HTTP_REFERER'], "game.
     <title>Win</title>
 </head>
 <body>
-    <div id="mensaje">
-        <h3>You got it</h3>
-        <p><button id="win" class="boton-mediano" onclick="recompensa()">Show Correct Answers</button></p>
-        <form action="index.php" method="post">
-            <button class="boton-mediano" >Back To Start</button>
-        </form>
-    </div>
+    <h3>You got it</h3>
+    <img src="images/winner.gif" alt="" height="290px" width="290px">
+   
 
-    <div class="oculto" id="pantalla">
-    <img src="images/congratulations.gif" alt="" >
+    <div  id="pantalla">
+    <br> <br>
+    <?php 
+    echo "<p>Questions answered correctly: " . $_COOKIE["aciertos"] . "</p>";
+?>
 
+    <br><br>
     <p>
     <button class="boton-mediano" onclick="window.location.href = 'index.php'">Back To Start</button>
     <button class="boton-mediano" id="publish_button" name="publish_button" type="submit" onclick="publish()">Publish</button>
@@ -46,10 +51,16 @@ if (!isset($_SERVER['HTTP_REFERER']) || !strpos($_SERVER['HTTP_REFERER'], "game.
     <script src="funciones/win_sound.js"></script>
     <script src="funciones/funcionalidades.js"></script>
     <?php
-        session_start();
+        $tiempo = $_COOKIE["crono"];
+        $tiempo_separado = explode(":", $tiempo);
+        $segundos_totales = (($tiempo_separado[0]*3600)+($tiempo_separado[1]*60)+($tiempo_separado[2]));
         if (isset($_POST["nombre"])) {
             $file = fopen("records.txt", "a+");
-            fwrite($file,$_POST["nombre"].", 18, ".session_id()."\n");
+            $puntuacion = floor(1 - pow(2.71828,(1-(intval($_COOKIE["aciertos"]))/(1+(intval($segundos_totales))*0.4))))*100;
+            if ($puntuacion < 0) {
+                $puntuacion = intval("-1")*$puntuacion;
+            }
+            fwrite($file,$_POST["nombre"].", 18, ".session_id().", puntuacion ".$puntuacion."\n");
             fclose($file);           
              
         }
