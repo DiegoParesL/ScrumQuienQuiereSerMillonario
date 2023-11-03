@@ -203,7 +203,7 @@ div > button {
 
 
 /* *************************************************************************************** */
-/* ESTILOS PARA FUNCIONALIDAD COMODIN PUBLICO */
+/* ESTILOS PARA FUNCIONALIDAD COMODIN PUBLICO */ 
 :root{
     --height1: 0;
     --height2: 0;
@@ -218,7 +218,7 @@ div > button {
     text-align: center;
     margin-top: 30vh;
 }
-#oculto{
+#oculto{ 
     display: none;
 }
 
@@ -283,24 +283,62 @@ div > button {
 
 
 
+#xC50{
+    display: none;
+}
+#XTE{
+    display: none;
+}
+#xpubl {
+    display: none;
+}
+#xtel{
+    display: none;
+}
+
+
+.tamañoPreguntas{
+    font-size: 25px;
+}
+
 /* ************************************************************************** */
 /* ******************* RESPONSIVE TAMAÑO IPHONE 15 ************************** */
 
+@media only screen and (max-width: 1000px) {
 
-@media (max-width: 1179px) and (max-height: 2556px) {
+    .vertical-buttons {
+        left: 0px;
+       
+    }
+    
+    .grid {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+   
+}
+
+
+
+@media only screen and (max-width: 400px)  {
+
     /* Estilos para iPhone15 u otras resoluciones similares */
     /* Puedes ajustar los estilos según sea necesario */
+
     body {
         text-align: center;
         background-color: rgb(18, 27, 42);
         margin-top: 5%; /* Aumentar el espacio en la parte superior */
+        padding-right: 15px;
     }
     header {
         color: #fff; /* Color del texto en el encabezado */
-        padding: 70px ; /* Espaciado interno del encabezado (20px arriba/abajo, 10px izquierda/derecha) */
-        padding-bottom: 190px;
+        padding: 1px ; /* Espaciado interno del encabezado (20px arriba/abajo, 10px izquierda/derecha) */
+        padding-bottom: 5px;
         margin: 20px;
-        margin-top: 10px;
+        margin-top: 5px;
     }
 
     p {
@@ -317,24 +355,25 @@ div > button {
     display: flex; /* Utiliza flexbox para alinear elementos */
     align-items: flex-start; /* Alinea los elementos en la parte superior */
     border: 2px solid #333; /* Borde de 2px sólido color gris oscuro (#333) */
-    margin-right: 10px; /* Espacio a la derecha de cada imagen */
-    width: 120px; /* Ajusta el ancho de la imagen */
-    height: 90px; /* Ajusta el alto de la imagen */
+    margin-right: 6px; /* Espacio a la derecha de cada imagen */
+    width: 35px; /* Ajusta el ancho de la imagen */
+    height: 29px; /* Ajusta el alto de la imagen */
 }
     
    /* Estilos para la imagen con espacio adicional */
     .espacio-imagen {
-        margin-top: 90px; /* Espacio extra encima de la imagen */
-        margin-bottom: 90px; /* Espacio extra debajo de la imagen */
-        width: 300px; /* Ancho de la imagen */
-        height: 300px; /* Alto de la imagen */
+        margin-top: 30px; /* Espacio extra encima de la imagen */
+        margin-bottom: 40px; /* Espacio extra debajo de la imagen */
+        width: 100px; /* Ancho de la imagen */
+        height: 100px; /* Alto de la imagen */
     }
 
     /* Estilos para el texto con la clase 'texto-ajustado' */
     .texto-ajustado {
-        font-size: 45px;
+        font-size: 20px;
+        padding-right: 20px;
         text-align: center; /* Centra el texto */
-        max-width: 980px; /* Establece un ancho máximo para el texto */
+        max-width: 500px; /* Establece un ancho máximo para el texto */
         margin: 0 auto; /* Centra el párrafo horizontalmente */
         font-family: Arial, sans-serif; /* Establece una fuente */
         line-height: 1.6; /* Ajusta la altura de línea para una mejor legibilidad */
@@ -344,9 +383,9 @@ div > button {
 
     
     .boton-grande {
-        margin-top: 120px;
+        margin-top: 12px;
         font-size: 120px; /* Tamaño de fuente más grande */
-        padding: 15px 30px; /* Aumenta el espacio interior del botón */
+        padding: 1px 30px; /* Aumenta el espacio interior del botón */
     }
 
     .boton-mediano {
@@ -361,60 +400,72 @@ div > button {
     /***************************************************************************/
     /****************************** GAME.PHP ***********************************/
 
-    .bodyGame{
-        padding-top: 60px;
-    }
-
-    .imgGame {
-        padding-top: 12px;
-        width: 320px;
-        height: 300px;
-    }
     
-    .botonesGame {
-        padding-top: 300px;
-        margin-right: 257px;
+
+    .grid {
+        max-width: 600px; /* Ancho máximo del grid, puedes ajustar el tamaño según tus necesidades */
+        margin: 0 auto; /* Márgenes automáticos para centrar horizontalmente */
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
     }
 
-    .preguntaGame {
-        font-size: 200px;
+    .imgGame{
+        width: 90px;
+        height: 85px;
     }
+
+    .crono {
+        margin-top: -1px;
+        font-size: 20px;
+    }
+
+    .nvl{
+        font-size: 20px;
+    }
+
+    .tamañoPreguntas{
+        font-size: 20px;
+    }
+    .CLlamada {
+        position: absolute;
+    }
+
+  
+
     .vertical-buttons {
+       
         position: fixed;
-        padding-left: 150px;
-        padding-top: 150px;
-        left: 95px;
-        top: 26%;
-        transform: translateY(-50%);
+        padding: 10px; /* Ajustar el espaciado según sea necesario */
+        left: 5%; /* Ajustar el margen izquierdo */
+        bottom: 5%; /* Mover los botones hacia la parte inferior de la pantalla */
         display: flex;
         flex-direction: row;
+        justify-content: space-around; /* Distribuir los botones horizontalmente */
+        width: 90%; /* Utilizar el 90% del ancho disponible */
+        max-width: 300px; /* Establecer un ancho máximo */
+        overflow-x: auto; /* Permitir desplazamiento horizontal en caso de que los botones no entren en la pantalla */
     }
     
     .vertical-buttons button {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 202px; /* Diámetro del círculo */
-        height: 159px; /* Diámetro del círculo */
-        border: none; /* Elimina el borde */
-        border-radius: 70%; /* Borde redondo para hacer el círculo */
+        width: 100px; /* Ajustar el tamaño de los botones según sea necesario */
+        height: 100px; /* Ajustar el tamaño de los botones según sea necesario */
+        border: none;
+        border-radius: 50%; /* Cambiar el borde redondo a 50% para círculos perfectos */
         cursor: pointer;
-        overflow: hidden; /* Recorta la imagen para adaptarla al círculo */
-        padding: 0; /* Elimina el relleno interno del botón */
-        border: 2px solid rgb(246, 251, 255); /* Borde azul con grosor de 2px */
+        overflow: hidden;
+        padding: 0;
+        margin: 5px; /* Ajustar el margen entre los botones */
+        border: 2px solid rgb(246, 251, 255);
     }
     
     .vertical-buttons button img {
-        width: 95%; /* Ocupa todo el ancho del botón */
-        height: auto; /* Altura automática para mantener la proporción */
-        object-fit: cover; /* Ajusta la imagen a las dimensiones del botón */
+        width: 100%; /* Ocupar todo el espacio disponible dentro del botón */
+        height: 100%; /* Ocupar todo el espacio disponible dentro del botón */
+        object-fit: cover;
     }
     
-    button {
-        width: 400px;
-        height: 140px;
-        padding-right: 200px;
-        margin-right: 200px;
-    }
 
-    }
+}

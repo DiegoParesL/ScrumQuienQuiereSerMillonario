@@ -35,22 +35,30 @@
     <br>
 
     <div id="preguntasContainer">
-        <h2 id='crono'>00:00:00</h2>
-        <div class="vertical-buttons">
-        
-        <button  onclick="comodin50_50()">
-            <img src="images/COMODIN50.png" alt="" width="50" height="50">
-            
-        </button>
-        <button onclick="preguntaAlPublico()" id="comodinPublico">
-            <img src="images/comodinpublico.png" alt="" width="50" height="50">
-            
-        </button>
-        <button  onclick="tiempoExtra()" id="comodinTiempoExtra" >
-            <img src="images/comodintiempoextra.png" alt="" width="550" height="50">
-        </button>
-    </div>
+                <h2 id='crono' class="crono">00:00:00</h2>
 
+        <div class="vertical-buttons">
+            <button  id="CLlamada" onclick="llamada()">
+                <img id="tel" src="images/telefono.png" alt="" width="50" height="50">
+                <img id="xtel" src="images/xtel.png" alt="" width="50" height="50">
+            
+            </button>
+            <button onclick="comodin50_50()">
+                <img id="C50" src="images/comodin50.png" alt="" width="50" height="50">
+                <img id="xC50" src="images/xcomodin50.png" alt="" width="50" height="50">
+            
+            </button>
+            <button onclick="preguntaAlPublico()" id="comodinPublico">
+                <img id="publ" src="images/comodinpublico.png" alt="" width="50" height="50">
+                <img id="xpubl" src="images/xcomodinpublico.png" alt="" width="50" height="50">
+                
+            </button>
+            <button onclick="tiempoExtra()" id="comodinTiempoExtra" >
+                <img id="TE" src="images/comodintiempoextra.png" alt="" width="550" height="50">
+                <img id="XTE" src="images/xcomodintiempoextra.png" alt="" width="550" height="50">
+            </button>
+        </div>
+    
    
     
     <?php
@@ -69,9 +77,10 @@
             $_SESSION['nivel'] = $nivel;
         }
     }
-
-    echo "<p class='' id='aciertos'>NIVEL " . $nivel . "</p>";
-
+   
+    
+    echo "<p class='nvl' id='aciertos'>NIVEL " . $nivel . "</p>";
+  
     function preguntas() {
         global $nivel, $idioma;
         $question_mark = '*';
@@ -141,7 +150,7 @@
         foreach ($preguntas_escogidas as $key => $value) {
             if ($preguntas_restantes == $total) {
                 echo "<div class='botonesGame'>";
-                echo "<h2 style='font-size: 40px;' >" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
+                echo "<h2 class='tamañoPreguntas' >" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
                 echo "<p id='cronometro-preguntas'></p>";
 
                 echo "<div class='grid'>";
