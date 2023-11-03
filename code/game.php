@@ -27,14 +27,14 @@
         echo"</div>";
     ?>  
     <a href="win.php">
-        <img src="images/milionari.png" alt="" height="150px" width="150px">
+        <img class="imgGame" src="images/milionari.png" alt="" height="150px" width="150px">
     </a>
     <br>
     
     <input type="button" class="oculto" value="Empezar" id="boton" >
     <br>
 
-    <div id="preguntasContainer">
+    <div class="preguntasContainer" id="preguntasContainer">
                 <h2 id='crono' class="crono">00:00:00</h2>
 
         <div class="vertical-buttons">
@@ -78,9 +78,9 @@
         }
     }
 
-    echo "<p class='nvl' id='aciertos'>NIVEL " . $nivel . "</p>";
+    echo "<p class='nvl' id='aciertos'>LEVEL " . $nivel . "</p>";
 
-    
+
     function preguntas() {
         global $nivel, $idioma;
         $question_mark = '*';
@@ -164,7 +164,7 @@
         //echo "<input type='text' id='valueAciertos' name='aciertos' value='$aciertos' > ";
         foreach ($preguntas_escogidas as $key => $value) {
             if ($preguntas_restantes == $total) {
-                echo "<div>";
+                echo "<div class='contenedorPreguntas'>";
                 echo "<h2 class='tamañoPreguntas'  >" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
                 echo "<p id='cronometro-preguntas'></p>";
                 $clean_img = substr($imagenes[$key],1);
@@ -186,7 +186,7 @@
             } else {
                 echo "<div id='pregunta" . ($total - $preguntas_restantes + 1) . "' class='oculto'>";
                 echo "<p id='cronometro-preguntas'></p>";
-                echo "<h2 style='font-size: 40px;' >" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
+                echo "<h2 class='tamañoPreguntas' >" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
                 echo "<div class='grid'>";
                 foreach ($value as $respuestas) {
                     if ($respuestas[0] === "+") {

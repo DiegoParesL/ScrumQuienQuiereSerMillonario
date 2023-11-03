@@ -79,7 +79,7 @@ function preguntaAlPublico() {
     let valorGalleta
     for (let i = 0; i < galleta.length; i++) {
         let nombreGalleta = galleta[i].split("=")
-        if(nombreGalleta[0]=="aciertos"){
+        if(nombreGalleta[0].trim()=="aciertos"){
             valorGalleta = nombreGalleta[1];
         }
         

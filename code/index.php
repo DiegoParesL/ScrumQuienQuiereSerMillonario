@@ -39,7 +39,7 @@ unset($_SESSION['nivel']);
         <button type="submit" id="boton-jugar" class="boton-grande" onclick="empezarDetener(this);">Play</button>
     </form>
     <br>
-    <form action="ranking.php" method="post">
+    <form class="rankingIndex"action="ranking.php" method="post">
         <button type="submit" id="ranking" class="boton-mediano">Hall Of Fame</button>
     </form>
 

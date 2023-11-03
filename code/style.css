@@ -331,7 +331,7 @@ div > button {
         text-align: center;
         background-color: rgb(18, 27, 42);
         margin-top: 5%; /* Aumentar el espacio en la parte superior */
-        padding-right: 15px;
+        padding-right: 2px;
     }
     header {
         color: #fff; /* Color del texto en el encabezado */
@@ -339,6 +339,10 @@ div > button {
         padding-bottom: 5px;
         margin: 20px;
         margin-top: 5px;
+    }
+
+    h1 {
+        font-size: 30px;
     }
 
     p {
@@ -371,7 +375,7 @@ div > button {
     /* Estilos para el texto con la clase 'texto-ajustado' */
     .texto-ajustado {
         font-size: 20px;
-        padding-right: 20px;
+        padding-left: 5px;
         text-align: center; /* Centra el texto */
         max-width: 500px; /* Establece un ancho máximo para el texto */
         margin: 0 auto; /* Centra el párrafo horizontalmente */
@@ -380,6 +384,13 @@ div > button {
         background-color: rgb(24, 40, 66);
         border-radius: 35px;
     }
+
+    .playIndex #boton-jugar {
+        font-size: 60px; /* Reducir el tamaño de la fuente del botón */
+        padding: 5px 10px; /* Ajustar el espaciado interno del botón */
+        /* Otros estilos que desees aplicar al botón */
+    }
+    
 
     
     .boton-grande {
@@ -426,6 +437,10 @@ div > button {
     .tamañoPreguntas{
         font-size: 20px;
     }
+
+    .contenedorPreguntas{
+       
+    }
     .CLlamada {
         position: absolute;
     }
@@ -435,14 +450,15 @@ div > button {
     .vertical-buttons {
        
         position: fixed;
+        padding-top: 15px;
         padding: 10px; /* Ajustar el espaciado según sea necesario */
-        left: 5%; /* Ajustar el margen izquierdo */
+        left: 1%; /* Ajustar el margen izquierdo */
         bottom: 5%; /* Mover los botones hacia la parte inferior de la pantalla */
         display: flex;
-        flex-direction: row;
+
         justify-content: space-around; /* Distribuir los botones horizontalmente */
         width: 90%; /* Utilizar el 90% del ancho disponible */
-        max-width: 300px; /* Establecer un ancho máximo */
+        max-width: 80px; /* Establecer un ancho máximo */
         overflow-x: auto; /* Permitir desplazamiento horizontal en caso de que los botones no entren en la pantalla */
     }
     
@@ -450,7 +466,7 @@ div > button {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 100px; /* Ajustar el tamaño de los botones según sea necesario */
+        width: 50px; /* Ajustar el tamaño de los botones según sea necesario */
         height: 100px; /* Ajustar el tamaño de los botones según sea necesario */
         border: none;
         border-radius: 50%; /* Cambiar el borde redondo a 50% para círculos perfectos */
