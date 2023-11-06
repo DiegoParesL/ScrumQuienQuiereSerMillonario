@@ -59,10 +59,10 @@ if (
     $tiempo = $_COOKIE["crono"];
     $tiempo_separado = explode(":", $tiempo);
     $segundos_totales = (($tiempo_separado[0] * 3600) + ($tiempo_separado[1] * 60) + ($tiempo_separado[2]));
-    $puntuacion = floor(1 - pow(2.71828,(1-(intval($_COOKIE["aciertos"]))/(1+(intval($segundos_totales))*0.4))))*100;
-            if ($puntuacion < 0) {
-                $puntuacion = intval("-1")*$puntuacion;
-            }
+    $puntuacion =floor((intval($_COOKIE["aciertos"]))*80/(intval($segundos_totales)+10)*1.4);
+    if ($puntuacion < 0) {
+        $puntuacion = intval("-1")*$puntuacion;
+    }
     if (isset($_POST["nombre"])) {
         for ($i = 0; $i < count($palabras_prohibidas); $i++) {
             if (str_contains($palabras_prohibidas[$i], $_POST["nombre"])) {

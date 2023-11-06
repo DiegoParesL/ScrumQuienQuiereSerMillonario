@@ -12,7 +12,7 @@
         <p>Contraseña<input type="password" name="pwd" id="pwd"></p>
         <input type="submit" value="Login">
     </form>
-
+    
     <?php
         $user = ["admin" => "P@ssw0rd"];
         if (isset($_POST["user"]) && $_POST["pwd"]) {

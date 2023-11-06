@@ -1,9 +1,9 @@
+* El país més calent?
+- Austràlia
+- Camerun
++ Índia
+- Nova Zelanda
 
-* Com és la bandera del Regne Unit?
-- Rosa, blau i vermell
-+ Blau Blanc I Vermell
-- Blau, Negre, Vermell
-- Groc Vermell Blau
 * Què menja normalment el Regne Unit?
 - Gofres
 - Sopa
@@ -16,6 +16,7 @@
 - Pedro Sánchez
 - Dina Boluarte
 + Boris Johnson
+
 * Quant de temps va durar aproximadament la guerra entre Palestina i Israel?
 - 2 mesos
 - 7 dies
@@ -34,20 +35,22 @@
 - La meitat del poble
 - 200 persones
 + 44 persones
-# imagesGame/palestina_israel.png
-* Per què són importants els imperis britànics?
-- Pel seu històric
-+ Per als seus morts
-- Per les seves victòries
-- Pels seus diners
+# imagesGame/palestina_israel.pngç
+
+* Quin d'aquests països europeus segueix siguent una colonia de l'Imperi Britànic?
++ Gibraltar
+- Chipre
+- Illes del Canal
+- Anglaterra
+
 * Les idees sobre l'Imperi al Regne Unit han fluctuat...
 - Victòries
 + Temps
 - Monarquia
 - País
-* Quants territoris va conquerir l'Imperi Britànic?
-+ 5 Territoris
-- 8 Territoris
-- 10 Territoris
-- 12 Territoris
-# imagesGame/territoris_britanics.png
+
+* A on és típic menjar peix i patates (fish and chips)?
++ Regne Unit
+- Escòcia
+- França
+- Irlanda
