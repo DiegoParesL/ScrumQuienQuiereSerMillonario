@@ -22,12 +22,6 @@
 - Australia
 - Inglaterra
 
-* ¿El país más caluroso?
-- Australia
-- Camerún
-+ India
-- Nueva Zelanda
-
 * ¿El país más frío?
 - Inglaterra
 + Canadá

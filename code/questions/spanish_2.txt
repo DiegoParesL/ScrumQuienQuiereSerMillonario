@@ -1,10 +1,15 @@
-
+* ¿El país más caluroso?
+- Australia
+- Camerún
++ India
+- Nueva Zelanda
 
 * ¿Qué come habitualmente el Reino Unido?
 - gofres
 - Sopa
 - Tocino
 + Patatas Y Pescado
+# imagesGame/menjar_britanics.png
 
 * ¿Quién es el presidente del Reino Unido?
 - Donald Trump
