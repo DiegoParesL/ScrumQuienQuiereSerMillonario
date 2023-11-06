@@ -25,7 +25,7 @@ if (
     <title>Lose</title>
 </head>
 <body>
-<audio id="my_audio" src="audio/lose.mp3" loop="loop"></audio>
+<audio id="my_audio" src="audio/lose.mp3"></audio>
 
     <div  id="pantalla">
         <br>
@@ -53,12 +53,16 @@ if (
     $tiempo = $_COOKIE["crono"];
     $tiempo_separado = explode(":", $tiempo);
     $segundos_totales = (($tiempo_separado[0] * 3600) + ($tiempo_separado[1] * 60) + ($tiempo_separado[2]));
-    $puntuacion = intval("-1") * ((intval("1") - pow(intval("2.718"), (intval("1") + intval($_COOKIE["aciertos"]))) / (intval("1") + intval($tiempo) * intval("3"))) * intval("100"));
-
+    $puntuacion = floor(1 - pow(2.71828,(1-(intval($_COOKIE["aciertos"]))/(1+(intval($segundos_totales))*0.4))))*100;
+            if ($puntuacion < 0) {
+                $puntuacion = intval("-1")*$puntuacion;
+            }
     if (isset($_POST["nombre"])) {
         for ($i = 0; $i < count($palabras_prohibidas); $i++) {
+            //print($palabras_prohibidas[$i]);
             if (str_contains($palabras_prohibidas[$i], $_POST["nombre"])) {
                 $palabra_valida = false;
+                
             }
         }
         if ($palabra_valida) {  //

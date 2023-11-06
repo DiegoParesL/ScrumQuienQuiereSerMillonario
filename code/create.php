@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p>Elije el nivel<p>
-    <form action="" method="post">
+    <form action="index.php" method="">
+        <input type="submit" value="Logout">
+    </form>
+    <br>
+    <form action="" method="post" id="create">
         <label for="nivel">Elije el nivel</label>
         <select name="nivel" id="nivel">
             <option value="1">Nivel 1</option>
@@ -39,6 +42,7 @@
     <br>
     <br>
     <input type="submit" value="Send">
+
 </form>
     <?php
     $file = fopen("questions/".$_POST["idioma"]."_".$_POST["nivel"].".txt","a+");
