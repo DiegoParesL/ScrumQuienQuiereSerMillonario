@@ -99,7 +99,7 @@ function trueClick(button, pregunta_id) {
 }
 function iniciarContador() {
     const contador = document.getElementById('tiempoRestante');
-
+    
     const intervalo = setInterval(() => {
         if (tiempoRestante <= 0) {
             clearInterval(intervalo); // Detener el contador cuando el tiempo se agote

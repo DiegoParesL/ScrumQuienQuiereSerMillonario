@@ -30,12 +30,13 @@ if (
 
     <div  id="pantalla">
         <br>
-    <h3 >You lose </h3>
+    <h3 >You Lose </h3>
     <?php
     echo "<p>You answered " . $_COOKIE["aciertos"] . " questions correctly.</p>";
     ?>
     <br><br>
     <p><button class="boton-mediano" onclick="window.location.href = 'index.php'">Back To Start</button>
+    <br><br>
     <button id="publish_button" name="publish_button" type="submit"  class="boton-mediano"onclick="publish()">Publish</button></p>
     </div>
     <div class="oculto" id="publicar">
@@ -66,15 +67,15 @@ if (
             fwrite($file, $_POST["nombre"] . " , " . $_COOKIE["aciertos"] . ", " . $tiempo . ", " . $puntuacion . ", " . session_create_id() . "\n");
             fclose($file);
             ?>
-                    <script>
-                        document.getElementById("publish_button").style.display = "none";
-                    </script>
+            <script>
+                document.getElementById("publish_button").style.display = "none";
+            </script>
             <?php
         } else {
             ?>
-                    <script>
-                        window.alert("Nombre no apropiado")
-                    </script>
+            <script>
+                window.alert("Nombre no apropiado")
+            </script>
             <?php
         }
     }

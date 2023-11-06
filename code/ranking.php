@@ -15,13 +15,13 @@
     <table>
         <thead>
             <tr>
-                <th style='font-size: 40px; padding-right: 20px;'>Name</th>
+                <th >Name</th>
                 <br>
-                <th style='font-size: 40px; padding-left: 20px;'>Answers</th>
+                <th>Answers</th>
                 <br>
-                <th style='font-size: 40px; padding-left: 20px;'>Time</th>
+                <th >Time</th>
                 <br>
-                <th style='font-size: 40px; padding-left: 20px;'>Total Score</th>
+                <th >Total Score</th>
             </tr>
         </thead>
         <tbody>

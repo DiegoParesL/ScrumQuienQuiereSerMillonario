@@ -301,6 +301,11 @@ div > button {
     font-size: 25px;
 }
 
+
+
+.th {
+    font-size: 60px; padding-right: 20px;
+}
 /* ************************************************************************** */
 /* ******************* RESPONSIVE TAMAÑO IPHONE 15 ************************** */
 
@@ -326,6 +331,11 @@ div > button {
 
     /* Estilos para iPhone15 u otras resoluciones similares */
     /* Puedes ajustar los estilos según sea necesario */
+
+
+    /***************************************************************************/
+    /****************************** INDEX.PHP ***********************************/
+
 
     body {
         text-align: center;
@@ -362,14 +372,14 @@ div > button {
     margin-right: 6px; /* Espacio a la derecha de cada imagen */
     width: 35px; /* Ajusta el ancho de la imagen */
     height: 29px; /* Ajusta el alto de la imagen */
-}
+    }
     
    /* Estilos para la imagen con espacio adicional */
     .espacio-imagen {
         margin-top: 30px; /* Espacio extra encima de la imagen */
         margin-bottom: 40px; /* Espacio extra debajo de la imagen */
-        width: 100px; /* Ancho de la imagen */
-        height: 100px; /* Alto de la imagen */
+        width: 140px; /* Ancho de la imagen */
+        height: 130px; /* Alto de la imagen */
     }
 
     /* Estilos para el texto con la clase 'texto-ajustado' */
@@ -382,16 +392,21 @@ div > button {
         font-family: Arial, sans-serif; /* Establece una fuente */
         line-height: 1.6; /* Ajusta la altura de línea para una mejor legibilidad */
         background-color: rgb(24, 40, 66);
-        border-radius: 35px;
+        border-radius: 9px;
     }
 
-    .playIndex #boton-jugar {
-        font-size: 60px; /* Reducir el tamaño de la fuente del botón */
-        padding: 5px 10px; /* Ajustar el espaciado interno del botón */
-        /* Otros estilos que desees aplicar al botón */
+    #boton-jugar {
+        width: 160px; /* Ancho del botón */
+        height: 70px; /* Alto del botón */
+        font-size: 50px; /* Tamaño de la fuente del botón */
     }
     
-
+    #ranking {
+        width: 190px; /* Ancho del botón */
+        height: 60px; /* Alto del botón */
+        font-size: 19px; /* Tamaño de la fuente del botón */
+        margin-left: 12px;
+    }
     
     .boton-grande {
         margin-top: 12px;
@@ -400,10 +415,13 @@ div > button {
     }
 
     .boton-mediano {
-        margin-top: 30px;
+        margin-top: 10px;
 
-        font-size: 70px; /* Tamaño de fuente más grande */
+        font-size: 30px; /* Tamaño de fuente más grande */
         padding: 15px 30px; /* Aumenta el espacio interior del botón */
+        margin-right: 10px; /* Margen a la derecha para separar los botones */
+       
+
     }
 
 
@@ -428,6 +446,7 @@ div > button {
     .crono {
         margin-top: -1px;
         font-size: 20px;
+     
     }
 
     .nvl{
@@ -438,9 +457,7 @@ div > button {
         font-size: 20px;
     }
 
-    .contenedorPreguntas{
-       
-    }
+   
     .CLlamada {
         position: absolute;
     }
@@ -483,5 +500,54 @@ div > button {
         object-fit: cover;
     }
     
+
+
+    
+
+    /***************************************************************************/
+    /****************************** LOSE.PHP ***********************************/
+
+
+    input[type="text"] {
+        width: 300px; /* Ancho del campo de entrada */
+        height: 40px; /* Alto del campo de entrada */
+        font-size: 16px; /* Tamaño de la fuente del campo de entrada */
+        margin-bottom: 12px;
+    }
+
+    #send {
+        width: 120px; /* Ancho del botón */
+        height: 40px; /* Alto del botón */
+        font-size: 26px; /* Tamaño de la fuente del botón */
+    }
+
+
+    #publish_button{
+        margin-top: 10px;
+
+        font-size: 30px; /* Tamaño de fuente más grande */
+        padding: 15px 30px; /* Aumenta el espacio interior del botón */
+        margin-right: 10px; /* Margen a la derecha para separar los botones */
+
+    }
+
+
+
+    /***************************************************************************/
+    /****************************** LOSE.PHP ***********************************/
+
+
+    
+
+     /***************************************************************************/
+    /****************************** RANKING.PHP ***********************************/
+    
+
+   
+    .th {
+        font-size: 90px; padding-right: 20px;
+    }
+   
+
 
 }

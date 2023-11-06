@@ -1,4 +1,2 @@
-hola, 18, rm2qbodcq1dld2tdri83tetj1l
-zxxz, 1, 1vgi2tu3l0oa3bohjdf28grumu, 00:00:00
-aaa, 6, 6f8l95kk434n2r6j8r0pharum8, 00:01:15
-aaa , 3, 00:37:29, 1500, 0vli8qk8tvpjdpidmgl4rbg8q2
+arnau , 6, 00:00:14, 12700, 76i7cul097fsdqc101m25phi6i
+aaaaaa , 0, 00:00:00, 100, as2jm214o5gv260gj0lob36iha
