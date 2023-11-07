@@ -62,17 +62,4 @@
 + Blau Blanc I Vermell
 - Blau, Negre, Vermell
 - Groc Vermell Blau
-* hola
 
-* hola
-- 1
-- 2
-+ 3
-- 4
-# 
-* hola
-- 1
-- 2
-+ 3
-- 4
-# 

@@ -84,7 +84,11 @@ if (
     }
     if ($_POST["question"]!="" && $_POST["respuesta1"]!="" && $_POST["respuesta2"]!=""
         && $_POST["respuesta3"]!="" && $_POST["respuesta4"]!="") {
-            fwrite($file,"\n* ".$_POST["question"].$respuestas."\n# ".$_POST["img"]);
+            if (!$_POST["img"]) {
+                fwrite($file,"\n* ".$_POST["question"].$respuestas);
+            } else {
+                fwrite($file,"\n* ".$_POST["question"].$respuestas."\n# ".$_POST["img"]);
+            }
     }
     ?>
 </body>
