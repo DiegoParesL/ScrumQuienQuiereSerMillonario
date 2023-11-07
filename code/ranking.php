@@ -10,7 +10,14 @@
     <noscript>
     <h1 id="jsDisabledMessage">Javascript is disabled, activate it to play</h1>
 </noscript>
-<h1>Hall of Fame</h1>
+    <header>
+        <p>
+            <a href="#" onclick="changeLanguage('spanish');"><img src="images/spain.png" alt="Español" height="50px"></a>&nbsp;
+            <a href="#" onclick="changeLanguage('catalan');"><img src="images/catalan.png" alt="Catalán" height="50px"></a>&nbsp;
+            <a href="#" onclick="changeLanguage('english');"><img src="images/english.jpg" alt="Inglés" height="50px"></a>
+        </p>
+    </header>
+<h1 class="ranking1">Hall of Fame</h1>
 <div class="table-container">
     <table>
         <thead>
@@ -67,6 +74,7 @@
     </table>
 </div>
 <br><br><br>
+<script src="funciones/translation.js"></script>
 <div class="button-container">
     <form action="index.php" method="post">
         <button class="boton-mediano" type="submit" id="index">Home</button>
