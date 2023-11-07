@@ -22,6 +22,7 @@
 - 7 días
 - 2 años
 + 11 Días
+# imagesGame/palestina_israel.png
 
 * ¿Cuántos Días Hubo Guerra Con Violencia Entre Palestina E Israel?
 - 11 días
@@ -34,12 +35,13 @@
 - La mitad de la ciudad
 - 200 personas
 + 44 personas
+# imagesGame/palestina_israel.png
 
-* ¿Por qué son importantes los imperios británicos?
-- Por su histórico
-+ Por sus muertos
-- Por sus victorias
-- Por su dinero
+* ¿Cuál de estos países europeos sigue siendo una colonia del Imperio Británico?
++ Gibraltar
+- Chipre
+- Islas del Canal
+- Inglaterra
 
 * Las ideas sobre el imperio en el Reino Unido han fluctuado a lo largo...
 - Victorias
@@ -47,8 +49,8 @@
 - Monarquía
 - País
 
-* ¿Cuántos territorios conquistó el Imperio Británico?
-+ 5 Territorios
-- 8 territorios
-- 10 territorios
-- 12 territorios
+* ¿Dónde es típico comer pescado y patatas (fish and chips)?
++ Reino Unido
+- Escocia
+- Francia
+- Irlanda

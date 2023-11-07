@@ -35,7 +35,7 @@
 - La meitat del poble
 - 200 persones
 + 44 persones
-# imagesGame/palestina_israel.pngç
+# imagesGame/palestina_israel.png
 
 * Quin d'aquests països europeus segueix siguent una colonia de l'Imperi Britànic?
 + Gibraltar

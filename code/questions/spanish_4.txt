@@ -3,12 +3,14 @@
 + 1
 - 2
 - Nunca ha ido
+# imagesGame/cups_england.jpeg
 
 * En que direccion conducen los ingleses?
 + Conducen por la izquierda y el conductor esta en la derecha
 - Conducen por la derecha y el conductor esta en la izquierda
 - Como todos
 - Al reves
+# imagesGame/english_drive.jpg
 
 * Que país de la commonwealth crees que tiene la mejor situacion economica?
 + India 
@@ -40,14 +42,20 @@
 - San Patrick day
 - April Fool’s Day
 
-* Que pais consume mas te anualmente?
-- Portugal
-+ Reino Unido
-- España
-- Francia
-
 * Que país colonial tiene mas copas del mundo?
 - Francia
 - España
 + Alemania
 - Brasil
+
+* ¿En qué siglo se creó el fútbol?
++ Siglo XIX
+- Siglo XX
+- Siglo I
+- Ahora
+
+* La pelota solía ser...
+- Con Plástico
++ Con Hojas
+- Con Cajas
+- Con ropa

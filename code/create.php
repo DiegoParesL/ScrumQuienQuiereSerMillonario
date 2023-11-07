@@ -41,10 +41,21 @@
     <label for="">Respuesta 4</label><input type="text" name="respuesta4" id="respuesta4">
     <br>
     <br>
+    <label for="nivel">Respuesta Correcta</label>
+        <select name="correcta" id="correcta">
+            <option value="respuesta_1">Respuesta 1</option>
+            <option value="respuesta_2">Respuesta 2</option>
+            <option value="respuesta_3">Respuesta 3</option>
+            <option value="respuesta_4">Respuesta 4</option>
+        </select>
+    <br>
+    <br>
+    <input type="file" name="img" id="img" accept="image/png, image/gif, image/jpeg">
     <input type="submit" value="Send">
 
 </form>
     <?php
+    error_reporting(0);
     $file = fopen("questions/".$_POST["idioma"]."_".$_POST["nivel"].".txt","a+");
     $respuesta_correcta = 0;
     if ($_POST["question"]!="" && $_POST["respuesta1"]!="" && $_POST["respuesta2"]!=""
@@ -61,8 +72,8 @@
                 </script>
                 <?php
             } elseif ($respuesta_correcta==1) {
-            fwrite($file,"\n* ".$_POST["question"]."\n".$_POST["respuesta1"]."\n".
-            $_POST["respuesta2"]."\n".$_POST["respuesta3"]."\n".$_POST["respuesta4"]); 
+                fwrite($file,"\n* ".$_POST["question"]."\n".$_POST["respuesta1"]."\n".
+                $_POST["respuesta2"]."\n".$_POST["respuesta3"]."\n".$_POST["respuesta4"]."\n"."# ".$_POST["img"]); 
             }
         }
     ?>
