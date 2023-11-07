@@ -306,6 +306,10 @@ div > button {
 .th {
     font-size: 60px; padding-right: 20px;
 }
+
+label {
+    color: white;
+}
 /* ************************************************************************** */
 /* ******************* RESPONSIVE TAMAÑO IPHONE 15 ************************** */
 
@@ -402,10 +406,10 @@ div > button {
     }
     
     #ranking {
-        width: 190px; /* Ancho del botón */
         height: 60px; /* Alto del botón */
         font-size: 19px; /* Tamaño de la fuente del botón */
         margin-left: 12px;
+        
     }
     
     .boton-grande {
@@ -422,6 +426,15 @@ div > button {
         margin-right: 10px; /* Margen a la derecha para separar los botones */
        
 
+    }
+
+    .login-button button{
+        font-size: 15px;
+        margin-top: 50px;
+        margin-right: 29px;
+        position: absolute;
+        top: 10px; /* Ajusta la distancia desde la parte superior */
+        right: 10px; /* Ajusta la distancia desde la izquierda */
     }
 
 
@@ -549,5 +562,29 @@ div > button {
     }
    
 
+    /***************************************************************************/
+    /****************************** LOGIN.PHP ***********************************/
+    
+    .tittleLogin {
+        margin-top: 90px;
+
+    }
+    .userLogin {
+        margin-top: 90px;
+    }
+
+    .boton-pequeño {
+      
+    font-size: 15px; /* Tamaño de fuente más grande */
+    }
+
+    
+    /***************************************************************************/
+    /****************************** CREATE.PHP ***********************************/
+    
+
+    .tittleCreate {
+        text-align: center;
+    }
 
 }

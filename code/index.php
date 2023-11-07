@@ -16,10 +16,10 @@ unset($_SESSION['nivel']);
 </head>
 
 <body>
-
-<noscript>
-    <h1 id="jsDisabledMessage">Javascript is disabled, activate it to play</h1>
-</noscript>
+<a href="login.php" class="login-button"><button>Login</button></a>
+    <noscript>
+        <h1 id="jsDisabledMessage">Javascript is disabled, activate it to play</h1>
+    </noscript>
 
     <header>
         <p>

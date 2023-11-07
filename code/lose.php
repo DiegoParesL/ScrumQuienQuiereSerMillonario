@@ -25,8 +25,7 @@ if (
     <title>Lose</title>
 </head>
 <body>
-    
-    
+<audio id="my_audio" src="audio/lose.mp3"></audio>
 
     <div  id="pantalla">
         <br>
@@ -36,7 +35,6 @@ if (
     ?>
     <br><br>
     <p><button class="boton-mediano" onclick="window.location.href = 'index.php'">Back To Start</button>
-    <br><br>
     <button id="publish_button" name="publish_button" type="submit"  class="boton-mediano"onclick="publish()">Publish</button></p>
     </div>
     <div class="oculto" id="publicar">
@@ -55,27 +53,31 @@ if (
     $tiempo = $_COOKIE["crono"];
     $tiempo_separado = explode(":", $tiempo);
     $segundos_totales = (($tiempo_separado[0] * 3600) + ($tiempo_separado[1] * 60) + ($tiempo_separado[2]));
-    $puntuacion = intval("-1") * ((intval("1") - pow(intval("2.718"), (intval("1") + intval($_COOKIE["aciertos"]))) / (intval("1") + intval($tiempo) * intval("3"))) * intval("100"));
-
+    $puntuacion =floor((intval($_COOKIE["aciertos"]))*80/(intval($segundos_totales)+10)*1.4);
+            if ($puntuacion < 0) {
+                $puntuacion = intval("-1")*$puntuacion;
+            }
     if (isset($_POST["nombre"])) {
         for ($i = 0; $i < count($palabras_prohibidas); $i++) {
+            //print($palabras_prohibidas[$i]);
             if (str_contains($palabras_prohibidas[$i], $_POST["nombre"])) {
                 $palabra_valida = false;
+                
             }
         }
         if ($palabra_valida) {  //
             fwrite($file, $_POST["nombre"] . " , " . $_COOKIE["aciertos"] . ", " . $tiempo . ", " . $puntuacion . ", " . session_create_id() . "\n");
             fclose($file);
             ?>
-            <script>
-                document.getElementById("publish_button").style.display = "none";
-            </script>
+                    <script>
+                        document.getElementById("publish_button").style.display = "none";
+                    </script>
             <?php
         } else {
             ?>
-            <script>
-                window.alert("Nombre no apropiado")
-            </script>
+                    <script>
+                        window.alert("Nombre no apropiado")
+                    </script>
             <?php
         }
     }

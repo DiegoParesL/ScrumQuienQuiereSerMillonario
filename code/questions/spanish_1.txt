@@ -3,55 +3,60 @@
 + Paz
 - Revolución
 - Racismo
-* ¿De dónde es Gandhi?
+# imagesGame/ghandi.png
 
+* ¿De dónde es Gandhi?
 - Marruecos
 - Inglaterra
 + India
 - Perú
+
 * Ghandi murió por un...
 - Accidente
 - Infarto de miocardio
 - enfermedad
 + Asesinado
-* ¿En qué siglo se creó el fútbol?
-+ Siglo XIX
-- Siglo XX
-- Siglo I
-- Ahora
+
 * ¿En qué parte del mundo se creó el fútbol?
-
-- Porcelana
+- China
 - México
--Brasil
+- Brasil
 + Inglaterra
-* La pelota solía ser...
-- Con Plástico
-+ Con Hojas
-- Con Cajas
 
-- Con ropa
-* ¿Quiénes fueron los que utilizaron la palabra “alborigen”?
-  - árabes
-  - asiáticos
-  - Español
- + Italianos - Griegos
+* ¿Dónde está localizado el Big Ben?
+- París
++ London
+- Andorra
+- Alemania
+# imagesGame/big_ben.jpg
 
+* ¿Dónde se encuentra el palacio de Buckingham?
+- Francia
++ Inglaterra
+- Italia
+- Sudáfrica.
+# imagesGame/buckingham_palace.jpg
 
+* "¡Oh Romeo, Romeo! ¿Dónde te encuentras Romeo? Rechaza a tu padre y rechaza tu nombre; o, si te podrirás, te juro mi amor y así yo no seré una Capulet". ¿Quién escribió esto?
++ Shakespeare
+- Zorrilla
+- Quevedo
+- Cervantes
 
-* En la antigüedad, los humanos vivían en...
-+Australia
-- Barcelona
--Singapur
-- Argentina
+* ¿Más población?
++ India
+- Bangladesh
+- Australia
+- Inglaterra
 
+* Que pais consume mas te anualmente?
+- Portugal
++ Reino Unido
+- España
+- Francia
 
-* ¿Cuántos años vivieron los aborígenes?
-
-- 12.000 Años
-
-+ 40.000 Años
-
-- 25.000 años
-
-- 60.000 años
+* ¿Cómo es la bandera del Reino Unido?
+- Rosa, azul y rojo
++ Azul Blanco Y Rojo
+- Azul, Negro, Rojo
+- Amarillo Rojo Azul

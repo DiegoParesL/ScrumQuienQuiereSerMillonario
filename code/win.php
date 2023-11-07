@@ -32,7 +32,7 @@ if (
     <br> <br>
     <?php 
     echo "<p>Questions answered correctly: " . $_COOKIE["aciertos"] . "</p>";
-?>
+    ?>
 
     <br><br>
     <p>
