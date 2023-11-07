@@ -60,27 +60,18 @@ if (
     <label for="">Respuesta 4</label><input type="text" name="respuesta4" id="respuesta4">
     <br>
     <br>
-    <div><input type="radio" name="correcta" id="respuesta_1" value="respuesta1" checked><label for="respuesta_1">Respuesta 1</label>
-    <input type="radio" name="correcta" id="respuesta_2"  value="respuesta2" ><label for="respuesta_2">Respuesta 2</label></div>
-    <div><input type="radio" name="correcta" id="respuesta_3" value="respuesta3" ><label for="respuesta_3">Respuesta 3</label>
-    <input type="radio" name="correcta" id="respuesta_4" value="respuesta4" ><label for="respuesta_4">Respuesta 4</label></div>
-    <br>
-    <br>
-    <input type="file" name="img" id="img" accept="image/png, image/gif, image/jpeg">
     <input type="submit" value="Send">
 
 </form>
     <?php
-    error_reporting(0);
     $file = fopen("questions/".$_POST["idioma"]."_".$_POST["nivel"].".txt","a+");
-    print_r($_POST["respuesta1"]."<br>");
-    $correcta = $_POST["correcta"];
-    print_r($_POST[$correcta]);
+    $respuesta_correcta = 0;
     if ($_POST["question"]!="" && $_POST["respuesta1"]!="" && $_POST["respuesta2"]!=""
         && $_POST["respuesta3"]!="" && $_POST["respuesta4"]!="") {
-            $correcta = $_POST["correcta"];
-            for ($i=0;$i<4;$i++) {
-                
+            for ($i= 0; $i<4;$i++) {
+                if (substr($_POST["respuesta".$i+1],0,1) == "+") {
+                    $respuesta_correcta++;
+                }
             }
             if ($respuesta_correcta != 1) {
                 ?>
@@ -89,8 +80,8 @@ if (
                 </script>
                 <?php
             } elseif ($respuesta_correcta==1) {
-                fwrite($file,"\n* ".$_POST["question"]."\n".$_POST["respuesta1"]."\n".
-                $_POST["respuesta2"]."\n".$_POST["respuesta3"]."\n".$_POST["respuesta4"]."\n"."# ".$_POST["img"]); 
+            fwrite($file,"\n* ".$_POST["question"]."\n".$_POST["respuesta1"]."\n".
+            $_POST["respuesta2"]."\n".$_POST["respuesta3"]."\n".$_POST["respuesta4"]); 
             }
         }
     ?>
