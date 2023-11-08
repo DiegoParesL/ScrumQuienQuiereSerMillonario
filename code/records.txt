@@ -1,11 +1,6 @@
-arnau , 6, 00:00:14, 12700, 76i7cul097fsdqc101m25phi6i
-aaaaaa , 0, 00:00:00, 100, as2jm214o5gv260gj0lob36iha
-aaaaa , , 00:00:01, 100, spvmtvp0do4krt1rqdkh0uh6u0
-aaa , 0, 00:00:00, 0, dpd62ls6lt20r3a84k6ohqe0o6
-prueba , 3, 00:00:00, 33, ncqhjlnk7odkplu95k79d1c1it
-prueba1 , 1, 00:02:27, 0, utqdd850b2adk7rhsehhodmntv
-prueba3 , 2, 00:00:03, 17, 1aij458iqgkc0ln7gi7u11gfhj
-prueba4 , 1, 00:00:03, 8, jit0bsdejojcja9f2l7j0locs9
-cascac , 0, 00:00:06, 0, mktk0alile00gnret487hqtafs
-tw4twt , 0, 00:00:00, 0, bjuelke0jtgr8m1eeg43k35nre
-hhh , 0, 00:00:00, 0, oj8dflb1b1g8uhvfisli8umcu1
+aaa , 1, 00:00:03, 8, 3uof9vopshnf98jencp1phlgeo
+prueba1 , 0, 00:00:09, 0, q6ndgk1ja96til17fgadoj48cv
+prueba1 , 0, 00:00:09, 0, h6hkrtjj78cpumhnt33sm5v2p0
+prueba3 , 0, 00:00:00, 0, fihggeue57v2sk9tokji5fk3gf
+prueba5 , 2, 00:00:13, 9, cq8gl5mq22g4vukfgs52md58nn
+prueba4 , 0, 00:00:02, 0, f51pr52ibvlp8kllbf1blprtou

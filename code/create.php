@@ -26,6 +26,7 @@ if (
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
     <form action="index.php" method="">
         <input type="submit" value="Logout">
     </form>
@@ -47,10 +48,10 @@ if (
             <option value="english">Ingles</option>
         </select>
     <br>
-    <p class="tittleCreate">Pregunta</p>
+    <h5 class="tittleCreate">Pregunta</h5>
     <input type="text" name="question" id="question">
     <br>
-    <p>Escribe las respuestas</p>
+    <h5>Escribe las respuestas</h5>
 
     <label for="">Respuesta 1</label><input type="text" name="respuesta1" id="respuesta1"> 
     <label for="">Respuesta 2</label><input type="text" name="respuesta2" id="respuesta2">
@@ -59,7 +60,7 @@ if (
     <label for="">Respuesta 4</label><input type="text" name="respuesta4" id="respuesta4">
     <br>
     <br>
-    <p>Indica la respuesta correcta</p>
+    <h5>Indica la respuesta correcta</h5>
     <div><input type="radio" name="correcta" id="respuesta_1" value="respuesta1" checked><label for="respuesta_1">Respuesta 1</label>
     <input type="radio" name="correcta" id="respuesta_2"  value="respuesta2" ><label for="respuesta_2">Respuesta 2</label></div>
     <div><input type="radio" name="correcta" id="respuesta_3" value="respuesta3" ><label for="respuesta_3">Respuesta 3</label>

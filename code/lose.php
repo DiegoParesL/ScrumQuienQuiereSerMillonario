@@ -34,8 +34,8 @@ if (
     echo "<p>You answered " . $_COOKIE["aciertos"] . " questions correctly.</p>";
     ?>
     <br><br>
-    <p><button class="boton-mediano" onclick="window.location.href = 'index.php'">Back To Start</button>
-    <button id="publish_button" name="publish_button" type="submit"  class="boton-mediano"onclick="publish()">Publish</button></p>
+    <h2><button class="boton-mediano" onclick="window.location.href = 'index.php'">Back To Start</button>
+    <button id="publish_button" name="publish_button" type="submit"  class="boton-mediano"onclick="publish()">Publish</button></h2>
     </div>
     <div class="oculto" id="publicar">
     <form method="post"  id="publicar">

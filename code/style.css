@@ -27,6 +27,12 @@ h3 {
     font-size: 75PX;
 }
 
+h5 {
+    font-family:'Courier New', Courier, monospace;
+    color: white;
+    font-size: 30PX;
+}
+
 p {
     color: white;
     font-size: 30PX;
@@ -119,7 +125,7 @@ div > button {
 }
 
 .red-blinking-text {
-    font-size: 24px;
+    font-size: 27px;
     color: red;
     animation: blinker 1s linear infinite;
 }
@@ -386,18 +392,18 @@ label {
         height: 130px; /* Alto de la imagen */
     }
 
-    /* Estilos para el texto con la clase 'texto-ajustado' */
     .texto-ajustado {
         font-size: 20px;
         padding-left: 5px;
-        text-align: center; /* Centra el texto */
-        max-width: 500px; /* Establece un ancho máximo para el texto */
-        margin: 0 auto; /* Centra el párrafo horizontalmente */
-        font-family: Arial, sans-serif; /* Establece una fuente */
-        line-height: 1.6; /* Ajusta la altura de línea para una mejor legibilidad */
+        text-align: justify; /* Justifica el texto */
+        max-width: 500px;
+        margin: 0 auto;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
         background-color: rgb(24, 40, 66);
         border-radius: 9px;
-    }
+      }
+      
 
     #boton-jugar {
         width: 160px; /* Ancho del botón */
@@ -586,5 +592,9 @@ label {
     .tittleCreate {
         text-align: center;
     }
-
+    h5 {
+        font-family:'Courier New', Courier, monospace;
+        color: white;
+        font-size: 20PX;
+    }
 }

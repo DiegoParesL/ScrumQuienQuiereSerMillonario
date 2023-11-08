@@ -78,7 +78,7 @@
         }
     }
 
-    echo "<p class='nvl' id='aciertos'>LEVEL " . $nivel . "</p>";
+    echo "<h2 class='nvl' id='aciertos'>LEVEL " . $nivel . "</h2>";
 
 
     function preguntas() {
