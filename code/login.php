@@ -14,13 +14,15 @@
     </form>
     
     <?php
+    session_start();
         $user = ["admin" => "P@ssw0rd"];
         if (isset($_POST["user"]) && $_POST["pwd"]) {
             if (array_key_exists($_POST["user"], $user)) {
                 if ($_POST["pwd"] == $user[$_POST["user"]]) {
+                    $_SESSION["userLogged"] = $_POST["user"];
                     ?>
                         <script>
-                            window.location.href = "create.php";
+                            window.location.href = "index.php";
                         </script>
                     <?php
                 }

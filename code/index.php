@@ -1,8 +1,8 @@
 <?php
 session_start();
 // Restablecer el nivel del juego al nivel 1
-
-
+error_reporting(0);
+echo $_SESSION['userLogged'];
 unset($_SESSION['nivel']);
 ?>
 
@@ -16,7 +16,11 @@ unset($_SESSION['nivel']);
 </head>
 
 <body>
-    <a href="login.php"><button>Login</button></a>
+    <p>
+    <button id="loginForm">Iniciar Sesio</button>
+    <button id="logoutButton" class="oculto">Tancar Sesio</button>
+    <button id="createForm" class="oculto">Crear Preguntes</button>
+    </p>
 <noscript>
     <h1 id="jsDisabledMessage">Javascript is disabled, activate it to play</h1>
 </noscript>
@@ -48,6 +52,39 @@ unset($_SESSION['nivel']);
     <script src="funciones/translation.js"></script>
     <script>
         document.cookie = "crono=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    </script>
+    <?php
+        if ($_SESSION["userLogged"]=="admin") {
+            ?>
+                <script>
+                    document.getElementById("loginForm").style.display = "none";
+                    document.getElementById("createForm").style.display = "block";
+                    document.getElementById("logoutButton").style.display = "block";
+                </script>
+            <?php
+        } else {
+            ?>
+            <script>
+                document.getElementById("loginForm").style.display = "block";
+                document.getElementById("createForm").style.display = "none";
+                document.getElementById("logoutButton").style.display = "none";
+            </script>            
+        <?php
+        }
+        
+    ?>
+    <script>
+        document.getElementById('logoutButton').onclick = function() {
+            <?php $_SESSION["userLogged"] = ""; ?>
+            window.location.href = "index.php";
+        }
+        document.getElementById('loginForm').onclick = function() {
+            window.location.href = "login.php";
+        }
+        document.getElementById('createForm').onclick = function() {
+            window.location.href = "create.php";
+        }
+        //loginForm
     </script>
 </body>
 </html>

@@ -5,15 +5,13 @@ if (
     !isset($_SERVER['HTTP_REFERER']) ||
     (
         strpos($_SERVER['HTTP_REFERER'], "login.php") === false &&
-        strpos($_SERVER['HTTP_REFERER'], "create.php") === false
+        strpos($_SERVER['HTTP_REFERER'], "index.php") === false
     )
 ) {
     // Si la página no se accede desde "game.php" ni desde "lose.php", redirige o muestra un mensaje de error.
     header("HTTP/1.1 403 Forbidden");
     exit;
 }
-
-
 // El contenido de la página "lose.php" continua aquí
 ?>
 
@@ -26,9 +24,7 @@ if (
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="index.php" method="">
-        <input type="submit" value="Logout">
-    </form>
+    <button id="logoutButton">Logout</button>
     <br>
     <form action="" method="post" id="create">
         <label for="nivel">Elije el nivel</label>
@@ -91,5 +87,11 @@ if (
             }
     }
     ?>
+    <script>
+        document.getElementById('logoutButton').onclick = function() {
+            <?php $_SESSION["userLogged"] = ""; ?>
+            window.location.href = "index.php";
+        }
+    </script>
 </body>
 </html>
