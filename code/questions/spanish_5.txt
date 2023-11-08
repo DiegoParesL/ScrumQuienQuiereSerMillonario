@@ -3,33 +3,54 @@
 - Harry Soutar
 - Milos Degenek
 - Leo Messi
+# imagesGame/australian_player.jpg
+
 * ¿Son los británicos puntuales?
 + Siempre
 - Generalmente
 - Puede
 - Nunca
+# imagesGame/british_punctual.webp
+
 * ¿Cuáles de estos países no fueron colonizados por Inglaterra?
 - Islas Maldivas
 - Islas Caimán
 - Islas Bermudas
 + Bielorrusia
+
 * ¿En qué siglo el cricket se convirtió en deporte nacional?
 + A finales del siglo XVIII
 - A principios del siglo XVII
 - A finales del siglo XV.
 - A principios del siglo XIX
+
 * ¿En qué colonia inglesa se juega menos al cricket?
 - India
 + Australia
 - Pakistán
 - Sudáfrica
-* ¿Cuál de estos países europeos sigue siendo una colonia del Imperio Británico?
-+ Gibraltar
-- Chipre
-- Islas del Canal
-- Inglaterra
+
 * ¿De qué se trata la tradición del Rolling Cheese?
 - Comer queso redondo
 + Tirar queso redondo desde una colina
 - Hacer una tarta de queso redonda
 - Compra un queso redondo grande.
+
+* ¿Mejor salud?
++ Singapur
+- Nueva Zelanda
+- Bahamas
+- Inglaterra
+
+* ¿Cuántos territorios conquistó el Imperio Británico?
++ 5 Territorios
+- 8 territorios
+- 10 territorios
+- 12 territorios
+# imagesGame/territoris_britanics.png
+
+* ¿Por qué son importantes los imperios británicos?
+- Por su histórico
++ Por sus muertos
+- Por sus victorias
+- Por su dinero

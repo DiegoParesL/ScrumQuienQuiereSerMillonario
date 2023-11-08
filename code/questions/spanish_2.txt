@@ -1,45 +1,56 @@
-* ¿Cómo es la bandera del Reino Unido?
-- Rosa, azul y rojo
-+ Azul Blanco Y Rojo
-- Azul, Negro, Rojo
-- Amarillo Rojo Azul
+* ¿El país más caluroso?
+- Australia
+- Camerún
++ India
+- Nueva Zelanda
+
 * ¿Qué come habitualmente el Reino Unido?
 - gofres
 - Sopa
 - Tocino
 + Patatas Y Pescado
+# imagesGame/menjar_britanics.png
+
 * ¿Quién es el presidente del Reino Unido?
 - Donald Trump
 - Pedro Sánchez
 - Dina Boluarte
 + Boris Johnson
+
 * ¿Cuánto duró aproximadamente la guerra entre Palestina e Israel?
 - 2 meses
 - 7 días
 - 2 años
 + 11 Días
+# imagesGame/palestina_israel.png
+
 * ¿Cuántos Días Hubo Guerra Con Violencia Entre Palestina E Israel?
 - 11 días
 - 2 meses
 + 3 Días
 - Cada día de guerra
+
 * ¿Cuántas personas murieron en la guerra entre Palestina e Israel?
 - 3 personas
 - La mitad de la ciudad
 - 200 personas
 + 44 personas
-* ¿Por qué son importantes los imperios británicos?
-- Por su histórico
-+ Por sus muertos
-- Por sus victorias
-- Por su dinero
+# imagesGame/palestina_israel.png
+
+* ¿Cuál de estos países europeos sigue siendo una colonia del Imperio Británico?
++ Gibraltar
+- Chipre
+- Islas del Canal
+- Inglaterra
+
 * Las ideas sobre el imperio en el Reino Unido han fluctuado a lo largo...
 - Victorias
 + Horarios
 - Monarquía
 - País
-* ¿Cuántos territorios conquistó el Imperio Británico?
-+ 5 Territorios
-- 8 territorios
-- 10 territorios
-- 12 territorios
+
+* ¿Dónde es típico comer pescado y patatas (fish and chips)?
++ Reino Unido
+- Escocia
+- Francia
+- Irlanda

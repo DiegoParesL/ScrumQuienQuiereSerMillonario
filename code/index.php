@@ -16,10 +16,10 @@ unset($_SESSION['nivel']);
 </head>
 
 <body>
-
-<noscript>
-    <h1 id="jsDisabledMessage">Javascript is disabled, activate it to play</h1>
-</noscript>
+<a href="login.php" class="login-button"><button>Login</button></a>
+    <noscript>
+        <h1 id="jsDisabledMessage">Javascript is disabled, activate it to play</h1>
+    </noscript>
 
     <header>
         <p>
@@ -29,15 +29,17 @@ unset($_SESSION['nivel']);
         </p>
     </header>
     <h1 id="titulo">Benvigut a Qui vol ser milionari?</h1>
-    <img src="images/milionari.png" alt="milionariIMG" width="300px" height="300px">
-    <p id="descripcion">Aquest joc aquesta basat en el programa del mateix nom.<br>En el qual hi ha diferents nivells de dificultat respecte les preguntes.<br>Començarem en el nivell 1 i conforme anem encertat preguntes anira pujant el nivell, fins al nivell 6.<br>Cada nivell de dificultat té en total 3 preguntes i una vegada encertades las 3 passarem a la següent dificultat,<br> fins que encertem les 18 preguntes totals o fallem.</p>
+    <img class="espacio-imagen" src="images/milionari.png" alt="milionariIMG" width="300px" height="300px">
+    <p id="descripcion" class="texto-ajustado">
+    Aquest joc aquesta basat en el programa del mateix nom. En el qual hi ha diferents nivells de dificultat respecte les preguntes. Començarem en el nivell 1 i conforme anem encertat preguntes anira pujant el nivell, fins al nivell 6. Cada nivell de dificultat té en total 3 preguntes i una vegada encertades les 3 passarem a la següent dificultat, fins que encertem les 18 preguntes totals o fallem.
+    </p>
     <br>
     <form action="game.php" method="get">
         <input type="hidden" name="lang" id="selectedLanguage" value="catalan"> <!-- Cambia "es" a "ca" o "en" según el idioma seleccionado -->
         <button type="submit" id="boton-jugar" class="boton-grande" onclick="empezarDetener(this);">Play</button>
     </form>
     <br>
-    <form action="ranking.php" method="post">
+    <form class="rankingIndex"action="ranking.php" method="post">
         <button type="submit" id="ranking" class="boton-mediano">Hall Of Fame</button>
     </form>
 

@@ -3,6 +3,7 @@
 + Pau
 - Revolució
 - El racisme
+# imagesGame/ghandi.png
 
 * D'on és Gandhi?
 - El Marroc
@@ -10,43 +11,54 @@
 + Índia
 - Perú
 
-
 * Ghandi va morir per un...
 - Accident
 - Atac de cor
 - Malaltia
 + Assassinat
-* En quin segle es va crear el futbol?
-+ Segle Xix
-- Segle XX
-- Segle I
-- Ara
 
 * On del món es va crear el futbol?
 - Xina
 - Mèxic
 - Brasil
 + Anglaterra
-* La pilota solia ser...
-- Amb plàstic
-+ Amb Fulles
-- Amb caixes
-- Amb roba
-* Qui van ser els que van utilitzar la paraula "alborigen"?
 
+* A on es troba el Big Ben?
+- París
++ Londres
+- Andorra
+- Alemanya
+# imagesGame/big_ben.jpg
 
-- Àrabs
-- Asiàtics
-- Castellà
-+ italians - grecs
-* En l'antiguitat, els humans solien viure a...
-+ Austràlia
-- Barcelona
-- Singapur
-- Argentina
+* A on es localitza el palau de Buckingham?
+- França
++ Anglaterra
+- Itàlia
+- Sudàfrica.
+# imagesGame/buckingham_palace.jpg
 
-* Quants anys van viure els aborígens?
-- 12.000 anys
-+ 40.000 anys
-- 25.000 anys
-- 60.000 anys
+* "Oh Romeu, Romeu! Per què ets Romeu? Nega el teu pare i rebutja el teu nom; o, si et podrís, et juro amor meu i ja no seré una Capulet." Qui va escriure això?
++ Shakespeare
+- Zorrilla
+- Quevedo
+- Cervantes
+
+* Més població?
++ Índia
+- Bangla Desh
+- Austràlia
+- Anglaterra
+# imagesGame/More_Population.jpeg
+
+* Quin país consumeix més te anualment? 
+- Portugal 
++ El Regne Unit 
+- Espanya 
+- França
+# imagesGame/more_tea.webp
+
+* Com és la bandera del Regne Unit?
+- Rosa, blau i vermell
++ Blau Blanc I Vermell
+- Blau, Negre, Vermell
+- Groc Vermell Blau

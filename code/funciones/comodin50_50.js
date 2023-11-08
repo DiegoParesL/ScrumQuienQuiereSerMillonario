@@ -21,6 +21,25 @@ function detectarIncorrectas() {
     return arrayIncorrectas;
     //document.getElementsByClassName("fail")
 }
+function bloquearEntreNiveles50_50(){
+let galletas = document.cookie;
+let galleta = galletas.split(";");
+let valorGalleta
+for (let i = 0; i < galleta.length; i++) {
+    let nombreGalleta = galleta[i].split("=")
+    if(nombreGalleta[0].trim()=="llamada"){
+        valorGalleta = nombreGalleta[1];
+    }
+    
+}
+if(parseInt(valorGalleta)==1){
+    document.getElementById("C50").style.display = "none";
+    document.getElementById("xC50").style.display = "flex"; 
+}
+
+}
+bloquearEntreNiveles50_50();
+
 function comodin50_50() {
     
     let arrayIncorrecto = detectarIncorrectas();

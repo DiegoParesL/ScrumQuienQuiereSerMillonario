@@ -6,7 +6,10 @@
     <title>Joc</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="bloquearEntreNivelesPublico()">
+<body>
+    <noscript>
+    <h1 id="jsDisabledMessage">Javascript is disabled, activate it to play</h1>
+</noscript>
 <?php
         echo"<div id=\"oculto\" class=\"publico\">";
         echo"<div class=\"publicOcult red-bar\">";
@@ -22,25 +25,23 @@
         echo "<p>(2,2)</p>";
         echo"</div>";
         echo"</div>";
+
+        echo "<div id='contenedorTelefono'>";
+        echo "<img id='imgTel' src='./images/telefono.png' alt='Imagen Comodin Telefono'>";
+        echo "</div>";
     ?>  
-    <?php
-        echo"<div id=\"ocultoLlamda\" class=\"llamada\">";
-        echo"<div id=\"contenedorTelefono\">";
-        echo "<img id=\"imgTel\" src=\"images/telefono.png\" alt=\"imagen de telefono antiguo\">";
-        echo"</div>";
-        echo"</div>";
-    ?>  
-<a href="win.php">
-    <img src="images/milionari.png" alt="" height="150px" width="150px">
-</a>
+    <a href="win.php">
+        <img class="imgGame" src="images/milionari.png" alt="" height="150px" width="150px">
+    </a>
     <br>
     
     <input type="button" class="oculto" value="Empezar" id="boton" >
     <br>
 
-    <div id="preguntasContainer">
+    <div class="preguntasContainer" id="preguntasContainer">
+                <h2 id='crono' class="crono">00:00:00</h2>
+
         <div class="vertical-buttons">
-        <h2 id='crono'>00:00:00</h2>
             <button  id="CLlamada" onclick="llamada()">
                 <img id="tel" src="images/telefono.png" alt="" width="50" height="50">
                 <img id="xtel" src="images/xtel.png" alt="" width="50" height="50">
@@ -53,7 +54,7 @@
             </button>
             <button onclick="preguntaAlPublico()" id="comodinPublico">
                 <img id="publ" src="images/comodinpublico.png" alt="" width="50" height="50">
-                <img  id="xpubl" src="images/xcomodinpublico.png" alt="" width="50" height="50">
+                <img id="xpubl" src="images/xcomodinpublico.png" alt="" width="50" height="50">
                 
             </button>
             <button onclick="tiempoExtra()" id="comodinTiempoExtra" >
@@ -61,7 +62,7 @@
                 <img id="XTE" src="images/xcomodintiempoextra.png" alt="" width="550" height="50">
             </button>
         </div>
-    </div>
+    
    
     
     <?php
@@ -81,7 +82,8 @@
         }
     }
 
-    echo "<p> LEVEL <p class='' id='aciertos'>" .$nivel ."</p></p>";
+    echo "<h2 class='nvl' id='aciertos'>LEVEL " . $nivel . "</h2>";
+
 
     function preguntas() {
         global $nivel, $idioma;
@@ -96,11 +98,27 @@
                 $preguntas_por_nivel[$llave][] = $linea;
             } elseif ($linea[0] === "-") {
                 $preguntas_por_nivel[$llave][] = $linea;
+            } elseif ($linea[0] === "#") {
+                $imagenes_por_nivel[$llave] = $linea;
             }
         }
         return $preguntas_por_nivel;
     }
-
+    function imagenes_preguntas() {
+        global $nivel, $idioma;
+        $question_mark = '*';
+        $preguntas_nivel = file("questions/{$idioma}_{$nivel}.txt");
+        $imagenes_por_nivel = [];
+        $llave = '';
+        foreach ($preguntas_nivel as $linea) {
+            if ($linea[0] === $question_mark) {
+                $llave = $linea;
+            }  elseif ($linea[0] === "#") {
+                $imagenes_por_nivel[$llave] = $linea;
+            }
+        }
+        return $imagenes_por_nivel;
+    }
     function numeros_aleatorios($max) {
         $array_of_number = [];
         for ($i = 0; $i < 3; $i++) {
@@ -145,16 +163,19 @@
         $preguntas_escogidas = preguntas_aleatorias();
         $total = count($preguntas_escogidas);
         $preguntas_restantes = $total;
-        
-
+        $imagenes = imagenes_preguntas();
         
         //echo "<input type='text' id='valueAciertos' name='aciertos' value='$aciertos' > ";
         foreach ($preguntas_escogidas as $key => $value) {
             if ($preguntas_restantes == $total) {
-                echo "<div>";
-                echo "<h2 style='font-size: 40px;' >" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
+                echo "<div class='contenedorPreguntas'>";
+                echo "<h2 class='tamañoPreguntas'  >" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
                 echo "<p id='cronometro-preguntas'></p>";
-
+                $clean_img = substr($imagenes[$key],1);
+                $clean_img = trim($clean_img, " ");
+                if ($clean_img != "") {
+                    echo "<img src=". $clean_img ." alt='' height='250px' width='250px'>";
+                }
                 echo "<div class='grid'>";
                 foreach ($value as $respuestas) {
                     if ($respuestas[0] === "+") {
@@ -169,7 +190,7 @@
             } else {
                 echo "<div id='pregunta" . ($total - $preguntas_restantes + 1) . "' class='oculto'>";
                 echo "<p id='cronometro-preguntas'></p>";
-                echo "<h2 style='font-size: 40px;' >" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
+                echo "<h2 class='tamañoPreguntas' >" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
                 echo "<div class='grid'>";
                 foreach ($value as $respuestas) {
                     if ($respuestas[0] === "+") {

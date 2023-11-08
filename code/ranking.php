@@ -7,39 +7,59 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <noscript>
+    <h1 id="jsDisabledMessage">Javascript is disabled, activate it to play</h1>
+</noscript>
 <h1>Hall of Fame</h1>
 <div class="table-container">
     <table>
         <thead>
+            
             <tr>
-                <th style='font-size: 40px; padding-right: 20px;'>Name</th>
+                <th >Name</th>
                 <br>
-                <th style='font-size: 40px; padding-left: 20px;'>Score</th>
+                <th>Answers</th>
+                <br>
+                <th >Time</th>
+                <br>
+                <th >Total Score</th>
             </tr>
         </thead>
         <tbody>
             <?php
             $file = fopen("records.txt", "r");
             $ranking = [];
+            $num_user = 0;
             while (!feof($file)) {
                 $line = fgets($file);
                 trim($line, " ");
                 if (!ctype_space($line)) {
                     $users = explode(",", $line);
                     if(!empty($users[0])) {
-                        $ranking[$users[0]] = $users[1];
+                        $ranking[$users[0]." ".$num_user][] = $users[1];
+                        $ranking[$users[0]." ".$num_user][] = $users[2];
+                        $ranking[$users[0]." ".$num_user][] = $users[3];
+                        $num_user++;
                     }
                 }
             }
             arsort($ranking);
             foreach ($ranking as $order => $valor) {
-                $name = substr($order, 0, strlen($order));
-                
+                $name = substr($order, 0, strlen($order)-3);
+                $last_user = ((int)trim(substr($order, strlen($order)-3)));
                 echo "<tr>";
-                
-                echo "<td style='font-size: 30px;'>$name</td>";
-                echo "<td style='font-size: 30px;'>$valor</td>";
-                
+                if ($last_user==$num_user-1) {
+                    echo "<td style='font-size: 30px;' bgcolor='green';>$name</td>";
+                    echo "<td style='font-size: 30px;' bgcolor='green';>".$valor[0]."</td>";
+                    echo "<td style='font-size: 30px;' bgcolor='green';>".$valor[1]."</td>";
+                    echo "<td style='font-size: 30px;' bgcolor='green';>".$valor[2]."</td>";
+                }else {
+                    echo "<td style='font-size: 30px;'>$name</td>";
+                    echo "<td style='font-size: 30px;'>".$valor[0]."</td>";
+                    echo "<td style='font-size: 30px;'>".$valor[1]."</td>";
+                    echo "<td style='font-size: 30px;'>".$valor[2]."</td>";
+                }
+
                 echo "</tr>";
             }
             fclose($file);

@@ -32,7 +32,7 @@ if (
     <br> <br>
     <?php 
     echo "<p>Questions answered correctly: " . $_COOKIE["aciertos"] . "</p>";
-?>
+    ?>
 
     <br><br>
     <p>
@@ -51,20 +51,36 @@ if (
     <script src="funciones/win_sound.js"></script>
     <script src="funciones/funcionalidades.js"></script>
     <?php
-        $tiempo = $_COOKIE["crono"];
-        $tiempo_separado = explode(":", $tiempo);
-        $segundos_totales = (($tiempo_separado[0]*3600)+($tiempo_separado[1]*60)+($tiempo_separado[2]));
-        if (isset($_POST["nombre"])) {
-            $file = fopen("records.txt", "a+");
-            $puntuacion = floor(1 - pow(2.71828,(1-(intval($_COOKIE["aciertos"]))/(1+(intval($segundos_totales))*0.4))))*100;
-            if ($puntuacion < 0) {
-                $puntuacion = intval("-1")*$puntuacion;
+    $palabras_prohibidas = file("nombres_prohibidos.txt");
+    $file = fopen("records.txt", "a+");
+    $palabra_valida = true;
+    $tiempo = $_COOKIE["crono"];
+    $tiempo_separado = explode(":", $tiempo);
+    $segundos_totales = (($tiempo_separado[0] * 3600) + ($tiempo_separado[1] * 60) + ($tiempo_separado[2]));
+    $puntuacion = intval("-1") * ((intval("1") - pow(intval("2.718"), (intval("1") + intval($_COOKIE["aciertos"]))) / (intval("1") + intval($tiempo) * intval("3"))) * intval("100"));
+    
+    if (isset($_POST["nombre"])) {
+        for ($i = 0; $i < count($palabras_prohibidas); $i++) {
+            if (str_contains($palabras_prohibidas[$i], $_POST["nombre"])) {
+                $palabra_valida = false;
             }
-            fwrite($file,$_POST["nombre"].", 18, ".session_id().", puntuacion ".$puntuacion."\n");
-            fclose($file);           
-             
         }
-        session_destroy();
+        if ($palabra_valida) {
+            fwrite($file, $_POST["nombre"] . " , " . $_COOKIE["aciertos"] . ", " . $tiempo . ", " . $puntuacion . ", " . session_create_id() . "\n");
+            fclose($file);
+            ?>
+                <script>
+                    document.getElementById("publish_button").style.display = "none";
+                </script>
+            <?php
+        } else {
+            ?>
+                <script>
+                    window.alert("Nombre no apropiado")
+                </script>
+            <?php
+        }
+    }
     ?>
 </body>
 </html>

@@ -99,7 +99,7 @@ function trueClick(button, pregunta_id) {
 }
 function iniciarContador() {
     const contador = document.getElementById('tiempoRestante');
-
+    
     const intervalo = setInterval(() => {
         if (tiempoRestante <= 0) {
             clearInterval(intervalo); // Detener el contador cuando el tiempo se agote
@@ -124,8 +124,6 @@ function reiniciarContador() {
 // *********************************************************************************************************
 // FUNCION COMODIN TIEMPO EXTRA
 function tiempoExtra() {
-    document.getElementById("TE").display = "none";
-    document.getElementById("XTE").display ="block";
     const contador = document.getElementById('tiempoRestante');
     tiempoRestante += 30;
     contador.textContent = tiempoRestante + ' s';

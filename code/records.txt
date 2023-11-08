@@ -1,3 +1,6 @@
-diego2, 1, 5f9j9t38blkl9pujg6c7c6i6l8, 00:00:02, puntuacion 300
-prueba, 2, 50697u68dh0q4q8ebui9b3pq7g, 19:07:04, puntuacion 1
-kkkk, 1, 9vmlovju74g339bc69672boqeu, 00:00:04, puntuacion 6
+aaa , 1, 00:00:03, 8, 3uof9vopshnf98jencp1phlgeo
+prueba1 , 0, 00:00:09, 0, q6ndgk1ja96til17fgadoj48cv
+prueba1 , 0, 00:00:09, 0, h6hkrtjj78cpumhnt33sm5v2p0
+prueba3 , 0, 00:00:00, 0, fihggeue57v2sk9tokji5fk3gf
+prueba5 , 2, 00:00:13, 9, cq8gl5mq22g4vukfgs52md58nn
+prueba4 , 0, 00:00:02, 0, f51pr52ibvlp8kllbf1blprtou

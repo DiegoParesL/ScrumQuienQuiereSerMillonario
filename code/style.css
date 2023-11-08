@@ -27,12 +27,26 @@ h3 {
     font-size: 75PX;
 }
 
+h5 {
+    font-family:'Courier New', Courier, monospace;
+    color: white;
+    font-size: 30PX;
+}
+
 p {
     color: white;
     font-size: 30PX;
     text-align: center;
 }
 
+
+.texto-ajustado {
+    text-align: center; /* Centra el texto */
+    max-width: 1500px; /* Establece un ancho máximo para el texto */
+    margin: 0 auto; /* Centra el párrafo horizontalmente */
+    font-family: Arial, sans-serif; /* Establece una fuente */
+    line-height: 1.6; /* Ajusta la altura de línea para una mejor legibilidad */
+}
 .visible {
     display: block;
 }
@@ -111,7 +125,7 @@ div > button {
 }
 
 .red-blinking-text {
-    font-size: 24px;
+    font-size: 27px;
     color: red;
     animation: blinker 1s linear infinite;
 }
@@ -191,20 +205,11 @@ div > button {
 }
 
 /* *************************************************************************************** */
-/* ESTILOS PARA FUNCIONALIDAD COMODIN 50/50 y tiempo extra*/
-#xC50{
-    display: none;
-}
-#XTE{
-    display: none;
-}
+
+
 
 /* *************************************************************************************** */
-/* ESTILOS PARA FUNCIONALIDAD COMODIN PUBLICO */
-
-#xpubl {
-    display: none;
-}
+/* ESTILOS PARA FUNCIONALIDAD COMODIN PUBLICO */ 
 :root{
     --height1: 0;
     --height2: 0;
@@ -219,7 +224,7 @@ div > button {
     text-align: center;
     margin-top: 30vh;
 }
-#oculto{
+#oculto{ 
     display: none;
 }
 
@@ -280,78 +285,324 @@ div > button {
     transition: max-height 4s ease-out;
     z-index: 301;
 }
-/* *************************************************************************************** */
-/* *************************************************************************************** */
-/* ESTILOS PARA FUNCIONALIDAD COMODIN LLAMADA */
 
+
+#contenedorTelefono{
+    display: none;
+    width: fit-content;
+    margin-right:auto;
+    margin-left: auto;
+    background-color: rgb(71, 1, 137);
+    border-radius: 40%;
+    
+}
+
+#xC50{
+    display: none;
+}
+#XTE{
+    display: none;
+}
+#xpubl {
+    display: none;
+}
 #xtel{
     display: none;
 }
-#ocultoLlamada{
-    display: none;
-    width: 60%;
-    height: 60%;
-}
-#imgTel{
-    width: 60%;
-    height:max-content;
-    margin-left: auto;
-    margin-right: auto;
-}
-#contenedorTelefono{
-    display: none;
-    position: sticky;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40vw;
-    height: 40vh;
-    background:linear-gradient(to bottom,rgb(83, 0, 125),rgb(41, 1, 62));
-    
-    z-index: 300;
-}
-.red-bar{
-    background:linear-gradient(to bottom,red,rgb(58, 0, 0));
-    z-index: 301;
-    max-height: 0;
-}
-.blue-bar{
-    background:linear-gradient(to bottom,blue,rgb(21, 0, 212));
-    z-index: 301;
-    max-height: 0;
-}
-.orange-bar{
-    background:linear-gradient(to bottom,orange,rgb(143, 86, 0));
-    z-index: 301;
-    max-height: 0;
-}
-.yellow-bar{
-    background:linear-gradient(to bottom,yellow,rgb(141, 132, 3));
-    z-index: 301;
-    max-height: 0;
+
+
+.tamañoPreguntas{
+    font-size: 25px;
 }
 
-.start1 {
-    width: 3vw;
-    max-height: var(--height1);
-    transition: max-height 4s ease-out;
-    z-index: 301;
+
+
+.th {
+    font-size: 60px; padding-right: 20px;
 }
-.start2 {
-    width: 3vw;
-    max-height: var(--height2);
-    transition: max-height 4s ease-out;
-    z-index: 301;
+
+label {
+    color: white;
 }
-.start3 {
-    width: 3vw;
-    max-height: var(--height3);
-    transition: max-height 4s ease-out;
-    z-index: 301;
+/* ************************************************************************** */
+/* ******************* RESPONSIVE TAMAÑO IPHONE 15 ************************** */
+
+@media only screen and (max-width: 1000px) {
+
+    .vertical-buttons {
+        left: 0px;
+       
+    }
+    
+    .grid {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+   
 }
-.start4 {
-    width: 3vw;
-    max-height: var(--height4);
-    transition: max-height 4s ease-out;
-    z-index: 301;
+
+
+
+@media only screen and (max-width: 400px)  {
+
+    /* Estilos para iPhone15 u otras resoluciones similares */
+    /* Puedes ajustar los estilos según sea necesario */
+
+
+    /***************************************************************************/
+    /****************************** INDEX.PHP ***********************************/
+
+
+    body {
+        text-align: center;
+        background-color: rgb(18, 27, 42);
+        margin-top: 5%; /* Aumentar el espacio en la parte superior */
+        padding-right: 2px;
+    }
+    header {
+        color: #fff; /* Color del texto en el encabezado */
+        padding: 1px ; /* Espaciado interno del encabezado (20px arriba/abajo, 10px izquierda/derecha) */
+        padding-bottom: 5px;
+        margin: 20px;
+        margin-top: 5px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    p {
+        display: flex; /* Utiliza flexbox para alinear elementos */
+        
+    }
+    
+    p a {
+        display: flex; /* Utiliza flexbox para alinear elementos */
+        align-items: flex-start; /* Alinea los elementos en la parte superior */
+    }
+    
+    p a img {
+    display: flex; /* Utiliza flexbox para alinear elementos */
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+    border: 2px solid #333; /* Borde de 2px sólido color gris oscuro (#333) */
+    margin-right: 6px; /* Espacio a la derecha de cada imagen */
+    width: 35px; /* Ajusta el ancho de la imagen */
+    height: 29px; /* Ajusta el alto de la imagen */
+    }
+    
+   /* Estilos para la imagen con espacio adicional */
+    .espacio-imagen {
+        margin-top: 30px; /* Espacio extra encima de la imagen */
+        margin-bottom: 40px; /* Espacio extra debajo de la imagen */
+        width: 140px; /* Ancho de la imagen */
+        height: 130px; /* Alto de la imagen */
+    }
+
+    .texto-ajustado {
+        font-size: 20px;
+        padding-left: 5px;
+        text-align: justify; /* Justifica el texto */
+        max-width: 500px;
+        margin: 0 auto;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: rgb(24, 40, 66);
+        border-radius: 9px;
+      }
+      
+
+    #boton-jugar {
+        width: 160px; /* Ancho del botón */
+        height: 70px; /* Alto del botón */
+        font-size: 50px; /* Tamaño de la fuente del botón */
+    }
+    
+    #ranking {
+        height: 60px; /* Alto del botón */
+        font-size: 19px; /* Tamaño de la fuente del botón */
+        margin-left: 12px;
+        
+    }
+    
+    .boton-grande {
+        margin-top: 12px;
+        font-size: 120px; /* Tamaño de fuente más grande */
+        padding: 1px 30px; /* Aumenta el espacio interior del botón */
+    }
+
+    .boton-mediano {
+        margin-top: 10px;
+
+        font-size: 30px; /* Tamaño de fuente más grande */
+        padding: 15px 30px; /* Aumenta el espacio interior del botón */
+        margin-right: 10px; /* Margen a la derecha para separar los botones */
+       
+
+    }
+
+    .login-button button{
+        font-size: 15px;
+        margin-top: 50px;
+        margin-right: 29px;
+        position: absolute;
+        top: 10px; /* Ajusta la distancia desde la parte superior */
+        right: 10px; /* Ajusta la distancia desde la izquierda */
+    }
+
+
+
+    /***************************************************************************/
+    /****************************** GAME.PHP ***********************************/
+
+    
+
+    .grid {
+        max-width: 600px; /* Ancho máximo del grid, puedes ajustar el tamaño según tus necesidades */
+        margin: 0 auto; /* Márgenes automáticos para centrar horizontalmente */
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .imgGame{
+        width: 90px;
+        height: 85px;
+    }
+
+    .crono {
+        margin-top: -1px;
+        font-size: 20px;
+     
+    }
+
+    .nvl{
+        font-size: 20px;
+    }
+
+    .tamañoPreguntas{
+        font-size: 20px;
+    }
+
+   
+    .CLlamada {
+        position: absolute;
+    }
+
+  
+
+    .vertical-buttons {
+       
+        position: fixed;
+        padding-top: 15px;
+        padding: 10px; /* Ajustar el espaciado según sea necesario */
+        left: 1%; /* Ajustar el margen izquierdo */
+        bottom: 5%; /* Mover los botones hacia la parte inferior de la pantalla */
+        display: flex;
+
+        justify-content: space-around; /* Distribuir los botones horizontalmente */
+        width: 90%; /* Utilizar el 90% del ancho disponible */
+        max-width: 80px; /* Establecer un ancho máximo */
+        overflow-x: auto; /* Permitir desplazamiento horizontal en caso de que los botones no entren en la pantalla */
+    }
+    
+    .vertical-buttons button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px; /* Ajustar el tamaño de los botones según sea necesario */
+        height: 100px; /* Ajustar el tamaño de los botones según sea necesario */
+        border: none;
+        border-radius: 50%; /* Cambiar el borde redondo a 50% para círculos perfectos */
+        cursor: pointer;
+        overflow: hidden;
+        padding: 0;
+        margin: 5px; /* Ajustar el margen entre los botones */
+        border: 2px solid rgb(246, 251, 255);
+    }
+    
+    .vertical-buttons button img {
+        width: 100%; /* Ocupar todo el espacio disponible dentro del botón */
+        height: 100%; /* Ocupar todo el espacio disponible dentro del botón */
+        object-fit: cover;
+    }
+    
+
+
+    
+
+    /***************************************************************************/
+    /****************************** LOSE.PHP ***********************************/
+
+
+    input[type="text"] {
+        width: 300px; /* Ancho del campo de entrada */
+        height: 40px; /* Alto del campo de entrada */
+        font-size: 16px; /* Tamaño de la fuente del campo de entrada */
+        margin-bottom: 12px;
+    }
+
+    #send {
+        width: 120px; /* Ancho del botón */
+        height: 40px; /* Alto del botón */
+        font-size: 26px; /* Tamaño de la fuente del botón */
+    }
+
+
+    #publish_button{
+        margin-top: 10px;
+
+        font-size: 30px; /* Tamaño de fuente más grande */
+        padding: 15px 30px; /* Aumenta el espacio interior del botón */
+        margin-right: 10px; /* Margen a la derecha para separar los botones */
+
+    }
+
+
+
+    /***************************************************************************/
+    /****************************** LOSE.PHP ***********************************/
+
+
+    
+
+     /***************************************************************************/
+    /****************************** RANKING.PHP ***********************************/
+    
+
+   
+    .th {
+        font-size: 90px; padding-right: 20px;
+    }
+   
+
+    /***************************************************************************/
+    /****************************** LOGIN.PHP ***********************************/
+    
+    .tittleLogin {
+        margin-top: 90px;
+
+    }
+    .userLogin {
+        margin-top: 90px;
+    }
+
+    .boton-pequeño {
+      
+    font-size: 15px; /* Tamaño de fuente más grande */
+    }
+
+    
+    /***************************************************************************/
+    /****************************** CREATE.PHP ***********************************/
+    
+
+    .tittleCreate {
+        text-align: center;
+    }
+    h5 {
+        font-family:'Courier New', Courier, monospace;
+        color: white;
+        font-size: 20PX;
+    }
 }
-/* *************************************************************************************** */
