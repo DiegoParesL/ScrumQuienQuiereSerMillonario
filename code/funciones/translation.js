@@ -10,6 +10,7 @@ function changeLanguage(lang) {
             'loginForm' : 'Iniciar Sesión',
             'logoutButton' : 'Cerrar Sesión',
             'createForm':'Crear Preguntas'
+            
         },
         'catalan': {
             'titulo': 'Benvingut al joc Qui vol ser milionari?',
@@ -44,6 +45,6 @@ function changeLanguage(lang) {
     document.getElementById('selectedLanguage').value = lang;
 
     // Establece el idioma seleccionado en la sesión
-    sessionStorage.setItem('idioma', lang);
+    localStorage.setItem('idioma', lang);
 
 }

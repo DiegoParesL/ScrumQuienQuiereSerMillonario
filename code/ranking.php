@@ -59,13 +59,12 @@
                     echo "<td style='font-size: 30px;' bgcolor='green';>".$valor[0]."</td>";
                     echo "<td style='font-size: 30px;' bgcolor='green';>".$valor[1]."</td>";
                     echo "<td style='font-size: 30px;' bgcolor='green';>".$valor[2]."</td>";
-                }else {
+                } else {
                     echo "<td style='font-size: 30px;'>$name</td>";
                     echo "<td style='font-size: 30px;'>".$valor[0]."</td>";
                     echo "<td style='font-size: 30px;'>".$valor[1]."</td>";
                     echo "<td style='font-size: 30px;'>".$valor[2]."</td>";
                 }
-
                 echo "</tr>";
             }
             fclose($file);

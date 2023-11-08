@@ -2,7 +2,7 @@
 session_start();
 // Restablecer el nivel del juego al nivel 1
 error_reporting(0);
-echo $_SESSION['userLogged'];
+
 unset($_SESSION['nivel']);
 ?>
 

@@ -62,4 +62,3 @@
 + Blau Blanc I Vermell
 - Blau, Negre, Vermell
 - Groc Vermell Blau
-

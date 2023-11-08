@@ -5,7 +5,8 @@ if (
     !isset($_SERVER['HTTP_REFERER']) ||
     (
         strpos($_SERVER['HTTP_REFERER'], "login.php") === false &&
-        strpos($_SERVER['HTTP_REFERER'], "index.php") === false
+        strpos($_SERVER['HTTP_REFERER'], "index.php") === false &&
+        strpos($_SERVER['HTTP_REFERER'], "create.php") === false
     )
 ) {
     // Si la página no se accede desde "game.php" ni desde "lose.php", redirige o muestra un mensaje de error.
@@ -83,7 +84,11 @@ if (
             if (!$_POST["img"]) {
                 fwrite($file,"\n* ".$_POST["question"].$respuestas);
             } else {
-                fwrite($file,"\n* ".$_POST["question"].$respuestas."\n# ".$_POST["img"]);
+                fwrite($file,"\n* ".$_POST["question"].$respuestas."\n# imagesGame/".$_POST["img"]);
+                $FileName=$_FILES['img']['name'];
+                $upload_dir = 'imagesGame';
+                $TmpName=$_FILES['img']['tmp_name'];
+                move_uploaded_file($TmpName,"upload_dir/");
             }
     }
     ?>

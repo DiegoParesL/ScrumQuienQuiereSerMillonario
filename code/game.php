@@ -11,6 +11,7 @@
     <h1 id="jsDisabledMessage">Javascript is disabled, activate it to play</h1>
 </noscript>
 <?php
+session_start();
 error_reporting(0);
         echo"<div id=\"oculto\" class=\"publico\">";
         echo"<div class=\"publicOcult red-bar\">";
