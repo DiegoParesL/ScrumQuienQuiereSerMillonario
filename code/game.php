@@ -11,51 +11,62 @@
     <h1 id="jsDisabledMessage">Javascript is disabled, activate it to play</h1>
 </noscript>
 <?php
-session_start();
-error_reporting(0);
         echo"<div id=\"oculto\" class=\"publico\">";
         echo"<div class=\"publicOcult red-bar\">";
-        echo "<p>(1,1)</p>";
+        //echo "<p>(1,1)</p>";
         echo"</div>";
         echo"<div class=\"publicOcult blue-bar\">";
-        echo "<p>(1,2)</p>";
+        //echo "<p>(1,2)</p>";
         echo"</div>";
         echo"<div class=\"publicOcult orange-bar\">";
-        echo "<p>(2,1)</p>";
+        //echo "<p>(2,1)</p>";
         echo"</div>";
         echo"<div class=\"publicOcult yellow-bar\">";
-        echo "<p>(2,2)</p>";
+        //echo "<p>(2,2)</p>";
         echo"</div>";
         echo"</div>";
+
+        echo "<div id='contenedorTelefono'>";
+        echo "<img id='imgTel' src='./images/telefono.png' alt='Imagen Comodin Telefono'  class='responsive'>";
+        echo "</div>";
     ?>  
-<a href="win.php">
-    <img src="images/milionari.png" alt="" height="150px" width="150px">
-</a>
+    <a href="win.php">
+        <img class="imgGame" src="images/milionari.png" alt="" height="150px" width="150px">
+    </a>
     <br>
     
     <input type="button" class="oculto" value="Empezar" id="boton" >
     <br>
 
-    <div id="preguntasContainer">
-    <div class="vertical-buttons">
-    <h2 id='crono'>00:00:00</h2>
-        <button onclick="comodin50_50()">
-            <img src="images/COMODIN50.png" alt="" width="50" height="50">
-           
-        </button>
-        <button onclick="preguntaAlPublico()" id="comodinPublico">
-            <img src="images/comodinpublico.png" alt="" width="50" height="50">
-            
-        </button>
-        <button onclick="tiempoExtra()" id="comodinTiempoExtra" >
-            <img src="images/comodintiempoextra.png" alt="" width="550" height="50">
-        </button>
-    </div>
+    <div class="preguntasContainer" id="preguntasContainer">
+                <h2 id='crono' class="crono">00:00:00</h2>
 
+        <div class="vertical-buttons">
+            <button  id="CLlamada" onclick="llamada()">
+                <img id="tel" src="images/telefono.png" alt="" width="50" height="50">
+                <img id="xtel" src="images/xtel.png" alt="" width="50" height="50">
+            
+            </button>
+            <button onclick="comodin50_50()">
+                <img id="C50" src="images/comodin50.png" alt="" width="50" height="50">
+                <img id="xC50" src="images/xcomodin50.png" alt="" width="50" height="50">
+            
+            </button>
+            <button onclick="preguntaAlPublico()" id="comodinPublico">
+                <img id="publ" src="images/comodinpublico.png" alt="" width="50" height="50">
+                <img id="xpubl" src="images/xcomodinpublico.png" alt="" width="50" height="50">
+                
+            </button>
+            <button onclick="tiempoExtra()" id="comodinTiempoExtra" >
+                <img id="TE" src="images/comodintiempoextra.png" alt="" width="550" height="50">
+                <img id="XTE" src="images/xcomodintiempoextra.png" alt="" width="550" height="50">
+            </button>
+        </div>
+    
    
     
     <?php
-    
+    error_reporting(0);
     session_start();
 
     // Obtener el idioma del campo oculto
@@ -71,7 +82,8 @@ error_reporting(0);
         }
     }
 
-    echo "<p> LEVEL <p class='' id='aciertos'>" .$nivel ."</p></p>";
+    echo "<h2 class='nvl' id='aciertos'>LEVEL " . $nivel . "</h2>";
+
 
     function preguntas() {
         global $nivel, $idioma;
@@ -156,8 +168,8 @@ error_reporting(0);
         //echo "<input type='text' id='valueAciertos' name='aciertos' value='$aciertos' > ";
         foreach ($preguntas_escogidas as $key => $value) {
             if ($preguntas_restantes == $total) {
-                echo "<div>";
-                echo "<h2 style='font-size: 40px;' >" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
+                echo "<div class='contenedorPreguntas'>";
+                echo "<h2 class='tamañoPreguntas'  >" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
                 echo "<p id='cronometro-preguntas'></p>";
                 $clean_img = substr($imagenes[$key],1);
                 $clean_img = trim($clean_img, " ");
@@ -178,7 +190,7 @@ error_reporting(0);
             } else {
                 echo "<div id='pregunta" . ($total - $preguntas_restantes + 1) . "' class='oculto'>";
                 echo "<p id='cronometro-preguntas'></p>";
-                echo "<h2 style='font-size: 40px;' >" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
+                echo "<h2 class='tamañoPreguntas' >" . substr($key, 1) . "</h2>"; // Quita el signo "*" en el título
                 echo "<div class='grid'>";
                 foreach ($value as $respuestas) {
                     if ($respuestas[0] === "+") {
@@ -230,8 +242,8 @@ error_reporting(0);
         
 
 
-    <p><button id="win_button" class="centrar-boton" onclick="window.location.href = 'win.php'">Show Stats</button></p>
-    <p><button id="lose_button" class="centrar-boton" onclick="window.location.href = 'lose.php'">Wrong Answer</button></p>
+    <p><button id="win_button" class="centrar-boton" onclick="window.location.href = 'win.php'">Ver estadisticas</button></p>
+    <p><button id="lose_button" class="centrar-boton" onclick="window.location.href = 'lose.php'">Ver estadisticas</button></p>
 
     
      <script src="funciones/sounds.js"></script>
@@ -239,6 +251,7 @@ error_reporting(0);
     <script src="funciones/pass_aciertos.js"></script>
     <script src="funciones/comodinPublico.js"></script>
     <script src="funciones/comodin50_50.js"></script>
+    <script src="funciones/comodinLlamada.js"></script>
     <script src="funciones/cronometro.js"></script>
 
     <script>

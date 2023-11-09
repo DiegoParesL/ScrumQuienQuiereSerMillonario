@@ -29,13 +29,13 @@ if (
 
     <div  id="pantalla">
         <br>
-    <h3 >You lose </h3>
+    <h3 >You Lose </h3>
     <?php
     echo "<p>You answered " . $_COOKIE["aciertos"] . " questions correctly.</p>";
     ?>
     <br><br>
-    <p><button class="boton-mediano" onclick="window.location.href = 'index.php'">Back To Start</button>
-    <button id="publish_button" name="publish_button" type="submit"  class="boton-mediano"onclick="publish()">Publish</button></p>
+    <h2><button class="boton-mediano" onclick="window.location.href = 'index.php'">Back To Start</button>
+    <button id="publish_button" name="publish_button" type="submit"  class="boton-mediano"onclick="publish()">Publish</button></h2>
     </div>
     <div class="oculto" id="publicar">
     <form method="post"  id="publicar">
@@ -53,10 +53,10 @@ if (
     $tiempo = $_COOKIE["crono"];
     $tiempo_separado = explode(":", $tiempo);
     $segundos_totales = (($tiempo_separado[0] * 3600) + ($tiempo_separado[1] * 60) + ($tiempo_separado[2]));
-    $puntuacion =floor((intval($_COOKIE["aciertos"]))*80/(intval($segundos_totales)+10)*1.4);
-    if ($puntuacion < 0) {
-        $puntuacion = intval("-1")*$puntuacion;
-    }
+    $puntuacion =floor((intval($_COOKIE["aciertos"]))*80/(intval($segundos_totales)+10)*1.4) - intval($_COOKIE["publico"])*5 - intval($_COOKIE["llamada"])*5 - intval($_COOKIE["cincuenta"])*5;
+            if ($puntuacion < 0) {
+                $puntuacion = 0;
+            }
     if (isset($_POST["nombre"])) {
         for ($i = 0; $i < count($palabras_prohibidas); $i++) {
             //print($palabras_prohibidas[$i]);
@@ -68,9 +68,10 @@ if (
         if ($palabra_valida) {  //
             fwrite($file, $_POST["nombre"] . " , " . $_COOKIE["aciertos"] . ", " . $tiempo . ", " . $puntuacion . ", " . session_create_id() . "\n");
             fclose($file);
+            
             ?>
                     <script>
-                        document.getElementById("publish_button").style.display = "none";
+                        document.location.href = "ranking.php";
                     </script>
             <?php
         } else {

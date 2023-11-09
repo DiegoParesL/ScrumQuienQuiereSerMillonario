@@ -62,3 +62,9 @@
 + Blau Blanc I Vermell
 - Blau, Negre, Vermell
 - Groc Vermell Blau
+
+* qui es el tutor d'aws2?
++ Leandro
+- Xavi
+- Enric
+- Albert

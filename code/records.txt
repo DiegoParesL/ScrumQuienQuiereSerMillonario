@@ -1,3 +1,5 @@
-asasasa , 0, 00:00:00, 0, 5psshn38166ns9gg3cp1utg5q4
-fail1 , 3, 00:00:05, 22, q8kdmaonf3v8ma4hk1hg4l89fl
-fail2 , 8, 00:00:14, 37, 4m3s95lukkdpa5aqpm2klo5bha
+easter egg , 18, 00:00:00, 201, a9rok9t4it92slqp5jr68tjtul
+win , 18, 00:00:39, 41, 5b632lo36tvc2nbjf0t69kib8d
+present , 18, 00:00:00, 201, ic3kpbmsp6bikuekm8bmt8vt7s
+hola2 , 6, 00:02:02, 0, jrbbhsamb9rdv2qkvv6k94v2oi
+profesores , 18, 00:00:02, 168, m6703p801ke95gj80q64u7p62m

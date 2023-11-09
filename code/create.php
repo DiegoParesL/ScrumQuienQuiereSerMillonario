@@ -5,7 +5,6 @@ if (
     !isset($_SERVER['HTTP_REFERER']) ||
     (
         strpos($_SERVER['HTTP_REFERER'], "login.php") === false &&
-        strpos($_SERVER['HTTP_REFERER'], "index.php") === false &&
         strpos($_SERVER['HTTP_REFERER'], "create.php") === false
     )
 ) {
@@ -13,6 +12,8 @@ if (
     header("HTTP/1.1 403 Forbidden");
     exit;
 }
+
+
 // El contenido de la página "lose.php" continua aquí
 ?>
 
@@ -25,7 +26,10 @@ if (
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button id="logoutButton">Logout</button>
+    
+    <form action="index.php" method="">
+        <input type="submit" value="Logout">
+    </form>
     <br>
     <form action="" method="post" id="create">
         <label for="nivel">Elije el nivel</label>
@@ -44,10 +48,10 @@ if (
             <option value="english">Ingles</option>
         </select>
     <br>
-    <p>Pregunta</p>
+    <h5 class="tittleCreate">Pregunta</h5>
     <input type="text" name="question" id="question">
     <br>
-    <p>Escribe las respuestas</p>
+    <h5>Escribe las respuestas</h5>
 
     <label for="">Respuesta 1</label><input type="text" name="respuesta1" id="respuesta1"> 
     <label for="">Respuesta 2</label><input type="text" name="respuesta2" id="respuesta2">
@@ -56,7 +60,7 @@ if (
     <label for="">Respuesta 4</label><input type="text" name="respuesta4" id="respuesta4">
     <br>
     <br>
-    <p>Indica la respuesta correcta</p>
+    <h5>Indica la respuesta correcta</h5>
     <div><input type="radio" name="correcta" id="respuesta_1" value="respuesta1" checked><label for="respuesta_1">Respuesta 1</label>
     <input type="radio" name="correcta" id="respuesta_2"  value="respuesta2" ><label for="respuesta_2">Respuesta 2</label></div>
     <div><input type="radio" name="correcta" id="respuesta_3" value="respuesta3" ><label for="respuesta_3">Respuesta 3</label>
@@ -83,20 +87,16 @@ if (
         && $_POST["respuesta3"]!="" && $_POST["respuesta4"]!="") {
             if (!$_POST["img"]) {
                 fwrite($file,"\n* ".$_POST["question"].$respuestas);
+                echo "<h2>Pregunta enviada</h2>";
             } else {
                 fwrite($file,"\n* ".$_POST["question"].$respuestas."\n# imagesGame/".$_POST["img"]);
+                echo "<h2>Pregunta enviada</h2>";
                 $FileName=$_FILES['img']['name'];
                 $upload_dir = 'imagesGame';
                 $TmpName=$_FILES['img']['tmp_name'];
-                move_uploaded_file($TmpName,"imagesGame/");
+                move_uploaded_file($TmpName,"./imagesGame/");
             }
     }
     ?>
-    <script>
-        document.getElementById('logoutButton').onclick = function() {
-            <?php $_SESSION["userLogged"] = ""; ?>
-            window.location.href = "index.php";
-        }
-    </script>
 </body>
 </html>

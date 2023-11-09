@@ -1,7 +1,7 @@
 <?php
 session_start();
 // Restablecer el nivel del juego al nivel 1
-error_reporting(0);
+
 
 unset($_SESSION['nivel']);
 ?>
@@ -16,14 +16,10 @@ unset($_SESSION['nivel']);
 </head>
 
 <body>
-    <p>
-    <button id="loginForm">Iniciar Sesio</button>
-    <button id="logoutButton" class="oculto">Tancar Sesio</button>
-    <button id="createForm" class="oculto">Crear Preguntes</button>
-    </p>
-<noscript>
-    <h1 id="jsDisabledMessage">Javascript is disabled, activate it to play</h1>
-</noscript>
+<a href="login.php" class="login-button"><button>Login</button></a>
+    <noscript>
+        <h1 id="jsDisabledMessage">Javascript is disabled, activate it to play</h1>
+    </noscript>
 
     <header>
         <p>
@@ -32,16 +28,18 @@ unset($_SESSION['nivel']);
             <a href="#" onclick="changeLanguage('english');"><img src="images/english.jpg" alt="Inglés" height="50px"></a>
         </p>
     </header>
-    <h1 id="titulo">Benvingut al joc Qui vol ser milionari?</h1>
-    <img src="images/milionari.png" alt="milionariIMG" width="300px" height="300px">
-    <p id="descripcion">Aquest joc està basat en el programa de televisió. En ell, hi ha diferents nivells de dificultat en les preguntes. Començarem en el nivell 1 i a mesura que anem encertant preguntes, pujarem de nivell fins al nivell 6. Cada nivell de dificultat consta de 3 preguntes en total i un cop n'haguem encertat les 3, passarem al següent nivell, fins que n'haguem encertat les 18 preguntes en total o fallat.</p>
+    <h1 id="titulo">Benvigut a Qui vol ser milionari?</h1>
+    <img class="espacio-imagen" src="images/milionari.png" alt="milionariIMG" width="300px" height="300px">
+    <p id="descripcion" class="texto-ajustado">
+    Aquest joc aquesta basat en el programa del mateix nom. En el qual hi ha diferents nivells de dificultat respecte les preguntes. Començarem en el nivell 1 i conforme anem encertat preguntes anira pujant el nivell, fins al nivell 6. Cada nivell de dificultat té en total 3 preguntes i una vegada encertades les 3 passarem a la següent dificultat, fins que encertem les 18 preguntes totals o fallem.
+    </p>
     <br>
     <form action="game.php" method="get">
         <input type="hidden" name="lang" id="selectedLanguage" value="catalan"> <!-- Cambia "es" a "ca" o "en" según el idioma seleccionado -->
         <button type="submit" id="boton-jugar" class="boton-grande" onclick="empezarDetener(this);">Jugar</button>
     </form>
     <br>
-    <form action="ranking.php" method="post">
+    <form class="rankingIndex"action="ranking.php" method="post">
         <button type="submit" id="ranking" class="boton-mediano">Saló de la fama</button>
     </form>
 
@@ -52,39 +50,6 @@ unset($_SESSION['nivel']);
     <script src="funciones/translation.js"></script>
     <script>
         document.cookie = "crono=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    </script>
-    <?php
-        if ($_SESSION["userLogged"]=="admin") {
-            ?>
-                <script>
-                    document.getElementById("loginForm").style.display = "none";
-                    document.getElementById("createForm").style.display = "block";
-                    document.getElementById("logoutButton").style.display = "block";
-                </script>
-            <?php
-        } else {
-            ?>
-            <script>
-                document.getElementById("loginForm").style.display = "block";
-                document.getElementById("createForm").style.display = "none";
-                document.getElementById("logoutButton").style.display = "none";
-            </script>            
-        <?php
-        }
-        
-    ?>
-    <script>
-        document.getElementById('logoutButton').onclick = function() {
-            <?php $_SESSION["userLogged"] = ""; ?>
-            window.location.href = "index.php";
-        }
-        document.getElementById('loginForm').onclick = function() {
-            window.location.href = "login.php";
-        }
-        document.getElementById('createForm').onclick = function() {
-            window.location.href = "create.php";
-        }
-        //loginForm
     </script>
 </body>
 </html>

@@ -2,9 +2,9 @@
 session_start();
 
 if (
-    !isset($_SERVER['HTTP_REFERER']) ||
+    !isset($_SERVER['HTTP_REFERER']) || 
     (
-        strpos($_SERVER['HTTP_REFERER'], "game.php") === false &&
+        strpos($_SERVER['HTTP_REFERER'], "game.php") === false && 
         strpos($_SERVER['HTTP_REFERER'], "win.php") === false
     )
 ) {
@@ -25,7 +25,6 @@ if (
 </head>
 <body>
     <audio id="my_audio" src="audio/felicidades.mp3"></audio>
-
     <h3>You got it</h3>
     <img src="images/winner.gif" alt="" height="290px" width="290px">
    
@@ -33,6 +32,7 @@ if (
     <div  id="pantalla">
     <br> <br>
     <?php
+    $_COOKIE["aciertos"]=18;
     echo "<p>Questions answered correctly: " . $_COOKIE["aciertos"] . "</p>";
     ?>
 
@@ -59,10 +59,10 @@ if (
     $tiempo = $_COOKIE["crono"];
     $tiempo_separado = explode(":", $tiempo);
     $segundos_totales = (($tiempo_separado[0] * 3600) + ($tiempo_separado[1] * 60) + ($tiempo_separado[2]));
-    $puntuacion =floor((intval($_COOKIE["aciertos"]))*80/(intval($segundos_totales)+10)*1.4);
-    if ($puntuacion < 0) {
-        $puntuacion = intval("-1")*$puntuacion;
-    }
+    $puntuacion =floor((intval($_COOKIE["aciertos"]))*80/(intval($segundos_totales)+10)*1.4) - intval($_COOKIE["publico"])*5 - intval($_COOKIE["llamada"])*5 - intval($_COOKIE["cincuenta"])*5;
+            if ($puntuacion < 0) {
+                $puntuacion = 0;
+            }
     if (isset($_POST["nombre"])) {
         for ($i = 0; $i < count($palabras_prohibidas); $i++) {
             if (str_contains($palabras_prohibidas[$i], $_POST["nombre"])) {
@@ -73,16 +73,16 @@ if (
             fwrite($file, $_POST["nombre"] . " , " . $_COOKIE["aciertos"] . ", " . $tiempo . ", " . $puntuacion . ", " . session_create_id() . "\n");
             fclose($file);
             ?>
-                        <script>
-                            document.getElementById("publish_button").style.display = "none";
-                        </script>
-                    <?php
+                <script>
+                    document.location.href = "ranking.php";
+                </script>
+            <?php
         } else {
             ?>
-                        <script>
-                            window.alert("Nombre no apropiado")
-                        </script>
-                    <?php
+                <script>
+                    window.alert("Nombre no apropiado")
+                </script>
+            <?php
         }
     }
     ?>

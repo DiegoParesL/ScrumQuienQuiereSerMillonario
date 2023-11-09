@@ -62,18 +62,32 @@ function trueClick(button, pregunta_id) {
     playCorrect();
     button.style.color = "rgb(0, 255, 0)";
 
+    
+
+    
+    //aciertos++;
+    let galletas = document.cookie;
+    let galleta = galletas.split(";");
+    let valorGalleta
+    for (let i = 0; i < galleta.length; i++) {
+        let nombreGalleta = galleta[i].split("=")
+        //console.log(nombreGalleta[0],nombreGalleta[1]);
+        if(nombreGalleta[0].trim()=="aciertos"){
+            
+            valorGalleta = nombreGalleta[1];
+        }
+        
+    }
+    let nivel = Math.floor(valorGalleta/3);
+    let aciertos = valorGalleta%3;
+    document.getElementById("res" + aciertos).disabled = true;
     let fails = document.getElementsByClassName("fail" + aciertos);
     for (let i = 0; i < fails.length; i++) {
         fails[i].style.color = "rgb(255, 0, 0)";
         fails[i].disabled = true;
     }
 
-    document.getElementById("res" + aciertos).disabled = true;
-    aciertos++;
-    
-    let nivel = document.getElementById("aciertos").innerText;
-
-    if (parseInt(nivel) >= 6 && aciertos >= 3) {
+    if (parseInt(nivel) >= 5 && 1+aciertos >= 3) {
         document.getElementById("win_button").style.display = "block";
         let contador = document.getElementById('contadorRegresivo');
         contador.style.display = 'none'; // Oculta el contador al mostrar el botón de "Next Level"
@@ -81,9 +95,9 @@ function trueClick(button, pregunta_id) {
     } else if (aciertos >= totalPreguntas) {
         document.getElementById("botones").style.display = "block";
         let contador = document.getElementById('contadorRegresivo');
-        //contador.style.display = 'none'; // Oculta el contador al mostrar el botón de "Menu"
+        contador.style.display = 'none'; // Oculta el contador al mostrar el botón de "Menu"
     } else {
-        mostrarSiguiente(aciertos);
+        mostrarSiguiente(1+aciertos);
         currentQuestion++;
 
         var preguntaElement = document.getElementById("pregunta" + currentQuestion);
@@ -99,7 +113,7 @@ function trueClick(button, pregunta_id) {
 }
 function iniciarContador() {
     const contador = document.getElementById('tiempoRestante');
-
+    
     const intervalo = setInterval(() => {
         if (tiempoRestante <= 0) {
             clearInterval(intervalo); // Detener el contador cuando el tiempo se agote
@@ -180,7 +194,6 @@ function recompensa() {
     document.getElementById("pantalla").style.display = "block";
     document.getElementById("mensaje").style.display = "none";
 }
-
 
 
 

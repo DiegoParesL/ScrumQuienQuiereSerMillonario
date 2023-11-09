@@ -72,27 +72,55 @@ function randomizarVotos(cssHeight, i) {
     }, "100");
     
 }
-
-function preguntaAlPublico() {
+function bloquearEntreNivelesPublico() {
     let galletas = document.cookie;
     let galleta = galletas.split(";");
     let valorGalleta
     for (let i = 0; i < galleta.length; i++) {
         let nombreGalleta = galleta[i].split("=")
-        if(nombreGalleta[0]=="aciertos"){
+        if(nombreGalleta[0].trim()=="publico"){
+            valorGalleta = nombreGalleta[1];
+            //console.log("galleta publico = 1")
+        }
+        
+    }
+    if(parseInt(valorGalleta)==1){
+        document.getElementById("publ").style.display = "none";
+        document.getElementById("xpubl").style.display = "flex"; 
+    }
+    
+}
+bloquearEntreNivelesPublico();
+
+function preguntaAlPublico() {
+    document.getElementById("publ").style.display ="none";
+    document.getElementById("xpubl").style.display ="flex";
+
+    let galletas = document.cookie;
+    let galleta = galletas.split(";");
+    let valorGalleta
+    for (let i = 0; i < galleta.length; i++) {
+        let nombreGalleta = galleta[i].split("=")
+        //console.log(nombreGalleta[0],nombreGalleta[1]);
+        if(nombreGalleta[0].trim()=="aciertos"){
+            
             valorGalleta = nombreGalleta[1];
         }
         
     }
+    
     if(window.localStorage.getItem("usedPublic") !=1){
         let numPregunta = valorGalleta;
         //console.log(numPregunta);
         let padreAnimacion = document.getElementById("oculto");
         //get child elements from div id = oculto
         let bars =document.getElementById("oculto").children;
+        //console.log(valorGalleta)
         let res = document.getElementsByClassName("grid")[(numPregunta%3)].children;
         let cond = Math.floor(Math.random()*100)<=80;
+        document.getElementById("comodinPublico").disabled=true;
         let cont = 0;
+        document.cookie="publico=1";
         
         for (let i = 0; i < res.length; i++) {
             
@@ -109,5 +137,5 @@ function preguntaAlPublico() {
             }
         }
         
-    }
+    }  
 }

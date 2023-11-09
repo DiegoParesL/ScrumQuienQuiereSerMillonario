@@ -7,22 +7,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="" method="post" id="login">
-        <p>Usuario<input type="text" name="user" id="user"></p>
-        <p>Contraseña<input type="password" name="pwd" id="pwd"></p>
-        <input type="submit" value="Login">
+    <h2 class="tittleLogin">User Login</h2>
+    <form class="userLogin"action="" method="post" id="login">
+        <p>Usuario  <input type="text" name="user" id="user"></p>
+        <p>Contraseña  <input type="password" name="pwd" id="pwd"></p>
+        <input class="boton-pequeño" type="submit" value="Login">
     </form>
     
     <?php
-    session_start();
-        $user = ["admin" => "P@ssw0rd"];
+        $user = ["admin" => "1234"];
         if (isset($_POST["user"]) && $_POST["pwd"]) {
             if (array_key_exists($_POST["user"], $user)) {
                 if ($_POST["pwd"] == $user[$_POST["user"]]) {
-                    $_SESSION["userLogged"] = $_POST["user"];
                     ?>
                         <script>
-                            window.location.href = "index.php";
+                            window.location.href = "create.php";
                         </script>
                     <?php
                 }
@@ -34,5 +33,7 @@
             }
         } 
     ?>
+    <BR>
+    <a href="index.php"><button>Go Back</button></a>
 </body>
 </html>
