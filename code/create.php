@@ -88,7 +88,7 @@ if (
                 $FileName=$_FILES['img']['name'];
                 $upload_dir = 'imagesGame';
                 $TmpName=$_FILES['img']['tmp_name'];
-                move_uploaded_file($TmpName,"upload_dir/");
+                move_uploaded_file($TmpName,"imagesGame/");
             }
     }
     ?>
