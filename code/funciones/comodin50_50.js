@@ -46,6 +46,7 @@ function comodin50_50() {
     let arrayABloquear = [];
     cont = 0;
     if(window.localStorage.getItem("used5050") !=1){
+        document.cookie="cincuenta=1"
         if(arrayABloquear.length<1){
             while (arrayABloquear.length <2) {
                 let cond = Math.floor(Math.random()*100);

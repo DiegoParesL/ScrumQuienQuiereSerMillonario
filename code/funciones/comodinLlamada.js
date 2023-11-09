@@ -30,7 +30,7 @@ function llamada() {
     document.getElementById("CLlamada").disabled = true;
 
     let x = 1+Math.floor(Math.random()*9);
-    console.log(x);
+    //console.log(x);
     let galletas = document.cookie;
     let galleta = galletas.split(";");
     let valorGalleta
@@ -58,14 +58,14 @@ function llamada() {
                     setTimeout(() => {
                         showCall();
                         audioLlamada.play();
-                    }, (i*3)+"000");
+                    }, (i*2)+"000");
                 }
             }else{
                 setTimeout(() => {
                     audioLlamada.pause();
                     audioLlamada.currentTime=0;
                     hideCall();
-                }, (i*3)+"000");
+                }, (i*2)+"000");
             }
             
             

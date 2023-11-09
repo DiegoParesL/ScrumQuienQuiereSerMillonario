@@ -6,3 +6,5 @@ prueba5 , 2, 00:00:13, 9, cq8gl5mq22g4vukfgs52md58nn
 prueba4 , 0, 00:00:02, 0, f51pr52ibvlp8kllbf1blprtou
 hola , 0, 00:00:00, 0, 4inqjenclvjgm0q1d7ksd2v38e
 holA , 1, 00:00:01, 10, akg66l03js39a1tqa56tevn7l0
+diegopares , 3, 00:00:15, 13, q22lhl39hbk4q3er60r9hpttsi
+diegopares , 2, 00:00:39, 0, cagbo0sa2ke6pt3tsmklaum3mv

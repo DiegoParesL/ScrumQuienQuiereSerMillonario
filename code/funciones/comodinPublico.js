@@ -80,7 +80,7 @@ function bloquearEntreNivelesPublico() {
         let nombreGalleta = galleta[i].split("=")
         if(nombreGalleta[0].trim()=="publico"){
             valorGalleta = nombreGalleta[1];
-            console.log("galleta publico = 1")
+            //console.log("galleta publico = 1")
         }
         
     }
