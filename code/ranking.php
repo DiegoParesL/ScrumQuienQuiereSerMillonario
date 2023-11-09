@@ -14,15 +14,14 @@
 <div class="table-container">
     <table>
         <thead>
-            
             <tr>
-                <th >Name</th>
+                <th id='nom_ranking'>Nom</th>
                 <br>
-                <th>Answers</th>
+                <th id='puntuacion_ranking'>Puntuació Total</th>
                 <br>
-                <th >Time</th>
+                <th id='correctes_ranking'>Respostes Correctes</th>
                 <br>
-                <th >Total Score</th>
+                <th id='temps_ranking'>Temps</th>
             </tr>
         </thead>
         <tbody>
@@ -36,13 +35,14 @@
                 if (!ctype_space($line)) {
                     $users = explode(",", $line);
                     if(!empty($users[0])) {
+                        $ranking[$users[0]." ".$num_user][] = $users[3];
                         $ranking[$users[0]." ".$num_user][] = $users[1];
                         $ranking[$users[0]." ".$num_user][] = $users[2];
-                        $ranking[$users[0]." ".$num_user][] = $users[3];
                         $num_user++;
                     }
                 }
             }
+            
             arsort($ranking);
             foreach ($ranking as $order => $valor) {
                 $name = substr($order, 0, strlen($order)-3);
@@ -72,6 +72,7 @@
     <form action="index.php" method="post">
         <button class="boton-mediano" type="submit" id="index">Home</button>
     </form>
+    <script src="funciones/translation.js"></script>
 </div>
 </body>
 </html>

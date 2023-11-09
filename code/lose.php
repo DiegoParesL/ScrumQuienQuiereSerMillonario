@@ -68,9 +68,10 @@ if (
         if ($palabra_valida) {  //
             fwrite($file, $_POST["nombre"] . " , " . $_COOKIE["aciertos"] . ", " . $tiempo . ", " . $puntuacion . ", " . session_create_id() . "\n");
             fclose($file);
+            
             ?>
                     <script>
-                        document.getElementById("publish_button").style.display = "none";
+                        document.location.href = "ranking.php";
                     </script>
             <?php
         } else {

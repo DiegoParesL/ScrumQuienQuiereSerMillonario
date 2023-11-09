@@ -24,6 +24,7 @@ if (
     <title>Win</title>
 </head>
 <body>
+    <audio id="my_audio" src="audio/felicidades.mp3"></audio>
     <h3>You got it</h3>
     <img src="images/winner.gif" alt="" height="290px" width="290px">
    
@@ -70,7 +71,7 @@ if (
             fclose($file);
             ?>
                 <script>
-                    document.getElementById("publish_button").style.display = "none";
+                    document.location.href = "ranking.php";
                 </script>
             <?php
         } else {

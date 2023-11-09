@@ -13,21 +13,21 @@
 <?php
         echo"<div id=\"oculto\" class=\"publico\">";
         echo"<div class=\"publicOcult red-bar\">";
-        echo "<p>(1,1)</p>";
+        //echo "<p>(1,1)</p>";
         echo"</div>";
         echo"<div class=\"publicOcult blue-bar\">";
-        echo "<p>(1,2)</p>";
+        //echo "<p>(1,2)</p>";
         echo"</div>";
         echo"<div class=\"publicOcult orange-bar\">";
-        echo "<p>(2,1)</p>";
+        //echo "<p>(2,1)</p>";
         echo"</div>";
         echo"<div class=\"publicOcult yellow-bar\">";
-        echo "<p>(2,2)</p>";
+        //echo "<p>(2,2)</p>";
         echo"</div>";
         echo"</div>";
 
         echo "<div id='contenedorTelefono'>";
-        echo "<img id='imgTel' src='./images/telefono.png' alt='Imagen Comodin Telefono'>";
+        echo "<img id='imgTel' src='./images/telefono.png' alt='Imagen Comodin Telefono'  class='responsive'>";
         echo "</div>";
     ?>  
     <a href="win.php">
@@ -66,7 +66,7 @@
    
     
     <?php
-    
+    error_reporting(0);
     session_start();
 
     // Obtener el idioma del campo oculto

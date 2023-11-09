@@ -36,11 +36,11 @@ unset($_SESSION['nivel']);
     <br>
     <form action="game.php" method="get">
         <input type="hidden" name="lang" id="selectedLanguage" value="catalan"> <!-- Cambia "es" a "ca" o "en" según el idioma seleccionado -->
-        <button type="submit" id="boton-jugar" class="boton-grande" onclick="empezarDetener(this);">Play</button>
+        <button type="submit" id="boton-jugar" class="boton-grande" onclick="empezarDetener(this);">Jugar</button>
     </form>
     <br>
     <form class="rankingIndex"action="ranking.php" method="post">
-        <button type="submit" id="ranking" class="boton-mediano">Hall Of Fame</button>
+        <button type="submit" id="ranking" class="boton-mediano">Saló de la fama</button>
     </form>
 
     <script src="funciones/funcionalidades.js"></script>
